@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardElevation="2dp"
+    android:layout_marginTop="8dp"
+    android:paddingBottom="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:background="@drawable/img_food"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/titleFood"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                tools:text="Ga ran KFC"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textSize="16sp"
+                tools:text="Mon ngon hom naysdkghsihgohgohefohegjegfjfgjfhjghjghjghjghjghjghjghjghjgh"
+                android:layout_marginTop="2dp"
+                android:maxLines="2"
+                android:lines="2"
+                android:ellipsize="end"
+                app:layout_constraintTop_toBottomOf="@id/titleFood"
+                app:layout_constraintStart_toStartOf="@id/titleFood"
+                app:layout_constraintEnd_toEndOf="@id/titleFood"/>
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/titleFood"
+                app:layout_constraintEnd_toStartOf="@id/rating"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                tools:text="500000 vnd"
+                android:layout_marginTop="8dp"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/price"
+                app:layout_constraintTop_toTopOf="@id/price"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="5.0"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:drawableEndCompat="@drawable/star" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="31dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="169dp"
+                android:layout_marginHorizontal="44dp"
+                android:layout_marginTop="40dp"
+                app:srcCompat="@drawable/logo2" />
+
+            <EditText
+                android:id="@+id/ed_login_username"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/box"
+                android:elevation="@android:dimen/thumbnail_width"
+                android:hint="@string/text_ten_dang_nhap"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/ed_login_password"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:background="@drawable/box"
+                android:elevation="@android:dimen/thumbnail_width"
+                android:hint="@string/text_mat_khau"
+                android:inputType="textPassword"
+                android:textAlignment="center" />
+
+            <CheckBox
+                android:id="@+id/checkbox_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:checked="false"
+                android:text="@string/text_luu_mat_khau" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_dangnhap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/boxbutton"
+                    android:fontFamily="@font/robotoblack"
+                    android:text="@string/text_dang_nhap"
+                    />
+
+                <Button
+                    android:id="@+id/btn_dangky"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/boxbutton2"
+                    android:fontFamily="@font/robotoblack"
+                    android:text="@string/text_dang_ky"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_quenmatkhau"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:fontFamily="@font/robotoregular"
+                android:text="@string/text_quen_mat_khau_click"
+                android:textAlignment="center"
+                android:textColor="#2537D8"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginHorizontal="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/robotoregular"
+                android:text="@string/text_hoac"
+                android:textAlignment="center"
+                android:textColor="#000" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/line" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_fb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/boxbutton_fb"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/fb_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginVertical="8dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/facebook" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/text_dang_nhap_fb"
+                android:textAlignment="center"
+                android:textColor="#fff" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/btn_gg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/box"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/gg_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginVertical="10dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/google" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/text_dang_nhap_gg"
+                android:textAlignment="center"
+                android:textColor="#000" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
