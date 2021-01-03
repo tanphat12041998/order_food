@@ -1,15 +1,22 @@
 package com.app.order_food.views.activities.splashscreen;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.app.order_food.R;
 import com.app.order_food.views.activities.BaseActivity;
 import com.app.order_food.views.activities.main.MainActivity;
 
-public class SplashScreenActivity extends BaseActivity {
+public class SplashScreenActivity extends AppCompatActivity {
 
     @Override
-    protected void initialViewComponent() {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.acitvity_splash_screen);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -17,15 +24,5 @@ public class SplashScreenActivity extends BaseActivity {
                 finish();
             }
         }, 1000);
-    }
-
-    @Override
-    protected void initialVariables() {
-        // TODO
-    }
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.acitvity_splash_screen;
     }
 }
