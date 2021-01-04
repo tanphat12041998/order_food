@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
     >
 
     <LinearLayout
@@ -49,7 +48,8 @@
                 <ImageView
                     android:layout_width="53dp"
                     android:layout_height="53dp"
-                    android:src="@drawable/banhmi"/>
+                    android:src="@drawable/banhmi"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -74,7 +74,7 @@
                     android:layout_width="53dp"
                     android:layout_height="53dp"
                     android:src="@drawable/buatrua"
-                     />
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -100,7 +100,7 @@
                     android:layout_width="53dp"
                     android:layout_height="53dp"
                     android:src="@drawable/com"
-                   />
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -137,7 +137,7 @@
                     android:layout_width="53dp"
                     android:layout_height="53dp"
                     android:src="@drawable/thucannhanh"
-                    />
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -162,7 +162,7 @@
                     android:layout_width="53dp"
                     android:layout_height="53dp"
                     android:src="@drawable/mipho"
-                    />
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -188,7 +188,7 @@
                     android:layout_width="53dp"
                     android:layout_height="53dp"
                     android:src="@drawable/xienque"
-                    />
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:layout_width="match_parent"
