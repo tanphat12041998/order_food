@@ -11,6 +11,7 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/title_dsmonan"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:background="@color/colorAccent"
@@ -21,6 +22,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_dsmonan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_monan_chitiet"
