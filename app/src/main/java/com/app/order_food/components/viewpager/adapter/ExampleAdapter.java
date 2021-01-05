@@ -1,4 +1,4 @@
-package com.app.order_food.views.components.viewpager.adapter;
+package com.app.order_food.components.viewpager.adapter;
 
 class ExampleAdapter {
 }

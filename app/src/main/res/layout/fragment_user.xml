@@ -8,7 +8,7 @@
 
 
     <LinearLayout
-        android:id="@+id/Linear_layout"
+        android:id="@+id/Linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -64,7 +64,7 @@
         android:id="@+id/Linear_layout_duoi"
         android:layout_width="match_parent"
         android:layout_height="340dp"
-        android:layout_below="@id/Linear_layout"
+        android:layout_below="@id/Linear"
         android:layout_marginTop="8dp"
         android:background="@color/white"
         android:gravity="center"
@@ -77,7 +77,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/btn_w_shadow"
-            android:drawableStart="@drawable/ic_user"
+            android:drawableStart="@drawable/ic_user2"
             android:drawablePadding="10dp"
             android:elevation="2dp"
             android:paddingStart="16dp"
@@ -107,7 +107,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/btn_w_shadow"
-            android:drawableStart="@drawable/ic_setting"
+            android:drawableStart="@drawable/ic_setting2"
             android:drawablePadding="10dp"
             android:elevation="2dp"
             android:paddingStart="16dp"
@@ -122,7 +122,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/btn_w_shadow"
-            android:drawableStart="@drawable/ic_intro"
+            android:drawableStart="@drawable/ic_intro2"
             android:drawablePadding="10dp"
             android:elevation="2dp"
             android:paddingStart="16dp"
@@ -139,7 +139,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/btn_w_shadow"
-            android:drawableStart="@drawable/ic_exit"
+            android:drawableStart="@drawable/ic_exit2"
             android:drawablePadding="10dp"
             android:elevation="2dp"
             android:paddingStart="16dp"
@@ -147,20 +147,7 @@
             android:textAlignment="viewStart"
             android:textColor="@drawable/button_change_text_color_black_red"
             tools:ignore="RtlSymmetry" />
-        <Button
-            android:id="@+id/button_dang_xuat2"
-            android:layout_width="360dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/btn_w_shadow"
-            android:drawableStart="@drawable/ic_exit"
-            android:drawablePadding="10dp"
-            android:elevation="2dp"
-            android:paddingStart="16dp"
-            android:text="@string/text_dang_xuat"
-            android:textAlignment="viewStart"
-            android:textColor="@drawable/button_change_text_color_black_red"
-            tools:ignore="RtlSymmetry" />
+
 
     </LinearLayout>
 </RelativeLayout>

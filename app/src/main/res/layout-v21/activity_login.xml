@@ -32,7 +32,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/box"
                 android:elevation="@android:dimen/thumbnail_width"
-                android:hint="@string/text_ten_dang_nhap"
+                android:hint="@string/text_nhap_email_dang_nhap"
                 android:textAlignment="center" />
 
             <EditText
