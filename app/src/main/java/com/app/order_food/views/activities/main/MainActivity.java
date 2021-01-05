@@ -1,12 +1,9 @@
 package com.app.order_food.views.activities.main;
 
-import android.annotation.SuppressLint;
-import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 
 import com.app.order_food.R;
+import com.app.order_food.components.recyclerview.decorator.CustomDecorator;
 import com.app.order_food.views.activities.BaseActivity;
 import com.app.order_food.views.fragments.AccountFragment;
 import com.app.order_food.views.fragments.CartFragment;
@@ -50,4 +47,11 @@ public class MainActivity extends BaseActivity {
     protected int getLayoutId() {
         return R.layout.activity_home;
     }
+
+
+    Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.logo2);
+    Bitmap circularBitmap = CustomDecorator.getRoundedCornerBitmap(bitmap, 100);
+
+    ImageView circularImageView = (ImageView) findViewById(R.id.imgAvatarUser);
+        circularImageView.();
 }
