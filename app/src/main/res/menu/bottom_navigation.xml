@@ -12,12 +12,6 @@
         android:title="Giỏ Hàng"
         app:showAsAction="always" />
     <item
-        android:id="@+id/nav_heart"
-        android:icon="@drawable/traitim"
-        android:title="Yêu Thích"
-        app:showAsAction="always"
-        />
-    <item
         android:id="@+id/nav_user"
         android:icon="@drawable/ic_account_circle_black_24dp"
         android:title="Tài khoản"
