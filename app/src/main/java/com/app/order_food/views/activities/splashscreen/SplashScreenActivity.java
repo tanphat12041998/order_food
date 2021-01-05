@@ -6,9 +6,7 @@ import android.os.Handler;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.app.order_food.views.activities.main.MainActivity;
-
 public class SplashScreenActivity extends AppCompatActivity {
 
     @Override

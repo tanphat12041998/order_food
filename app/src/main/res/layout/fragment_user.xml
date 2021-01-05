@@ -7,6 +7,7 @@
     android:background="#f0eff4">
 
 
+  
 <!--    <LinearLayout-->
 <!--        android:id="@+id/Linear_layout"-->
 <!--        android:layout_width="match_parent"-->
@@ -163,4 +164,5 @@
 <!--            tools:ignore="RtlSymmetry" />-->
 
 <!--    </LinearLayout>-->
+
 </RelativeLayout>

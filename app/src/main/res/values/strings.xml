@@ -23,6 +23,8 @@
     <string name="text_ho_ten">Họ tên</string>
     <string name="text_dia_chi">Địa chỉ</string>
     <string name="text_cap_nhat">Cập nhật</string>
+    <string name="text_nhap_email_dang_nhap">Nhập email</string>
+
     <string name="text_mat_khau_ky_tu">Mật khẩu mới phải có ít chất 8 ký tự</string>
     <string name="text_mat_khau_cu">Mật khẩu cũ</string>
     <string name="text_mat_khau_moi">Mật khẩu mới</string>
