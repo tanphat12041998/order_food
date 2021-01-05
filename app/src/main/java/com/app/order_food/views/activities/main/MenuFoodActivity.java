@@ -12,6 +12,7 @@ import com.app.order_food.API.Api;
 import com.app.order_food.API.RetrofitClient;
 import com.app.order_food.R;
 import com.app.order_food.components.Model.Foods;
+import com.app.order_food.components.Model.Users;
 import com.app.order_food.components.recyclerview.adapter.DSmonanAdapter;
 import com.app.order_food.views.activities.BaseActivity;
 
@@ -31,6 +32,7 @@ public class MenuFoodActivity extends BaseActivity {
     Api api = retrofit.getClient().create(Api.class);
     Context context;
     Integer idType;
+    Foods foods;
     @Override
     protected void initialViewComponent() {
         Intent intent = getIntent();
@@ -77,9 +79,12 @@ public class MenuFoodActivity extends BaseActivity {
             public void onResponse(Call<List<Foods>> call, Response<List<Foods>> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     foodsList = response.body();
+                    for(Foods foods: foodsList){
+                        Log.d("TAG", foods.getImg());
+                    }
                     dSmonanAdapter = new DSmonanAdapter(context, foodsList);
                     recyclerView_dsmonan.setAdapter(dSmonanAdapter);
-
+                    dSmonanAdapter.notifyDataSetChanged();
                 }
             }
             @Override

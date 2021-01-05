@@ -216,7 +216,7 @@
             android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvMonAnTH"
+            android:id="@+id/recyclerview_dsmonanthinhhanh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -250,9 +250,10 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_montrangmieng"
+            android:id="@+id/recyclerview_dstatcamonan"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            tools:listitem="@layout/item_monan_chitiet"
             android:paddingHorizontal="10dp" />
 
 
