@@ -1,6 +1,9 @@
 package com.app.order_food.components.recyclerview.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,11 +18,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.app.order_food.R;
 import com.app.order_food.components.Model.Foods;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.RecyclerViewHolder> {
     Context context;
     List<Foods> foodsList;
+
 
     public DSmonanAdapter(Context context, List<Foods> foodsList) {
         this.context = context;
@@ -32,7 +44,7 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
 
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
-//            imageView_dsmonan = itemView.findViewById(R.id.recyclerview_dsmonan);
+            imageView_dsmonan = itemView.findViewById(R.id.image_dsmonan);
             titleFood = itemView.findViewById(R.id.titleFood);
             description = itemView.findViewById(R.id.description);
             price = itemView.findViewById(R.id.price);
@@ -51,10 +63,77 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
     @Override
     public void onBindViewHolder(@NonNull DSmonanAdapter.RecyclerViewHolder holder, int position) {
         final Foods foods = this.foodsList.get(position);
+        new GetImage(holder.imageView_dsmonan).execute(foods.getImg());
         holder.titleFood.setText("Tên: " + foods.getName());
         holder.description.setText("Mô tả: " + foods.getDescription());
         holder.price.setText("Giá: " + foods.getPrice() + " VND");
+
     }
+
+    //    public class GetImage extends AsyncTask<String, Void, byte[]> {
+//        ImageView imageView;
+//
+//        public GetImage(ImageView imageView) {
+//            this.imageView = imageView;
+//        }
+//
+//        OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+//
+//        @Override
+//        protected byte[] doInBackground(String... strings) {
+//            Request.Builder builder = new Request.Builder();
+//            builder.url(strings[0]);
+//            Request request = builder.build();
+//            try {
+//                Response response = okHttpClient.newCall(request).execute();
+//                return response.body().bytes();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(byte[] bytes) {
+//            super.onPostExecute(bytes);
+//            if (bytes.length > 0) {
+//                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+//                imageView.setImageBitmap(bitmap);
+//            }
+//
+//        }
+//    }
+    public class GetImage extends AsyncTask<String, Void, Bitmap> {
+
+        Bitmap bitmap = null;
+        ImageView imageView;
+
+        public GetImage(ImageView imageView) {
+            this.imageView = imageView;
+        }
+
+        @Override
+        protected Bitmap doInBackground(String... strings) {
+            try {
+                URL url = new URL(strings[0]);
+                InputStream inputStream = url.openConnection().getInputStream();
+                bitmap = BitmapFactory.decodeStream(inputStream);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return bitmap;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            super.onPostExecute(bitmap);
+            imageView.setImageBitmap(bitmap);
+        }
+    }
+
 
     @Override
     public int getItemCount() {

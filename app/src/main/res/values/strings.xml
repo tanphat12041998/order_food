@@ -32,6 +32,7 @@
     <string name="text_quen_mat_khau">Quên mật khẩu</string>
     <string name="text_nhap_email">Vui lòng nhập email của bạn để lấy lại mật khẩu</string>
     <string name="text_lay_lai_mat_khau">Lấy lại mật khẩu</string>
+    <string name="text_ten_dang_nhap">Email</string>
     <string name="text_quay_lai_dang_nhap">Quay lại đăng nhập</string>
     <string name="text_mat_khau">Mật khẩu</string>
     <string name="text_luu_mat_khau">Lưu mật khẩu</string>
