@@ -7,7 +7,7 @@ import android.annotation.SuppressLint;
 import androidx.fragment.app.Fragment;
 
 import com.app.order_food.R;
-import com.app.order_food.components.recyclerview.decorator.CustomDecorator;
+
 import com.app.order_food.views.activities.BaseActivity;
 import com.app.order_food.views.fragments.AccountFragment;
 import com.app.order_food.views.fragments.CartFragment;
