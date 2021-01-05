@@ -1,4 +1,10 @@
-package com.app.order_food.views.components.recyclerview.adapter.decorator;
+package com.app.order_food.components.recyclerview.decorator;
 
-class CustomDecorator {
-}
+
+public class CustomDecorator {
+
+    }
+
+
+
+
