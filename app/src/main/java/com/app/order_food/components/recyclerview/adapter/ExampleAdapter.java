@@ -1,4 +1,4 @@
-package com.app.order_food.views.components.recyclerview.adapter;
+package com.app.order_food.components.recyclerview.adapter;
 
 class ExampleAdapter {
 }
