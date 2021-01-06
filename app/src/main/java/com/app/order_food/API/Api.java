@@ -3,6 +3,7 @@ package com.app.order_food.API;
 import com.app.order_food.components.Model.Foods;
 import com.app.order_food.components.Model.OrderFoods;
 import com.app.order_food.components.Model.PaymentMethods;
+import com.app.order_food.components.Model.Ratings;
 import com.app.order_food.components.Model.TypeFoods;
 import com.app.order_food.components.Model.Users;
 
@@ -61,5 +62,8 @@ public interface Api {
 
     @POST("getorderfood/{id}")
     Call<OrderFoods> getOrderFoodById(@Path("id") int Id);
+
+    @POST("getrating/{idfood}")
+    Call<List<Ratings>> getRatingByIdFood(@Path("idfood") int Id);
 
 }

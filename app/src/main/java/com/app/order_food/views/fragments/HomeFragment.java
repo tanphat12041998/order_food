@@ -19,6 +19,7 @@ import com.app.order_food.API.Api;
 import com.app.order_food.API.RetrofitClient;
 import com.app.order_food.R;
 import com.app.order_food.components.Model.Foods;
+import com.app.order_food.components.Model.Ratings;
 import com.app.order_food.components.recyclerview.adapter.DSmonanAdapter;
 import com.app.order_food.components.recyclerview.adapter.DSmonanThinhHanhAdapter;
 import com.app.order_food.views.activities.main.MenuFoodActivity;
@@ -36,9 +37,12 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView_dsmonanthinhhanh, recyclerView_dstatcamonan;
     RetrofitClient retrofit = new RetrofitClient();
     List<Foods> foodsList = new ArrayList<>();
+    List<Foods> foodsLists = new ArrayList<>();
     Api api = retrofit.getClient().create(Api.class);
     DSmonanThinhHanhAdapter dSmonanThinhHanhAdapter;
+    DSmonanAdapter dSmonanAdapter;
     Context context;
+    Context contexts;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -52,13 +56,23 @@ public class HomeFragment extends Fragment {
         recyclerView_dsmonanthinhhanh = view.findViewById(R.id.recyclerview_dsmonanthinhhanh);
         recyclerView_dstatcamonan = view.findViewById(R.id.recyclerview_dstatcamonan);
         foodsList = new ArrayList<>();
+        foodsLists = new ArrayList<>();
+
         api.getAllFood().enqueue(new Callback<List<Foods>>() {
             @Override
             public void onResponse(Call<List<Foods>> call, Response<List<Foods>> response) {
+                foodsList.clear();
+                foodsLists.clear();
                 if (response.isSuccessful() && response.body() != null) {
                     foodsList = response.body();
                     dSmonanThinhHanhAdapter = new DSmonanThinhHanhAdapter(context, foodsList);
                     recyclerView_dsmonanthinhhanh.setAdapter(dSmonanThinhHanhAdapter);
+                    dSmonanThinhHanhAdapter.notifyDataSetChanged();
+
+                    foodsLists = response.body();
+                    dSmonanAdapter = new DSmonanAdapter(contexts, foodsLists);
+                    recyclerView_dstatcamonan.setAdapter(dSmonanAdapter);
+                    dSmonanAdapter.notifyDataSetChanged();
                 }
             }
             @Override
