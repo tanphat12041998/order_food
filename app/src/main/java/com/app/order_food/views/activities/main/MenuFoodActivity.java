@@ -77,26 +77,29 @@ public class MenuFoodActivity extends BaseActivity {
         api.getAllFoodByIdType(idTyped).enqueue(new Callback<List<Foods>>() {
             @Override
             public void onResponse(Call<List<Foods>> call, Response<List<Foods>> response) {
+                foodsList.clear();
                 if (response.isSuccessful() && response.body() != null) {
                     foodsList = response.body();
-                    for(Foods foods: foodsList){
-                        Log.d("TAG", foods.getImg());
-                    }
+//                    for(Foods foods: foodsList){
+//                        Log.d("TAG", foods.getImg());
+//                    }
                     dSmonanAdapter = new DSmonanAdapter(context, foodsList);
                     recyclerView_dsmonan.setAdapter(dSmonanAdapter);
-                    dSmonanAdapter.notifyDataSetChanged();
+                    updateAdapter();
                 }
             }
             @Override
             public void onFailure(Call<List<Foods>> call, Throwable t) {
             }
         });
-//        updateAdapter();
+
     }
 
-    public void updateAdapter(){
+    private void updateAdapter() {
         dSmonanAdapter.notifyDataSetChanged();
     }
+
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_menu;

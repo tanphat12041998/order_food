@@ -15,23 +15,33 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.app.order_food.API.Api;
+import com.app.order_food.API.RetrofitClient;
 import com.app.order_food.R;
 import com.app.order_food.components.Model.Foods;
+import com.app.order_food.components.Model.Ratings;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.Response;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.RecyclerViewHolder> {
     Context context;
     List<Foods> foodsList;
-
+    Ratings ratings;
+    List<Ratings> ratingsList = new ArrayList<>();
+    RetrofitClient retrofit = new RetrofitClient();
+    Api api = retrofit.getClient().create(Api.class);
 
     public DSmonanAdapter(Context context, List<Foods> foodsList) {
         this.context = context;
@@ -67,42 +77,36 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
         holder.titleFood.setText("Tên: " + foods.getName());
         holder.description.setText("Mô tả: " + foods.getDescription());
         holder.price.setText("Giá: " + foods.getPrice() + " VND");
+        api.getRatingByIdFood(foods.getId()).enqueue(new Callback<List<Ratings>>() {
+            @Override
+            public void onResponse(Call<List<Ratings>> call, Response<List<Ratings>> response) {
+                ratingsList.clear();
+                ratingsList = response.body();
+                float total = 0;
+                float count = 0;
+                for (Ratings ratings : ratingsList) {
+                    double diem = ratings.getRate();
+                    total = (float) (total + diem);
+                    count++;
 
+                }
+                DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                if (total != 0 || count != 0) {
+                    holder.rating.setText(""+ Float.valueOf(decimalFormat.format(total / count)));
+                }
+                else {
+                    holder.rating.setText("0.0");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Ratings>> call, Throwable t) {
+
+            }
+        });
     }
 
-    //    public class GetImage extends AsyncTask<String, Void, byte[]> {
-//        ImageView imageView;
-//
-//        public GetImage(ImageView imageView) {
-//            this.imageView = imageView;
-//        }
-//
-//        OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
-//
-//        @Override
-//        protected byte[] doInBackground(String... strings) {
-//            Request.Builder builder = new Request.Builder();
-//            builder.url(strings[0]);
-//            Request request = builder.build();
-//            try {
-//                Response response = okHttpClient.newCall(request).execute();
-//                return response.body().bytes();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            return null;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(byte[] bytes) {
-//            super.onPostExecute(bytes);
-//            if (bytes.length > 0) {
-//                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-//                imageView.setImageBitmap(bitmap);
-//            }
-//
-//        }
-//    }
+
     public class GetImage extends AsyncTask<String, Void, Bitmap> {
 
         Bitmap bitmap = null;
