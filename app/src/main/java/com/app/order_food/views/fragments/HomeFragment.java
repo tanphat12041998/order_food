@@ -47,12 +47,12 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        btna = view.findViewById(R.id.btn_buaSang);
-        btnb = view.findViewById(R.id.btn_buaTrua);
-        btnc = view.findViewById(R.id.btn_buaChieu);
-        btnd = view.findViewById(R.id.btn_banhmi);
-        btne = view.findViewById(R.id.btn_mipho);
-        btnf = view.findViewById(R.id.btn_xienque);
+        btna = view.findViewById(R.id.btn_com_Phan);
+        btnb = view.findViewById(R.id.btn_mon_Han);
+        btnc = view.findViewById(R.id.btn_Pizza);
+        btnd = view.findViewById(R.id.btn_thuc_An_Nhanh);
+        btne = view.findViewById(R.id.btn_mi_Pho);
+        btnf = view.findViewById(R.id.btn_do_Nuong);
         recyclerView_dsmonanthinhhanh = view.findViewById(R.id.recyclerview_dsmonanthinhhanh);
         recyclerView_dstatcamonan = view.findViewById(R.id.recyclerview_dstatcamonan);
         foodsList = new ArrayList<>();
