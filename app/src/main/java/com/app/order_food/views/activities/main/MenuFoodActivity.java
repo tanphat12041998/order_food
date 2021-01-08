@@ -12,6 +12,7 @@ import com.app.order_food.API.Api;
 import com.app.order_food.API.RetrofitClient;
 import com.app.order_food.R;
 import com.app.order_food.components.Model.Foods;
+import com.app.order_food.components.Model.Users;
 import com.app.order_food.components.recyclerview.adapter.DSmonanAdapter;
 import com.app.order_food.views.activities.BaseActivity;
 
@@ -31,6 +32,7 @@ public class MenuFoodActivity extends BaseActivity {
     Api api = retrofit.getClient().create(Api.class);
     Context context;
     Integer idType;
+    Foods foods;
     @Override
     protected void initialViewComponent() {
         Intent intent = getIntent();
@@ -75,23 +77,29 @@ public class MenuFoodActivity extends BaseActivity {
         api.getAllFoodByIdType(idTyped).enqueue(new Callback<List<Foods>>() {
             @Override
             public void onResponse(Call<List<Foods>> call, Response<List<Foods>> response) {
+                foodsList.clear();
                 if (response.isSuccessful() && response.body() != null) {
                     foodsList = response.body();
+//                    for(Foods foods: foodsList){
+//                        Log.d("TAG", foods.getImg());
+//                    }
                     dSmonanAdapter = new DSmonanAdapter(context, foodsList);
                     recyclerView_dsmonan.setAdapter(dSmonanAdapter);
-
+                    updateAdapter();
                 }
             }
             @Override
             public void onFailure(Call<List<Foods>> call, Throwable t) {
             }
         });
-//        updateAdapter();
+
     }
 
-    public void updateAdapter(){
+    private void updateAdapter() {
         dSmonanAdapter.notifyDataSetChanged();
     }
+
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_menu;
