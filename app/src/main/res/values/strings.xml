@@ -79,4 +79,7 @@
     <string name="text_ngay_sinhh">12/06/1998</string>
     <string name="text_so_dien_thoai">Số điện thoại</string>
     <string name="text_sodienthoai">0941680872</string>
+    <string name="text_lien_ket_tai_khoan">Liên kết tài khoản</string>
+    <string name="text_gui_thong_bao">Gửi thông báo</string>
+    <string name="text_dia_chi_da_luu">Địa chỉ đã lưu</string>
 </resources>
