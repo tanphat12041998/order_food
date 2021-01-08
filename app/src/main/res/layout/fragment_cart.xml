@@ -96,9 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
                     android:ellipsize="end"
-                    android:id="@+id/text_dia_chi_giao_hang"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+
                     android:lines="2"
                     android:padding="8dp"
                     android:maxLines="2"
@@ -109,7 +107,7 @@
                     tools:ignore="MissingConstraints" />
 
                 <EditText
-                    android:id="@+id/description"
+                    android:id="@+id/text_dia_chi_giao_hang"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
@@ -253,7 +251,6 @@
         android:background="@drawable/btn_w_shadow"
         android:backgroundTint="@color/colorAccent"
         android:text="@string/text_dat_hang"
-        android:layout_gravity="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         android:textSize="32sp" />
 
