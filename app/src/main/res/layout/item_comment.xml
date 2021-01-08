@@ -7,6 +7,7 @@
     android:background="#f4f4f4"
     android:paddingTop="8dp"
     android:id="@+id/llItemComment"
+    android:layout_margin="8dp"
     android:orientation="horizontal">
 
 

@@ -5,10 +5,10 @@
     <string name="text_nhap_mon_an">Nhập món ăn cần tìm</string>
     <string name="text_mon_an_quanh_day">Món ăn quanh đây</string>
     <string name="text_xem_tat_ca">xem tất cả</string>
-    <string name="text_mon_an_sang">Món ăn sáng</string>
-    <string name="text_mon_an_trua">Món ăn trưa</string>
+    <string name="text_com_phan">Cơm phần</string>
+    <string name="text_han">Món hàn</string>
     <string name="text_mon_an_thinh_hanh">Món Ăn Thịnh Hành</string>
-    <string name="text_mon_an_toi">Món ăn tối</string>
+    <string name="text_pizza">Pizza</string>
     <string name="text_ga_ran">Gà rán</string>
     <string name="text_mi_pho">Mì phở</string>
     <string name="text_tra_sua">Trà sữa</string>
@@ -70,4 +70,16 @@
     <string name="text_dat_hang">Đặt hàng</string>
     <string name="text_thong_tin_don_hang">Thông tin đơn hàng</string>
     <string name="text_thong_tin_ca_nhan">Thông tin cá nhân</string>
+    <string name="text_thong_tin_don_hang">Thông tin đơn hàng</string>
+    <string name="text_thuc_an_nhanh">Thức ăn nhanh</string>
+    <string name="text_tat_ca_mon_an">Tất cả món ăn</string>
+    <string name="text_dat_hang">Đặt hàng</string>
+    <string name="text_thong_tin_ca_nhan">Thông tin cá nhân</string>
+    <string name="text_doi">Đổi</string>
+    <string name="text_ten">Tên</string>
+    <string name="text_admin">Nguyễn Thanh Lâm</string>
+    <string name="text_ngay_sinh">Ngày sinh</string>
+    <string name="text_ngay_sinhh">12/06/1998</string>
+    <string name="text_so_dien_thoai">Số điện thoại</string>
+    <string name="text_sodienthoai">0941680872</string>
 </resources>

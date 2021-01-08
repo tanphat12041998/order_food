@@ -3,9 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-
-    >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,8 +20,7 @@
             android:gravity="center"
             android:hint="@string/text_nhap_mon_an"
             android:padding="10dp"
-            app:drawableLeftCompat="@drawable/ic_search_black_24dp"
-             />
+            app:drawableLeftCompat="@drawable/ic_search_black_24dp" />
 
         //header
         // 3 hàng menu
@@ -32,12 +29,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:baselineAligned="false"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:baselineAligned="false">
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/btn_buaSang"
+                android:id="@+id/btn_com_Phan"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="10dp"
@@ -49,7 +46,7 @@
                 <ImageView
                     android:layout_width="39dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/banhmi"
+                    android:src="@drawable/com"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -57,13 +54,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/robotoregular"
-                    android:text="@string/text_mon_an_sang"
+                    android:text="@string/text_com_phan"
                     android:textAlignment="center"
                     android:textColor="#000" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/btn_buaTrua"
+                android:id="@+id/btn_mon_Han"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
@@ -82,13 +79,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/robotoregular"
-                    android:text="@string/text_mon_an_trua"
+                    android:text="@string/text_han"
                     android:textAlignment="center"
                     android:textColor="#000" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/btn_buaChieu"
+                android:id="@+id/btn_Pizza"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="10dp"
@@ -100,7 +97,7 @@
                 <ImageView
                     android:layout_width="53dp"
                     android:layout_height="53dp"
-                    android:src="@drawable/com"
+                    android:src="@drawable/banhmi"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -108,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/robotoregular"
-                    android:text="@string/text_mon_an_toi"
+                    android:text="@string/text_pizza"
                     android:textAlignment="center"
                     android:textColor="#000" />
             </LinearLayout>
@@ -120,12 +117,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:baselineAligned="false"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:baselineAligned="false">
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/btn_banhmi"
+                android:id="@+id/btn_thuc_An_Nhanh"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="10dp"
@@ -145,13 +142,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/robotoregular"
-                    android:text="Thức ăn nhanh"
+                    android:text="@string/text_thuc_an_nhanh"
                     android:textAlignment="center"
                     android:textColor="#000" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/btn_mipho"
+                android:id="@+id/btn_mi_Pho"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
@@ -176,7 +173,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/btn_xienque"
+                android:id="@+id/btn_do_Nuong"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="10dp"
@@ -235,9 +232,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/freehani"
-                android:text="@string/text_mon_an_quanh_day"
+                android:text="@string/text_tat_ca_mon_an"
                 android:textColor="#000"
-                android:textSize="16sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -248,20 +245,16 @@
                 android:textAlignment="textEnd"
                 android:textColor="#000" />
         </LinearLayout>
-        <LinearLayout
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_dstatcamonan"
             android:layout_width="match_parent"
-            android:layout_height="500dp">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview_dstatcamonan"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:listitem="@layout/item_monan_chitiet"
-                android:orientation="vertical"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:paddingHorizontal="10dp" />
-        </LinearLayout>
-
-
-
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_monan_chitiet" />
     </LinearLayout>
+
+
 </ScrollView>
