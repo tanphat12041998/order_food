@@ -37,7 +37,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Tên khách hàng" />
+                android:text="Tên khách hàng" />
 
             <TextView
                 android:id="@+id/text_setting_description"
@@ -45,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:ellipsize="end"
+                android:text="Thành viên mới"
                 android:lines="2"
                 android:maxLines="2"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
@@ -52,7 +53,7 @@
                 app:layout_constraintEnd_toEndOf="@id/text_setting_user"
                 app:layout_constraintStart_toStartOf="@id/text_setting_user"
                 app:layout_constraintTop_toBottomOf="@id/text_setting_user"
-                tools:text="Thành viên mới" />
+                />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -75,10 +76,11 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/text_doi"
+            android:id="@+id/text_doithongtin"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:textColor="@color/blue"
             android:gravity="end"
             android:text="@string/text_doi"
             android:layout_marginEnd="8dp"
@@ -120,15 +122,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/text_ngay_sinh"
+            android:text="@string/text_dia_chi"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/text_tuoi_chitiet"
+            android:id="@+id/text_diachi_chitiet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/text_ngay_sinhh"
+            android:text="@string/text_dia_chii"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textSize="16sp" />
 
@@ -155,6 +157,35 @@
             android:text="@string/text_sodienthoai"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Đổi mật khẩu"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/text_doimatkhau"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:textColor="@color/blue"
+            android:text="@string/text_doi"
+            android:layout_marginEnd="8dp"
+            android:textSize="24sp" />
 
     </LinearLayout>
 

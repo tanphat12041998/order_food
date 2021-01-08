@@ -20,6 +20,7 @@ import com.app.order_food.API.RetrofitClient;
 import com.app.order_food.R;
 import com.app.order_food.components.Model.Foods;
 import com.app.order_food.components.Model.Ratings;
+import com.app.order_food.components.Model.Users;
 import com.app.order_food.components.recyclerview.adapter.DSmonanAdapter;
 import com.app.order_food.components.recyclerview.adapter.DSmonanThinhHanhAdapter;
 import com.app.order_food.views.activities.main.MenuFoodActivity;
@@ -57,7 +58,6 @@ public class HomeFragment extends Fragment {
         recyclerView_dstatcamonan = view.findViewById(R.id.recyclerview_dstatcamonan);
         foodsList = new ArrayList<>();
         foodsLists = new ArrayList<>();
-
         api.getAllFood().enqueue(new Callback<List<Foods>>() {
             @Override
             public void onResponse(Call<List<Foods>> call, Response<List<Foods>> response) {
@@ -80,6 +80,8 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
+
         init();
         return view;
     }
