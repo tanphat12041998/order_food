@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="@color/a6gray"
+        android:background="@color/colorAccent"
         android:text="@string/text_thong_tin_don_hang"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         android:textSize="24sp" />
@@ -24,37 +24,65 @@
         android:orientation="vertical"
         android:padding="8dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/a6gray"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/text_ten_nguoi_dung_don_hang"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:text="@string/text_ten_nguoi_dung"
-                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                app:drawableLeftCompat="@drawable/ic_user2"
-                tools:ignore="MissingConstraints"
-                 />
+                app:drawableLeftCompat="@drawable/ic_user2" />
+
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/text_so_dien_thoai_don_hang"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:text="@string/text_so_dien_thoai"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                app:drawableLeftCompat="@drawable/ic_user2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.827"
-                app:layout_constraintStart_toEndOf="@+id/textView2"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="0dp" />
+                app:drawableLeftCompat="@drawable/ic_phone" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:background="@color/a6gray"-->
+        <!--            android:orientation="horizontal">-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView2"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="@string/text_ten_nguoi_dung"-->
+        <!--                android:textAlignment="center"-->
+        <!--                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"-->
+        <!--                app:drawableLeftCompat="@drawable/ic_user2"-->
+        <!--                tools:ignore="MissingConstraints"-->
+        <!--                 />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="@string/text_so_dien_thoai"-->
+        <!--                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"-->
+        <!--                app:drawableLeftCompat="@drawable/ic_user2"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintHorizontal_bias="0.827"-->
+        <!--                app:layout_constraintStart_toEndOf="@+id/textView2"-->
+        <!--                tools:ignore="MissingConstraints"-->
+        <!--                tools:layout_editor_absoluteY="0dp" />-->
+
+        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,20 +106,20 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:lines="2"
-                    android:padding="8dp"
                     android:maxLines="2"
+                    android:padding="8dp"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:text="80 Bình Lợi, P13, Bình Thạnh, TP.HCM"
-                    tools:ignore="MissingConstraints" />
+                    tools:ignore="MissingConstraints"
+                    tools:text="80 Bình Lợi, P13, Bình Thạnh, TP.HCM" />
 
                 <EditText
                     android:id="@+id/description"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:hint="Ghi chú"
+                    android:hint="@string/text_ghi_chu"
                     android:lines="2"
                     android:maxLines="2"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
@@ -100,16 +128,16 @@
                     app:layout_constraintStart_toStartOf="@id/text_dia_chi_giao_hang"
                     app:layout_constraintTop_toBottomOf="@id/text_dia_chi_giao_hang" />
 
-<!--                <TextView-->
-<!--                    android:id="@+id/text_view_thay_doi"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="30dp"-->
-<!--                    android:lines="2"-->
-<!--                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"-->
-<!--                    android:textColor="@color/colorAccent"-->
-<!--                    app:layout_constraintRight_toRightOf="parent"-->
-<!--                    tools:ignore="MissingConstraints"-->
-<!--                    tools:text="Thay đổi " />-->
+                <!--                <TextView-->
+                <!--                    android:id="@+id/text_view_thay_doi"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="30dp"-->
+                <!--                    android:lines="2"-->
+                <!--                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"-->
+                <!--                    android:textColor="@color/colorAccent"-->
+                <!--                    app:layout_constraintRight_toRightOf="parent"-->
+                <!--                    tools:ignore="MissingConstraints"-->
+                <!--                    tools:text="Thay đổi " />-->
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
@@ -125,7 +153,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thời gian nhận hàng"
+            android:text="@string/text_thoi_gian_nhan_hang"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textSize="24sp"
 
@@ -134,7 +162,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Trong vòng 20 phút"
+            android:text="@string/text_thoi_gian_20"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
             android:textSize="16sp" />
 
@@ -144,13 +172,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/a6gray"
+        android:background="@color/cbr"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chi tiết đơn hàng"
+            android:text="@string/text_chi_tiet_don_hang"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textSize="24sp"
 
@@ -184,14 +212,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="18dp"
-                android:text="Tạm tính"
+                android:text="@string/text_tam_tinh"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                 android:textSize="24sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Phí giao hàng"
+                android:text="@string/text_phi_giao_hang"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -206,7 +234,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="18dp"
                 android:gravity="end"
-                android:text="100.000đ"
+                android:text="@string/text_100"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:textSize="24sp" />
 
@@ -214,7 +242,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:text="Miễn phí"
+                android:text="@string/text_mien_phi"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:textSize="24sp" />
         </LinearLayout>

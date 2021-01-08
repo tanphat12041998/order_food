@@ -82,4 +82,12 @@
     <string name="text_lien_ket_tai_khoan">Liên kết tài khoản</string>
     <string name="text_gui_thong_bao">Gửi thông báo</string>
     <string name="text_dia_chi_da_luu">Địa chỉ đã lưu</string>
+    <string name="text_thoi_gian_nhan_hang">Thời gian nhận hàng</string>
+    <string name="text_thoi_gian_20">Trong vòng 20 phút</string>
+    <string name="text_ghi_chu">Ghi chú</string>
+    <string name="text_chi_tiet_don_hang">Chi tiết đơn hàng</string>
+    <string name="text_tam_tinh">Tạm tính</string>
+    <string name="text_phi_giao_hang">Phí giao hàng</string>
+    <string name="text_100">100.000đ</string>
+    <string name="text_mien_phi">Miễn phí</string>
 </resources>
