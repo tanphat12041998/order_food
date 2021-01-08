@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.app.order_food.R;
 import com.app.order_food.views.activities.main.MainActivity;
-import com.app.order_food.views.activities.main.ThongTinUserActivity;
+
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -65,12 +65,12 @@ public class AccountFragment extends Fragment {
 //                startActivity(new Intent(getActivity(), GioiThieuActivity.class));
             }
         });
-        button_thong_tin_user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), ThongTinUserActivity.class));
-            }
-        });
+//        button_thong_tin_user.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getActivity(), ThongTinUserActivity.class));
+//            }
+//        });
 
     }
 }

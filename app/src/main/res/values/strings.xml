@@ -24,7 +24,7 @@
     <string name="text_dia_chi">Địa chỉ</string>
     <string name="text_cap_nhat">Cập nhật</string>
     <string name="text_nhap_email_dang_nhap">Nhập email</string>
-
+    <string name="text_thong_tin_don_hang">Thông tin đơn hàng</string>
     <string name="text_mat_khau_ky_tu">Mật khẩu mới phải có ít chất 8 ký tự</string>
     <string name="text_mat_khau_cu">Mật khẩu cũ</string>
     <string name="text_mat_khau_moi">Mật khẩu mới</string>
@@ -45,7 +45,6 @@
     <string name="text_dang_nhap_gg">Đăng nhập với Google</string>
     <string name="text_hoac">Hoặc</string>
     <string name="text_email">Email</string>
-    <string name="text_so_dien_thoai">Số điện thoại</string>
     <string name="text_nhap_mat_khau">Nhập mật khẩu</string>
     <string name="text_dang_ky_tai_khoan">Đăng ký tài khoản</string>
     <string name="text_da_co_tai_khoan">Đã có tài khoản? Đăng nhập</string>
@@ -67,10 +66,7 @@
     <string name="text_thong_tin_user">Thông tin khách hàng</string>
     <string name="text_danh_sach">Danh sách</string>
     <string name="text_ten_nguoi_dung">Tên người dùng</string>
-    <string name="text_dat_hang">Đặt hàng</string>
-    <string name="text_thong_tin_don_hang">Thông tin đơn hàng</string>
-    <string name="text_thong_tin_ca_nhan">Thông tin cá nhân</string>
-    <string name="text_thong_tin_don_hang">Thông tin đơn hàng</string>
+
     <string name="text_thuc_an_nhanh">Thức ăn nhanh</string>
     <string name="text_tat_ca_mon_an">Tất cả món ăn</string>
     <string name="text_dat_hang">Đặt hàng</string>
