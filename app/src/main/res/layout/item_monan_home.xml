@@ -57,8 +57,9 @@
                 android:id="@+id/textView_like"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/text_star"
                 android:textColor="#7f8c8d"
+                android:text="5.0"
+                android:drawableEnd="@drawable/star"
                 android:textSize="16sp" />
 
         </LinearLayout>
