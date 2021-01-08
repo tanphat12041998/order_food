@@ -61,7 +61,7 @@
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="@id/titleFood"
                 app:layout_constraintTop_toBottomOf="@id/description"
-                tools:text="500000 vnd" />
+                tools:text="50.000 vnđ" />
 
             <TextView
                 android:id="@+id/rating"
