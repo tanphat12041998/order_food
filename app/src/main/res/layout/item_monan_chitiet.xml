@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:cardElevation="2dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
-    android:paddingBottom="8dp">
+    android:paddingBottom="8dp"
+    app:cardElevation="2dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:id="@+id/image_dsmonan"
             android:layout_width="120dp"
             android:layout_height="100dp"
-            android:background="@drawable/img_food"/>
+            android:background="@drawable/img_food" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -28,53 +28,53 @@
                 android:id="@+id/titleFood"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                tools:text="Ga ran KFC"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginStart="8dp"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Ga ran KFC" />
 
             <TextView
                 android:id="@+id/description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:lines="2"
+                android:maxLines="2"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                 android:textSize="16sp"
-                tools:text="Mon ngon hom naysdkghsihgohgohefohegjegfjfgjfhjghjghjghjghjghjghjghjghjgh"
-                android:layout_marginTop="2dp"
-                android:maxLines="2"
-                android:lines="2"
-                android:ellipsize="end"
-                app:layout_constraintTop_toBottomOf="@id/titleFood"
+                app:layout_constraintEnd_toEndOf="@id/titleFood"
                 app:layout_constraintStart_toStartOf="@id/titleFood"
-                app:layout_constraintEnd_toEndOf="@id/titleFood"/>
+                app:layout_constraintTop_toBottomOf="@id/titleFood"
+                tools:text="Mon ngon hom " />
 
             <TextView
                 android:id="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/titleFood"
-                app:layout_constraintEnd_toStartOf="@id/rating"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/description"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                tools:text="500000 vnd"
                 android:layout_marginTop="8dp"
-                app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/rating"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="@id/titleFood"
+                app:layout_constraintTop_toBottomOf="@id/description"
+                tools:text="500000 vnd" />
 
             <TextView
                 android:id="@+id/rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:drawableEndCompat="@drawable/star"
                 app:layout_constraintBottom_toBottomOf="@id/price"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/price"
                 app:layout_constraintTop_toTopOf="@id/price"
                 app:layout_constraintVertical_bias="0.0"
-                tools:text="5.0"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                app:drawableEndCompat="@drawable/star" />
+                tools:text="5.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

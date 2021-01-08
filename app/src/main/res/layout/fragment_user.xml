@@ -14,6 +14,7 @@
         android:background="@color/white"
         android:orientation="horizontal"
         android:padding="8dp"
+        android:layout_margin="8dp"
         tools:ignore="UnusedAttribute">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -65,7 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="340dp"
         android:layout_below="@id/Linear"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:background="@color/white"
         android:gravity="center"
         android:orientation="vertical">
@@ -79,7 +80,6 @@
             android:background="@drawable/btn_w_shadow"
             android:drawableStart="@drawable/ic_user2"
             android:drawablePadding="10dp"
-            android:elevation="2dp"
             android:paddingStart="16dp"
             android:text="@string/text_thong_tin_user"
             android:textAlignment="viewStart"
@@ -94,7 +94,6 @@
             android:background="@drawable/btn_w_shadow"
             android:drawableStart="@drawable/ic_history2"
             android:drawablePadding="10dp"
-            android:elevation="2dp"
             android:paddingStart="16dp"
             android:text="@string/text_lich_su"
             android:textAlignment="viewStart"
@@ -109,7 +108,6 @@
             android:background="@drawable/btn_w_shadow"
             android:drawableStart="@drawable/ic_setting2"
             android:drawablePadding="10dp"
-            android:elevation="2dp"
             android:paddingStart="16dp"
             android:text="@string/text_cai_dat"
             android:textAlignment="viewStart"
@@ -124,7 +122,6 @@
             android:background="@drawable/btn_w_shadow"
             android:drawableStart="@drawable/ic_intro2"
             android:drawablePadding="10dp"
-            android:elevation="2dp"
             android:paddingStart="16dp"
             android:text="@string/text_gioi_thieu"
             android:textAlignment="viewStart"
@@ -141,7 +138,6 @@
             android:background="@drawable/btn_w_shadow"
             android:drawableStart="@drawable/ic_exit2"
             android:drawablePadding="10dp"
-            android:elevation="2dp"
             android:paddingStart="16dp"
             android:text="@string/text_dang_xuat"
             android:textAlignment="viewStart"
