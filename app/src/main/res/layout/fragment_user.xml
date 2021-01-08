@@ -18,7 +18,7 @@
         tools:ignore="UnusedAttribute">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/Circle_Image_view"
+            android:id="@+id/Circle_Image_view_user"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@drawable/mipho" />

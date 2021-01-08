@@ -39,27 +39,27 @@ public class MenuFoodActivity extends BaseActivity {
         idType = intent.getIntExtra("idType",0);
         switch (idType){
             case 1:
-                title_dsmonan.setTitle("Danh sách a");
+                title_dsmonan.setTitle("Danh sách Cơm Phần");
                 callData(idType);
                 break;
             case 2:
-                title_dsmonan.setTitle("Danh sách b");
+                title_dsmonan.setTitle("Danh sách món Hàn");
                 callData(idType);
                 break;
             case 3:
-                title_dsmonan.setTitle("Danh sách c");
+                title_dsmonan.setTitle("Danh sách món Pizza");
                 callData(idType);
                 break;
             case 4:
-                title_dsmonan.setTitle("Danh sách d");
+                title_dsmonan.setTitle("Danh sách món ăn nhanh");
                 callData(idType);
                 break;
             case 5:
-                title_dsmonan.setTitle("Danh sách e");
+                title_dsmonan.setTitle("Danh sách món ăn Mì-Phở");
                 callData(idType);
                 break;
             case 6:
-                title_dsmonan.setTitle("Danh sách f");
+                title_dsmonan.setTitle("Danh sách món ăn Nướng");
                 callData(idType);
                 break;
             default:
