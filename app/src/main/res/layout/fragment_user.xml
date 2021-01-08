@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0eff4">
+
+
+    <LinearLayout
+        android:id="@+id/Linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        tools:ignore="UnusedAttribute">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/Circle_Image_view_user"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/mipho" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_setting_user"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Tên khách hàng" />
+
+            <TextView
+                android:id="@+id/text_setting_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:lines="2"
+                android:maxLines="2"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/text_setting_user"
+                app:layout_constraintStart_toStartOf="@id/text_setting_user"
+                app:layout_constraintTop_toBottomOf="@id/text_setting_user"
+                tools:text="Thành viên mới" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+    //button
+
+    <LinearLayout
+        android:id="@+id/Linear_layout_duoi"
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:layout_below="@id/Linear"
+        android:layout_marginTop="32dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/button_thong_tin_user"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_w_shadow"
+            android:drawableStart="@drawable/ic_user2"
+            android:drawablePadding="10dp"
+            android:paddingStart="16dp"
+            android:text="@string/text_thong_tin_user"
+            android:textAlignment="viewStart"
+            android:textColor="@drawable/button_change_text_color_black_red"
+            tools:ignore="RtlSymmetry" />
+
+        <Button
+            android:id="@+id/button_lich_su"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_w_shadow"
+            android:drawableStart="@drawable/ic_history2"
+            android:drawablePadding="10dp"
+            android:paddingStart="16dp"
+            android:text="@string/text_lich_su"
+            android:textAlignment="viewStart"
+            android:textColor="@drawable/button_change_text_color_black_red"
+            tools:ignore="RtlSymmetry" />
+
+        <Button
+            android:id="@+id/button_cai_dat"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_w_shadow"
+            android:drawableStart="@drawable/ic_setting2"
+            android:drawablePadding="10dp"
+            android:paddingStart="16dp"
+            android:text="@string/text_cai_dat"
+            android:textAlignment="viewStart"
+            android:textColor="@drawable/button_change_text_color_black_red"
+            tools:ignore="RtlSymmetry" />
+
+        <Button
+            android:id="@+id/button_gioi_thieu"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_w_shadow"
+            android:drawableStart="@drawable/ic_intro2"
+            android:drawablePadding="10dp"
+            android:paddingStart="16dp"
+            android:text="@string/text_gioi_thieu"
+            android:textAlignment="viewStart"
+            android:textColor="@drawable/button_change_text_color_black_red"
+            tools:ignore="RtlSymmetry"
+            tools:targetApi="lollipop" />
+
+
+        <Button
+            android:id="@+id/button_dang_xuat"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn_w_shadow"
+            android:drawableStart="@drawable/ic_exit2"
+            android:drawablePadding="10dp"
+            android:paddingStart="16dp"
+            android:text="@string/text_dang_xuat"
+            android:textAlignment="viewStart"
+            android:textColor="@drawable/button_change_text_color_black_red"
+            tools:ignore="RtlSymmetry" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
