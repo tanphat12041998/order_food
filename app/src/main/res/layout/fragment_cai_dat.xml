@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorAccent"
+            app:backgroundTint="@color/white"
+            app:navigationIcon="@drawable/ic_back_white"
+            app:title="Cài đặt" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/Linear_layout_duoi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button_dia_diem_da_luu"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_location"
+            android:drawablePadding="10dp"
+            android:paddingStart="16dp"
+            android:textSize="16sp"
+            android:text="@string/text_dia_chi_da_luu"
+            android:drawableEnd="@drawable/muiten"
+            android:textAlignment="viewStart"
+            android:textColor="@drawable/button_change_text_color_black_red"
+            tools:ignore="RtlSymmetry" />
+
+        <Button
+            android:id="@+id/button_lien_ket_tai_khoan"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_user3"
+            android:drawablePadding="10dp"
+            android:drawableEnd="@drawable/muiten"
+            android:paddingStart="16dp"
+            android:textSize="16sp"
+            android:text="@string/text_lien_ket_tai_khoan"
+            android:textAlignment="viewStart"
+            android:textColor="@drawable/button_change_text_color_black_red"
+            tools:ignore="RtlSymmetry" />
+
+        <Button
+            android:id="@+id/button_gui_thong_bao"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_ring"
+            android:drawablePadding="10dp"
+            android:paddingStart="16dp"
+            android:textSize="16sp"
+            android:drawableEnd="@drawable/ic_ring"
+            android:text="@string/text_gui_thong_bao"
+            android:textAlignment="viewStart"
+            android:textColor="@drawable/button_change_text_color_black_red"
+            tools:ignore="RtlSymmetry"
+
+            />
+
+    </LinearLayout>
+</LinearLayout>
