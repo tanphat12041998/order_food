@@ -3,6 +3,7 @@ package com.app.order_food.views.activities.main;
 
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 
 import androidx.fragment.app.Fragment;
 
@@ -15,8 +16,11 @@ import com.app.order_food.views.fragments.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends BaseActivity {
-
-
+    public static Integer ID;
+    public static String Email;
+    public static String Name;
+    public static String Password;
+    public static String Img;
     @Override
     protected void initialViewComponent() {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
@@ -44,6 +48,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initialVariables() {
+        Intent intent = getIntent();
+        ID = intent.getExtras().getInt("ID");
+        Email = intent.getExtras().getString("Email");
+        Name = intent.getExtras().getString("Name");
+        Password = intent.getExtras().getString("Password");
+        Img = intent.getExtras().getString("Img");
 
     }
 

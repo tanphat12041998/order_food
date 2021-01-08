@@ -18,6 +18,7 @@
             android:id="@+id/image_dsmonan"
             android:layout_width="120dp"
             android:layout_height="100dp"
+            android:scaleType="fitXY"
             android:background="@drawable/img_food" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
