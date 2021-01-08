@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/Linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        tools:ignore="UnusedAttribute">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/Circle_Image_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/mipho" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_setting_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textSize="24sp"
+                tools:text="Tên khách hàng" />
+
+            <TextView
+                android:id="@+id/text_setting_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textSize="16sp"
+                tools:text="Thành viên mới" />
+
+            <TextView
+                android:id="@+id/ada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:text="5.0"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textSize="16sp"
+                app:drawableEndCompat="@drawable/star" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cbr"
+        android:text="Gioi thieu mon"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/cbr"
+        android:lines="5"
+        android:maxLines="5"
+        android:text="Thỉnh thoảng trong ứng dụng của bạn, nếu bạn muốn hỏi người dùng về quyết định giữa có hoặc không để phản hồi bất kỳ hành động cụ thể nào do người dùng thực hiện."
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="8dp">
+
+        <Button
+            android:id="@+id/btn_tru"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_remove"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/btn_1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="@string/text_1"
+            android:background="@color/white"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/btn_cong"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:textSize="30sp"
+            android:background="@drawable/ic_add"
+            />
+
+        <Button
+            android:id="@+id/btn_tien"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="@string/text_399"
+            android:layout_marginStart="40dp"
+            android:backgroundTint="@color/colorAccent"
+            android:background="@drawable/btn_w_shadow"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
