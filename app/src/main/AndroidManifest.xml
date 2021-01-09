@@ -12,7 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Orderfood"
         android:usesCleartextTraffic="true">
-        <activity android:name=".views.activities.main.ThongTinUserActivity"></activity>
+        <activity android:name=".views.activities.main.LichSuActivity"></activity>
+        <activity android:name=".views.activities.main.GioiThieuActivity" />
+        <activity android:name=".views.activities.main.ChangePassActivity" />
+        <activity android:name=".views.activities.main.ChangeInfoActivity" />
+        <activity android:name=".views.activities.main.ThongTinUserActivity" />
         <activity android:name=".views.activities.main.ResgisterActivity" />
         <activity android:name=".views.activities.main.LoginActivity" />
         <activity

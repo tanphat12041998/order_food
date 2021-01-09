@@ -19,6 +19,8 @@ public class MainActivity extends BaseActivity {
     public static Integer ID;
     public static String Email;
     public static String Name;
+    public static String Phone;
+    public static String Address;
     public static String Password;
     public static String Img;
     @Override
@@ -52,6 +54,8 @@ public class MainActivity extends BaseActivity {
         ID = intent.getExtras().getInt("ID");
         Email = intent.getExtras().getString("Email");
         Name = intent.getExtras().getString("Name");
+        Phone = intent.getExtras().getString("Phone");
+        Address = intent.getExtras().getString("Address");
         Password = intent.getExtras().getString("Password");
         Img = intent.getExtras().getString("Img");
 
