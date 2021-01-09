@@ -79,12 +79,12 @@ public class AccountFragment extends Fragment {
             }
         });
 
-        button_thong_tin_user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getContext(), ThongTinUserActivity.class));
-            }
-        });
+//        button_thong_tin_user.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getContext(), ThongTinUserActivity.class));
+//            }
+//        });
 
     }
     public class GetImage extends AsyncTask<String, Void, Bitmap> {

@@ -16,11 +16,11 @@
         android:padding="8dp"
         tools:ignore="UnusedAttribute">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/Circle_Image_view"
+        <ImageView
+            android:id="@+id/image_hinhmonan"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/mipho" />
+            android:background="@drawable/rice_bowl" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,9 +32,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:lines="1"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                 android:textSize="24sp"
-                tools:text="Tên khách hàng" />
+                tools:text="Cơm chiên dương châu" />
 
             <TextView
                 android:id="@+id/text_setting_description"
@@ -43,20 +44,20 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="2dp"
                 android:ellipsize="end"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                android:textSize="16sp"
-                tools:text="Thành viên mới" />
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textSize="20sp"
+                tools:text="129.000đ" />
 
             <TextView
-                android:id="@+id/ada"
+                android:id="@+id/rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="2dp"
                 android:ellipsize="end"
-                android:text="5.0"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                android:textSize="16sp"
+                android:text="@string/text_rating"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textSize="18sp"
                 app:drawableEndCompat="@drawable/star" />
 
         </LinearLayout>
@@ -66,9 +67,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/cbr"
-        android:text="Gioi thieu mon"
         android:layout_marginStart="8dp"
+        android:background="@color/cbr"
+        android:text="@string/text_mo_ta_mon_an"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         android:textSize="24sp" />
 
@@ -86,8 +87,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginStart="8dp">
+        android:layout_marginStart="8dp"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_tru"
@@ -100,28 +101,26 @@
             android:id="@+id/btn_1"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="@string/text_1"
             android:background="@color/white"
+            android:text="@string/text_1"
             android:textSize="30sp" />
 
         <Button
             android:id="@+id/btn_cong"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:textSize="30sp"
             android:background="@drawable/ic_add"
-            />
+            android:textSize="30sp" />
 
         <Button
             android:id="@+id/btn_tien"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="@string/text_399"
             android:layout_marginStart="40dp"
-            android:backgroundTint="@color/colorAccent"
             android:background="@drawable/btn_w_shadow"
-            />
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/text_399"
+            android:textSize="30sp" />
 
     </LinearLayout>
 
