@@ -44,9 +44,9 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="39dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/com"
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:src="@drawable/rice_bowl"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -71,7 +71,7 @@
                 <ImageView
                     android:layout_width="53dp"
                     android:layout_height="53dp"
-                    android:src="@drawable/buatrua"
+                    android:src="@drawable/kimchi"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -97,7 +97,7 @@
                 <ImageView
                     android:layout_width="53dp"
                     android:layout_height="53dp"
-                    android:src="@drawable/banhmi"
+                    android:src="@drawable/pizza"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -159,7 +159,7 @@
                 <ImageView
                     android:layout_width="53dp"
                     android:layout_height="53dp"
-                    android:src="@drawable/mipho"
+                    android:src="@drawable/banh"
                     tools:ignore="ContentDescription" />
 
                 <TextView

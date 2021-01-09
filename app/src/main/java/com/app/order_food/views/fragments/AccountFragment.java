@@ -20,7 +20,7 @@ import com.app.order_food.R;
 import com.app.order_food.components.recyclerview.adapter.DSmonanThinhHanhAdapter;
 import com.app.order_food.views.activities.main.LoginActivity;
 import com.app.order_food.views.activities.main.MainActivity;
-import com.app.order_food.views.activities.main.ThongTinUserActivity;
+
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -78,6 +78,7 @@ public class AccountFragment extends Fragment {
 //                startActivity(new Intent(getActivity(), GioiThieuActivity.class));
             }
         });
+
         button_thong_tin_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
