@@ -80,7 +80,7 @@
         android:background="@color/cbr"
         android:lines="5"
         android:maxLines="5"
-        android:text="Thỉnh thoảng trong ứng dụng của bạn, nếu bạn muốn hỏi người dùng về quyết định giữa có hoặc không để phản hồi bất kỳ hành động cụ thể nào do người dùng thực hiện."
+        android:text="@string/text_mo_ta_mon_an_dialog"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
         android:textSize="24sp" />
 

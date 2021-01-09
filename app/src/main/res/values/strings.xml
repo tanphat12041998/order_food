@@ -94,5 +94,6 @@
     <string name="text_rating">5.0</string>
     <string name="text_100_000">100.000đ</string>
     <string name="text_tongcong">Tổng cộng</string>
+    <string name="text_mo_ta_mon_an_dialog">Thỉnh thoảng trong ứng dụng của bạn, nếu bạn muốn hỏi người dùng về quyết định giữa có hoặc không để phản hồi bất kỳ hành động cụ thể nào do người dùng thực hiện.</string>
 
 </resources>

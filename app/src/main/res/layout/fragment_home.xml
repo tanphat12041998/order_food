@@ -7,17 +7,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:ignore="ExtraText">
         //header
 
 
+
         <EditText
             android:id="@+id/tvHintSearch"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:hint="@string/text_nhap_mon_an"
             android:padding="10dp"
             app:drawableLeftCompat="@drawable/ic_search_black_24dp" />
@@ -238,11 +241,11 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:fontFamily="@font/robotoregular"
                 android:text="@string/text_xem_tat_ca"
-                android:textAlignment="textEnd"
+                android:gravity="end|bottom"
                 android:textColor="#000" />
         </LinearLayout>
 
