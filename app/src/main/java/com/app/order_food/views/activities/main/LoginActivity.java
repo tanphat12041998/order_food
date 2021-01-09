@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
         editor.putString("email", email);
         editor.putString("password", passw);
         editor.putBoolean("save", checkbox_login.isChecked());
-        editor.commit();
+        editor.apply();
     }
 
     @Override
