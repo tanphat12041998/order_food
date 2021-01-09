@@ -93,5 +93,6 @@
     <string name="text_rating">5.0</string>
     <string name="text_100_000">100.000đ</string>
     <string name="text_tongcong">Tổng cộng</string>
+    <string name="text_thong_tin_don_hang">Thông tin đơn hàng</string>
 
 </resources>

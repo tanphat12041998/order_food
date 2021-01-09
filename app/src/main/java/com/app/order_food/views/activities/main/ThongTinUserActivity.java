@@ -34,11 +34,6 @@ import retrofit2.Response;
 public class ThongTinUserActivity extends AppCompatActivity {
     CircleImageView Circle_Image_view;
     TextView text_setting_user, text_doithongtin, text_ten_chitiet, text_diachi_chitiet, text_sodienthoai_chitiet, text_doimatkhau;
-    RetrofitClient retrofit = new RetrofitClient();
-    Api api = retrofit.getClient().create(Api.class);
-    List<Users> usersLists = new ArrayList<>();
-    Users user;
-    String EMAIL = MainActivity.Email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,44 +46,6 @@ public class ThongTinUserActivity extends AppCompatActivity {
         text_sodienthoai_chitiet.setText(MainActivity.Phone);
         text_setting_user.setText(MainActivity.Name);
         new GetImage(Circle_Image_view).execute(MainActivity.Img);
-
-//        api.getAllUsers().enqueue(new Callback<List<Users>>() {
-//            @Override
-//            public void onResponse(Call<List<Users>> call, Response<List<Users>> response) {
-//                usersLists = response.body();
-//                for (int i = 0; i<usersLists.size();i++){
-//                    if(EMAIL.equals(usersLists.get(i).getEmail())){
-//                        api.getUserbyEmail(EMAIL).enqueue(new Callback<Users>() {
-//                            @Override
-//                            public void onResponse(Call<Users> call, Response<Users> response) {
-//                                Users user = response.body();
-//                                Log.d("TAG", user.getId().toString());
-//                                text_diachi_chitiet.setText(user.getAddress());
-//                                text_ten_chitiet.setText(user.getName());
-//                                text_sodienthoai_chitiet.setText(user.getPhone());
-//                                text_setting_user.setText(user.getName());
-//                                new GetImage(Circle_Image_view).execute(user.getImg());
-//                            }
-//
-//                            @Override
-//                            public void onFailure(Call<Users> call, Throwable t) {
-//
-//                            }
-//                        });
-//                        break;
-//                    }
-//                }
-//
-//
-//                Toast.makeText(ThongTinUserActivity.this, usersLists.toString(), Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<Users>> call, Throwable t) {
-//
-//            }
-//        });
-
 
         text_doithongtin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,7 +71,6 @@ public class ThongTinUserActivity extends AppCompatActivity {
         text_ten_chitiet = findViewById(R.id.text_ten_chitiet);
         text_diachi_chitiet = findViewById(R.id.text_diachi_chitiet);
         text_sodienthoai_chitiet = findViewById(R.id.text_sodienthoai_chitiet);
-        usersLists = new ArrayList<>();
     }
 
     public class GetImage extends AsyncTask<String, Void, Bitmap> {

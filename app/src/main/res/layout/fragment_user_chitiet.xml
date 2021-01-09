@@ -20,6 +20,7 @@
             android:id="@+id/Circle_Image_view"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:scaleType="fitXY"
             android:background="@drawable/mipho" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,134 +66,134 @@
         android:background="@color/cbr"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/text_thong_tin_ca_nhan"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/text_doithongtin"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textColor="@color/blue"
-            android:textAlignment="textEnd"
-            android:text="@string/text_cap_nhat"
+            android:layout_marginStart="24dp"
             android:layout_marginEnd="8dp"
-            android:textSize="16sp" />
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/text_thong_tin_ca_nhan"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textSize="24sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical">
+            <TextView
+                android:id="@+id/text_doithongtin"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/blue"
+                android:textAlignment="textEnd"
+                android:text="@string/text_cap_nhat"
+                android:layout_marginEnd="8dp"
+                android:textSize="16sp" />
 
-        <TextView
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/text_ten"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:textSize="24sp" />
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/text_ten_chitiet"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_ten"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/text_ten_chitiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_admin"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/text_admin"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            android:textSize="16sp" />
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_dia_chi"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textSize="24sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical">
+            <TextView
+                android:id="@+id/text_diachi_chitiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_dia_chii"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textSize="16sp" />
 
-        <TextView
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/text_dia_chi"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:textSize="24sp" />
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/text_diachi_chitiet"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_so_dien_thoai"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/text_sodienthoai_chitiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_sodienthoai"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/text_dia_chii"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            android:textSize="16sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/text_so_dien_thoai"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/text_sodienthoai_chitiet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/text_sodienthoai"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            android:textSize="16sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/text_doi_mat_khau"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/text_doimatkhau"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textColor="@color/blue"
-            android:textAlignment="textEnd"
-            android:text="@string/text_doi"
+            android:layout_marginStart="24dp"
             android:layout_marginEnd="8dp"
-            android:textSize="16sp" />
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/text_doi_mat_khau"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/text_doimatkhau"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/blue"
+                android:textAlignment="textEnd"
+                android:text="@string/text_doi"
+                android:layout_marginEnd="8dp"
+                android:textSize="16sp" />
+
+        </LinearLayout>
     </LinearLayout>
 
 

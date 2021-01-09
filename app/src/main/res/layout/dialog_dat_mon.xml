@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
     android:orientation="vertical">
 
     <LinearLayout
@@ -20,7 +21,8 @@
             android:id="@+id/image_hinhmonan"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/rice_bowl" />
+            android:scaleType="fitXY"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +30,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/text_setting_user"
+                android:id="@+id/text_food"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -38,7 +40,7 @@
                 tools:text="Cơm chiên dương châu" />
 
             <TextView
-                android:id="@+id/text_setting_description"
+                android:id="@+id/text_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -49,7 +51,7 @@
                 tools:text="129.000đ" />
 
             <TextView
-                android:id="@+id/rating"
+                android:id="@+id/text_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -74,6 +76,7 @@
         android:textSize="24sp" />
 
     <TextView
+        android:id="@+id/text_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -114,13 +117,13 @@
 
         <Button
             android:id="@+id/btn_tien"
-            android:layout_width="200dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:background="@drawable/btn_w_shadow"
             android:backgroundTint="@color/colorAccent"
             android:text="@string/text_399"
-            android:textSize="30sp" />
+            android:textSize="24sp" />
 
     </LinearLayout>
 
