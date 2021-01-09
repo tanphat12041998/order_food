@@ -14,6 +14,7 @@ public class GioiThieuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gioi_thieu);
+        btn_back_gt = findViewById(R.id.btn_back_gt);
         btn_back_gt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
