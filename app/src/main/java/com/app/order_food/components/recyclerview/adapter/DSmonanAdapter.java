@@ -1,5 +1,6 @@
 package com.app.order_food.components.recyclerview.adapter;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -8,6 +9,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,6 +31,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import retrofit2.Call;
@@ -42,7 +45,7 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
     List<Ratings> ratingsList = new ArrayList<>();
     RetrofitClient retrofit = new RetrofitClient();
     Api api = retrofit.getClient().create(Api.class);
-
+    Dialog dialog;
     public DSmonanAdapter(Context context, List<Foods> foodsList) {
         this.context = context;
         this.foodsList = foodsList;
@@ -59,6 +62,19 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
             description = itemView.findViewById(R.id.description);
             price = itemView.findViewById(R.id.price);
             rating = itemView.findViewById(R.id.rating);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int pos = getAdapterPosition();
+                    if (pos != RecyclerView.NO_POSITION) {
+                        final Foods foods = foodsList.get(pos);
+                        dialog = new Dialog(context);
+                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        dialog.setContentView(R.layout.dialog_dat_mon);
+                    }
+                }
+            });
         }
     }
 
@@ -104,6 +120,8 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
 
             }
         });
+
+
     }
 
 

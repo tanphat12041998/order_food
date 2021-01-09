@@ -25,8 +25,8 @@ public interface Api {
     @GET("getalluser")
     Call<List<Users>> getAllUsers();
 
-    @POST("getuserbyid/{id}")
-    Call<Users> getUserById(@Path("id") int id);
+    @POST("getuseremail/{email}")
+    Call<Users> getUserbyEmail(@Path("email") String email);
 
     @FormUrlEncoded
     @POST("adduser")
@@ -35,8 +35,11 @@ public interface Api {
 
     @FormUrlEncoded
     @PUT("updateuser/info/{id}")
-    Call<Users> updateUserInfo(@Field("name") String name, @Field("password") String password
-            , @Field("phone") String phone, @Field("address") String address);
+    Call<Users> updateUserInfo(@Path("id") int Id, @Field("name") String name, @Field("phone") String phone, @Field("address") String address);
+
+    @FormUrlEncoded
+    @PUT("updateuser/info/{id}")
+    Call<Users> updateUserPass(@Path("id") int Id, @Field("password") String password);
 
     @FormUrlEncoded
     @PUT("updateuser/img/{id}")
