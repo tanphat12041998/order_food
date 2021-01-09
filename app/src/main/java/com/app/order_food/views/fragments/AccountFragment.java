@@ -1,6 +1,9 @@
 package com.app.order_food.views.fragments;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,12 +12,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.order_food.R;
+import com.app.order_food.components.recyclerview.adapter.DSmonanThinhHanhAdapter;
+import com.app.order_food.views.activities.main.LoginActivity;
 import com.app.order_food.views.activities.main.MainActivity;
 
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -34,6 +45,8 @@ public class AccountFragment extends Fragment {
         button_cai_dat = view.findViewById(R.id.button_cai_dat);
         button_gioi_thieu = view.findViewById(R.id.button_gioi_thieu);
         button_dang_xuat = view.findViewById(R.id.button_dang_xuat);
+        text_setting_user.setText(MainActivity.Name);
+        new GetImage(Circle_Image_view_user).execute(MainActivity.Img);
         button();
         return view;
     }
@@ -41,7 +54,7 @@ public class AccountFragment extends Fragment {
         button_dang_xuat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
@@ -65,12 +78,43 @@ public class AccountFragment extends Fragment {
 //                startActivity(new Intent(getActivity(), GioiThieuActivity.class));
             }
         });
-//        button_thong_tin_user.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(getActivity(), ThongTinUserActivity.class));
-//            }
-//        });
 
+        button_thong_tin_user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), ThongTinUserActivity.class));
+            }
+        });
+
+    }
+    public class GetImage extends AsyncTask<String, Void, Bitmap> {
+
+        Bitmap bitmap = null;
+        CircleImageView circleImageView;
+        public GetImage(CircleImageView circleImageView) {
+            this.circleImageView = circleImageView;
+        }
+
+
+        @Override
+        protected Bitmap doInBackground(String... strings) {
+            try {
+                URL url = new URL(strings[0]);
+                InputStream inputStream = url.openConnection().getInputStream();
+                bitmap = BitmapFactory.decodeStream(inputStream);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return bitmap;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            super.onPostExecute(bitmap);
+            circleImageView.setImageBitmap(bitmap);
+        }
     }
 }

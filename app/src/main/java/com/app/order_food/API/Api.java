@@ -25,6 +25,9 @@ public interface Api {
     @GET("getalluser")
     Call<List<Users>> getAllUsers();
 
+    @POST("getuserbyid/{id}")
+    Call<Users> getUserById(@Path("id") int id);
+
     @FormUrlEncoded
     @POST("adduser")
     Call<Users> addUser(@Field("email") String email, @Field("name") String name, @Field("password") String password

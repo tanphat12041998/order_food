@@ -93,6 +93,7 @@ public class MenuFoodActivity extends BaseActivity {
             }
         });
 
+
     }
 
     private void updateAdapter() {
