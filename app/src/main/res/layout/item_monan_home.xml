@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    android:id="@+id/Item_monan_home"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginLeft="6dp"
@@ -8,12 +10,11 @@
     android:layout_marginBottom="3dp"
     card_view:cardCornerRadius="8dp"
     card_view:cardElevation="8dp"
-    android:id="@+id/Item_monan_home"
-    >
+    app:ignore="NamespaceTypo">
 
     <RelativeLayout
         android:layout_width="180dp"
-        android:layout_height="270dp"
+        android:layout_height="250dp"
         android:paddingLeft="6dp"
         android:paddingTop="3dp"
         android:paddingRight="6dp"
@@ -31,37 +32,65 @@
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/img_food"
-                />
+                android:src="@drawable/img_food" />
 
-            <TextView
-                android:id="@+id/textView_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:text="@string/text_thit_bo"
-                android:textColor="#2c3e50"
-                android:textSize="32sp"
-                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:text="@string/text_gia_tien"
-                android:textColor="#34495e"
-                android:textSize="16sp" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="2">
 
-            <TextView
-                android:id="@+id/textView_like"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#7f8c8d"
-                android:text="5.0"
-                android:drawableEnd="@drawable/star"
-                android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/textView_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:text="@string/text_thit_bo"
+                        android:textColor="#2c3e50"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
+                    <TextView
+                        android:id="@+id/textView_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:text="@string/text_gia_tien"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                        android:textColor="#34495e"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="end|bottom"
+                    android:layout_weight="1"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/textView_like"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:text="@string/text_rating"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                        android:textSize="18sp"
+                        app:drawableEndCompat="@drawable/star"/>
+
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
 
