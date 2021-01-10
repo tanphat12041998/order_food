@@ -87,7 +87,12 @@
                         android:text="@string/text_rating"
                         android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                         android:textSize="18sp"
-                        app:drawableEndCompat="@drawable/star"/>
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/star"/>
+
 
                 </LinearLayout>
             </LinearLayout>

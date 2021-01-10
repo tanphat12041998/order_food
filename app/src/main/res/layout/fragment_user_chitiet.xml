@@ -2,8 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/thongtin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?colorBackgroundFloating"
     android:orientation="vertical">
 
     <LinearLayout
@@ -16,48 +18,47 @@
         android:padding="8dp"
         tools:ignore="UnusedAttribute">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/Circle_Image_view"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="fitXY"
-            android:background="@drawable/mipho" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/Circle_Image_view"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/text_setting_user"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="24dp"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="Tên khách hàng" />
+                    <TextView
+                        android:id="@+id/text_setting_user"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="24dp"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="Tên khách hàng" />
 
-            <TextView
-                android:id="@+id/text_setting_description"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:ellipsize="end"
-                android:text="Thành viên mới"
-                android:lines="2"
-                android:maxLines="2"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@id/text_setting_user"
-                app:layout_constraintStart_toStartOf="@id/text_setting_user"
-                app:layout_constraintTop_toBottomOf="@id/text_setting_user"
-                />
+                    <TextView
+                        android:id="@+id/text_setting_description"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:text="Thành viên mới"
+                        android:lines="2"
+                        android:maxLines="2"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="@id/text_setting_user"
+                        app:layout_constraintStart_toStartOf="@id/text_setting_user"
+                        app:layout_constraintTop_toBottomOf="@id/text_setting_user"
+                        />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </LinearLayout>
     <LinearLayout

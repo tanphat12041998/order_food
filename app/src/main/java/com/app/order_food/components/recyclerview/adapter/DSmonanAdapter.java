@@ -1,12 +1,12 @@
 package com.app.order_food.components.recyclerview.adapter;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.util.AttributeSet;
+import android.os.Build;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +16,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.order_food.API.Api;
@@ -25,7 +23,6 @@ import com.app.order_food.API.RetrofitClient;
 import com.app.order_food.R;
 import com.app.order_food.components.Model.Foods;
 import com.app.order_food.components.Model.Ratings;
-import com.app.order_food.views.activities.main.MenuFoodActivity;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,11 +30,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -160,10 +155,24 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                         btn_tien.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
+                                ArrayList<Foods> a = new ArrayList<>();
+                                a.add(foods);
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                                    ArrayList<String> b = (ArrayList<String>) Arrays.asList(a.stream().map(this::convertToString).toArray(String[]::new));
+                                }
+//                                Bundle bundle = new Bundle();
+//                                bundle.putParcelableArray();
 
                             }
+
+                            private Object convertToString(Foods foods) {
+                                return (Object) foods.toString();
+                            }
+
+
                         });
                         dialog.show();
+
                     }
                 }
             });

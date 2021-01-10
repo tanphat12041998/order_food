@@ -4,26 +4,19 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.order_food.R;
-import com.app.order_food.components.recyclerview.adapter.DSmonanThinhHanhAdapter;
 import com.app.order_food.views.activities.main.GioiThieuActivity;
 import com.app.order_food.views.activities.main.LichSuActivity;
 import com.app.order_food.views.activities.main.LoginActivity;
 import com.app.order_food.views.activities.main.MainActivity;
-import com.app.order_food.views.activities.main.ThongTinUserActivity;
-
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,33 +25,43 @@ import java.net.URL;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class AccountFragment extends Fragment {
+public class AccountFragment extends BaseFragment {
     CircleImageView Circle_Image_view_user;
     TextView text_setting_user;
     Button button_thong_tin_user, button_lich_su, button_cai_dat, button_gioi_thieu, button_dang_xuat;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_user, container, false);
-        Circle_Image_view_user = view.findViewById(R.id.Circle_Image_view_user);
-        text_setting_user = view.findViewById(R.id.text_setting_user);
-        button_thong_tin_user = view.findViewById(R.id.button_thong_tin_user);
-        button_lich_su = view.findViewById(R.id.button_lich_su);
-        button_cai_dat = view.findViewById(R.id.button_cai_dat);
-        button_gioi_thieu = view.findViewById(R.id.button_gioi_thieu);
-        button_dang_xuat = view.findViewById(R.id.button_dang_xuat);
+    protected int getLayoutId() {
+        return R.layout.fragment_user;
+    }
+
+    @Override
+    protected void initialVariables() {
+        Circle_Image_view_user = getView().findViewById(R.id.Circle_Image_view_user);
+        text_setting_user = getView().findViewById(R.id.text_setting_user);
+        button_thong_tin_user = getView().findViewById(R.id.button_thong_tin_user);
+        button_lich_su = getView().findViewById(R.id.button_lich_su);
+        button_cai_dat = getView().findViewById(R.id.button_cai_dat);
+        button_gioi_thieu = getView().findViewById(R.id.button_gioi_thieu);
+        button_dang_xuat = getView().findViewById(R.id.button_dang_xuat);
         text_setting_user.setText(MainActivity.Name);
         new GetImage(Circle_Image_view_user).execute(MainActivity.Img);
         button();
-        return view;
     }
-    public void button(){
+
+    @Override
+    protected void initialViewComponent() {
+
+    }
+
+
+
+    public void button() {
         button_dang_xuat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
         });
@@ -85,15 +88,21 @@ public class AccountFragment extends Fragment {
         button_thong_tin_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), ThongTinUserActivity.class));
+//                startActivity(new Intent(getActivity(), ThongTinUserActivity.class));
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.account, ThongTinUserFragment.newInstance(MainActivity.Email));
+                fragmentTransaction.addToBackStack(ThongTinUserFragment.class.getSimpleName());
+                fragmentTransaction.commit();
             }
         });
 
     }
+
     public class GetImage extends AsyncTask<String, Void, Bitmap> {
 
         Bitmap bitmap = null;
         CircleImageView circleImageView;
+
         public GetImage(CircleImageView circleImageView) {
             this.circleImageView = circleImageView;
         }

@@ -14,6 +14,7 @@ import com.app.order_food.API.Api;
 import com.app.order_food.API.RetrofitClient;
 import com.app.order_food.R;
 import com.app.order_food.components.Model.Users;
+import com.app.order_food.views.activities.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ChangeInfoActivity extends AppCompatActivity {
+public class ChangeInfoActivity extends BaseActivity {
     EditText edtTenCu, edtSdtCu, edtDiaChiCu;
     Button btn_confirm;
     RetrofitClient retrofit = new RetrofitClient();
@@ -30,16 +31,7 @@ public class ChangeInfoActivity extends AppCompatActivity {
     Integer ID = MainActivity.ID;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_info);
-        edtDiaChiCu = findViewById(R.id.edtDiaChiCu);
-        edtTenCu = findViewById(R.id.edtTenCu);
-        edtSdtCu = findViewById(R.id.edtSdtCu);
-        edtTenCu.setText(MainActivity.Name);
-        edtSdtCu.setText(MainActivity.Phone);
-        edtDiaChiCu.setText(MainActivity.Address);
-        btn_confirm = findViewById(R.id.btn_confirm);
+    protected void initialViewComponent() {
         btn_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,6 +39,23 @@ public class ChangeInfoActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void initialVariables() {
+        edtDiaChiCu = findViewById(R.id.edtDiaChiCu);
+        edtTenCu = findViewById(R.id.edtTenCu);
+        edtSdtCu = findViewById(R.id.edtSdtCu);
+        edtTenCu.setText(MainActivity.Name);
+        edtSdtCu.setText(MainActivity.Phone);
+        edtDiaChiCu.setText(MainActivity.Address);
+        btn_confirm = findViewById(R.id.btn_confirm);
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_change_info;
+    }
+
     public void clickConfirm(){
         String name = edtTenCu.getText().toString();
         String phone = edtSdtCu.getText().toString().trim();
