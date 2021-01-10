@@ -21,9 +21,11 @@
             android:gravity="center"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            android:layout_marginTop="8dp"
             android:hint="@string/text_nhap_mon_an"
             android:padding="10dp"
-            app:drawableLeftCompat="@drawable/ic_search_black_24dp" />
+            app:drawableLeftCompat="@drawable/ic_search_black_24dp"
+            />
 
         //header
         // 3 hàng menu

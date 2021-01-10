@@ -130,10 +130,7 @@ public class LoginActivity extends BaseActivity {
                 startActivity(intent);
                 break;
             }
-            else {
-                Toast.makeText(LoginActivity.this, "Email hoặc mật khẩu sai", Toast.LENGTH_SHORT).show();
 
-            }
 
         }
     }
