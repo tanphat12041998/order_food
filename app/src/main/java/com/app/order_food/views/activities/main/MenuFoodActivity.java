@@ -3,6 +3,8 @@ package com.app.order_food.views.activities.main;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
@@ -65,6 +67,12 @@ public class MenuFoodActivity extends BaseActivity {
             default:
                 break;
         }
+        title_dsmonan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     @Override

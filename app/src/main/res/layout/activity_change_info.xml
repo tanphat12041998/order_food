@@ -47,7 +47,7 @@
             android:textStyle="bold" />
 
         <RelativeLayout
-            android:id="@+id/matKhauCu"
+            android:id="@+id/TenCu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_capnhat"
@@ -65,13 +65,13 @@
                 android:text="@string/text_ho_ten" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/nhapMatKhauCu"
+                android:id="@+id/nhapTenCu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtMatKhauCu"
+                    android:id="@+id/edtTenCu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -79,10 +79,10 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/relayPasswordChange"
+            android:id="@+id/SdtCu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/matKhauCu"
+            android:layout_below="@+id/TenCu"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
@@ -97,12 +97,12 @@
                 android:text="@string/text_so_dien_thoai" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_input_password_change"
+                android:id="@+id/nhapSdtCu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtpassword_change"
+                    android:id="@+id/edtSdtCu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -110,10 +110,10 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/relayPasswordChangeAgain"
+            android:id="@+id/DiaChiCu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/relayPasswordChange"
+            android:layout_below="@+id/SdtCu"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
@@ -128,14 +128,12 @@
                 android:text="@string/text_dia_chi" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_input_password_again_change"
+                android:id="@+id/nhapDiaChiCu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:errorEnabled="true"
-                app:passwordToggleEnabled="true">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtpassword_change_again"
+                    android:id="@+id/edtDiaChiCu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -144,10 +142,10 @@
         </RelativeLayout>
 
         <Button
-            android:id="@+id/btn_passchange_confirm"
+            android:id="@+id/btn_confirm"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/relayPasswordChangeAgain"
+            android:layout_below="@+id/DiaChiCu"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:background="@drawable/btn_cong"

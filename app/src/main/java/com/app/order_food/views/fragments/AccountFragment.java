@@ -18,8 +18,11 @@ import android.widget.Toast;
 
 import com.app.order_food.R;
 import com.app.order_food.components.recyclerview.adapter.DSmonanThinhHanhAdapter;
+import com.app.order_food.views.activities.main.GioiThieuActivity;
+import com.app.order_food.views.activities.main.LichSuActivity;
 import com.app.order_food.views.activities.main.LoginActivity;
 import com.app.order_food.views.activities.main.MainActivity;
+import com.app.order_food.views.activities.main.ThongTinUserActivity;
 
 
 import java.io.IOException;
@@ -62,13 +65,13 @@ public class AccountFragment extends Fragment {
         button_gioi_thieu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(getActivity(), GioiThieuActivity.class));
+                startActivity(new Intent(getActivity(), GioiThieuActivity.class));
             }
         });
         button_lich_su.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(getActivity(), GioiThieuActivity.class));
+                startActivity(new Intent(getActivity(), LichSuActivity.class));
             }
         });
         button_cai_dat.setOnClickListener(new View.OnClickListener() {
@@ -79,12 +82,12 @@ public class AccountFragment extends Fragment {
             }
         });
 
-//        button_thong_tin_user.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(getContext(), ThongTinUserActivity.class));
-//            }
-//        });
+        button_thong_tin_user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ThongTinUserActivity.class));
+            }
+        });
 
     }
     public class GetImage extends AsyncTask<String, Void, Bitmap> {

@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,48 +34,32 @@ import retrofit2.Response;
 public class ThongTinUserActivity extends AppCompatActivity {
     CircleImageView Circle_Image_view;
     TextView text_setting_user, text_doithongtin, text_ten_chitiet, text_diachi_chitiet, text_sodienthoai_chitiet, text_doimatkhau;
-    RetrofitClient retrofit = new RetrofitClient();
-    Api api = retrofit.getClient().create(Api.class);
-    List<Users> usersLists = new ArrayList<>();
-    Users user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_user_chitiet);
         init();
-        CallUser();
 
+        text_diachi_chitiet.setText(MainActivity.Address);
+        text_ten_chitiet.setText(MainActivity.Name);
+        text_sodienthoai_chitiet.setText(MainActivity.Phone);
+        text_setting_user.setText(MainActivity.Name);
+        new GetImage(Circle_Image_view).execute(MainActivity.Img);
 
-
-    }
-
-    public void CallUser() {
-        api.getAllUsers().enqueue(new Callback<List<Users>>() {
+        text_doithongtin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(Call<List<Users>> call, Response<List<Users>> response) {
-                usersLists = response.body();
-                Log.d("TAG", usersLists.toString());
-            }
-            @Override
-            public void onFailure(Call<List<Users>> call, Throwable t) {
-
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ChangeInfoActivity.class));
             }
         });
-        if (usersLists == null || usersLists.isEmpty()) {
-            return;
-        }
-        for (Users users: usersLists){
-            if (users.getEmail().equals(MainActivity.Email)) {
-                user = users;
-                Log.d("TAG", String.valueOf(users.getId()+ MainActivity.ID));
-                text_diachi_chitiet.setText(user.getAddress());
-                text_ten_chitiet.setText(user.getName());
-                text_sodienthoai_chitiet.setText(user.getPhone());
-                text_setting_user.setText(user.getName());
-                new GetImage(Circle_Image_view).execute(user.getImg());
-                break;
+
+        text_doimatkhau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ChangePassActivity.class));
             }
-        }
+        });
 
     }
 
@@ -86,7 +71,6 @@ public class ThongTinUserActivity extends AppCompatActivity {
         text_ten_chitiet = findViewById(R.id.text_ten_chitiet);
         text_diachi_chitiet = findViewById(R.id.text_diachi_chitiet);
         text_sodienthoai_chitiet = findViewById(R.id.text_sodienthoai_chitiet);
-
     }
 
     public class GetImage extends AsyncTask<String, Void, Bitmap> {
