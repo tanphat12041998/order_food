@@ -188,10 +188,10 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
                 }
                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                 if (total != 0 || count != 0) {
-                    holder.rating.setText("Star: " + Float.valueOf(decimalFormat.format(total / count)));
+                    holder.rating.setText(""+Float.valueOf(decimalFormat.format(total / count)));
                 }
                 else {
-                    holder.rating.setText("Star: 0.0");
+                    holder.rating.setText("0.0");
                 }
             }
 
@@ -203,8 +203,8 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
 
 
         new GetImage(holder.imageView_dsmonanthinhhanh).execute(foods.getImg());
-        holder.nameFood.setText("Tên: " + foods.getName());
-        holder.price.setText("Giá: " + foods.getPrice() + " VND");
+        holder.nameFood.setText(foods.getName());
+        holder.price.setText(foods.getPrice() + " VND");
 
     }
 

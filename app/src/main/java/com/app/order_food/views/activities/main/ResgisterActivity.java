@@ -16,6 +16,7 @@ import com.app.order_food.API.Api;
 import com.app.order_food.API.RetrofitClient;
 import com.app.order_food.R;
 import com.app.order_food.components.Model.Users;
+import com.app.order_food.views.activities.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,19 +25,16 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ResgisterActivity extends AppCompatActivity {
+public class ResgisterActivity extends BaseActivity {
     RetrofitClient retrofit = new RetrofitClient();
     Api api = retrofit.getClient().create(Api.class);
     List<Users> usersList= new ArrayList<>();
     EditText ed_hoten, ed_phone, ed_diachi, ed_email, ed_password, ed_repassword;
     Button btn_register;
     TextView tv_quaylaidn_register;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-        resinit();
-        callAllResUser();
+    protected void initialViewComponent() {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,7 +49,18 @@ public class ResgisterActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
 
+    @Override
+    protected void initialVariables() {
+        resinit();
+        callAllResUser();
+
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_register;
     }
 
     public void resinit(){
