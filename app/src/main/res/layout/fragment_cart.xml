@@ -9,7 +9,6 @@
     tools:ignore="ScrollViewCount">
 
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,6 +29,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:orientation="horizontal">
 
             <TextView
@@ -37,8 +37,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
+                android:textAlignment="viewStart"
                 android:text="@string/text_ten_nguoi_dung"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                tools:ignore="RtlCompat"
                 app:drawableLeftCompat="@drawable/ic_user2" />
 
 
@@ -46,10 +49,13 @@
                 android:id="@+id/text_so_dien_thoai_don_hang"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center"
+                android:textAlignment="viewStart"
                 android:layout_weight="1"
                 android:text="@string/text_sodienthoai"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                app:drawableLeftCompat="@drawable/ic_phone" />
+                app:drawableLeftCompat="@drawable/ic_phone"
+                tools:ignore="RtlCompat" />
 
 
         </LinearLayout>
@@ -169,95 +175,175 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/cbr"
-        android:orientation="horizontal"
-
-        android:padding="16dp">
+        android:background="@color/a6gray"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginBottom="0.5dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="8dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="18dp"
-                android:text="@string/text_tam_tinh"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                android:textSize="16sp" />
+                android:orientation="horizontal"
+                android:padding="8dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/text_tam_tinh"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/text_tamtinhgiatien"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/text_100"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/text_phi_giao_hang"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                android:textSize="16sp" />
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/text_phi_giao_hang"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/text_mien_phi"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:background="@color/a6gray"
+            android:layout_marginTop="0.5dp"
+            android:layout_marginBottom="0.5dp">
+
+            <LinearLayout
+                android:id="@+id/text_tienmat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tiền mặt"
+                    android:background="@color/white"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="0.5dp"
+                    tools:ignore="NestedWeights" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="100.000đ"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="0.5dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/text_khuyenmai"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:background="@color/white"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:text="Mã ưu đãi"
+                    android:gravity="center"
+                    android:layout_marginStart="0.5dp"
+                    android:textSize="16sp"
+                    />
+            </LinearLayout>
+
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="0.5dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/text_tamtinhgiatien"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="18dp"
-                android:gravity="end"
-                android:text="@string/text_100"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                android:textSize="16sp" />
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:text="@string/text_tongcong"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="@string/text_100_000"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_thanhtoang"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="@string/text_mien_phi"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                android:textSize="16sp" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="30dp"
-                android:text="@string/text_tongcong"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="@string/text_100_000"
+                android:layout_margin="16dp"
+                android:background="@drawable/btn_w_shadow"
+                android:backgroundTint="@color/colorAccent"
+                android:text="@string/text_dat_hang"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                android:textSize="16sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/button_thanhtoang"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="16dp"
-            android:background="@drawable/btn_w_shadow"
-            android:backgroundTint="@color/colorAccent"
-            android:text="@string/text_dat_hang"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            android:textSize="24sp" />
     </LinearLayout>
 
 
 </LinearLayout>
+

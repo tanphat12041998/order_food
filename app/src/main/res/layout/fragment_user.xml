@@ -11,10 +11,10 @@
         android:id="@+id/Linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:background="@color/white"
         android:orientation="horizontal"
         android:padding="8dp"
-        android:layout_margin="8dp"
         tools:ignore="UnusedAttribute">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -48,12 +48,12 @@
                 android:ellipsize="end"
                 android:lines="2"
                 android:maxLines="2"
+                android:text="Thành viên mới"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="@id/text_setting_user"
                 app:layout_constraintStart_toStartOf="@id/text_setting_user"
-                app:layout_constraintTop_toBottomOf="@id/text_setting_user"
-                android:text="Thành viên mới" />
+                app:layout_constraintTop_toBottomOf="@id/text_setting_user" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -64,7 +64,7 @@
     <LinearLayout
         android:id="@+id/Linear_layout_duoi"
         android:layout_width="match_parent"
-        android:layout_height="340dp"
+        android:layout_height="300dp"
         android:layout_below="@id/Linear"
         android:layout_marginTop="32dp"
         android:background="@color/white"
@@ -92,10 +92,10 @@
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/btn_w_shadow"
-            android:drawableStart="@drawable/ic_history2"
+            android:drawableStart="@drawable/ic_historyvip"
             android:drawablePadding="10dp"
             android:paddingStart="16dp"
-            android:text="@string/text_lich_su"
+            android:text="@string/text_don_mua_cua_toi"
             android:textAlignment="viewStart"
             android:textColor="@drawable/button_change_text_color_black_red"
             tools:ignore="RtlSymmetry" />
@@ -130,21 +130,22 @@
             tools:targetApi="lollipop" />
 
 
-        <Button
-            android:id="@+id/button_dang_xuat"
-            android:layout_width="360dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/btn_w_shadow"
-            android:drawableStart="@drawable/ic_exit2"
-            android:drawablePadding="10dp"
-            android:paddingStart="16dp"
-            android:text="@string/text_dang_xuat"
-            android:textAlignment="viewStart"
-            android:textColor="@drawable/button_change_text_color_black_red"
-            tools:ignore="RtlSymmetry" />
-
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button_dang_xuat"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Linear_layout_duoi"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_w_shadow"
+        android:drawableStart="@drawable/ic_exit2"
+        android:drawablePadding="10dp"
+        android:paddingStart="16dp"
+        android:layout_marginStart="26dp"
+        android:text="@string/text_dang_xuat"
+        android:textAlignment="viewStart"
+        android:textColor="@drawable/button_change_text_color_black_red"
+        tools:ignore="RtlSymmetry" />
 
 </RelativeLayout>
