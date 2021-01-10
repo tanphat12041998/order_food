@@ -95,6 +95,8 @@
     <string name="text_tongcong">Tổng cộng</string>
     <string name="text_thong_tin_don_hang">Thông tin đơn hàng</string>
     <string name="text_mo_ta_mon_an_dialog">Thỉnh thoảng trong ứng dụng của bạn, nếu bạn muốn hỏi người dùng về quyết định giữa có hoặc không để phản hồi bất kỳ hành động cụ thể nào do người dùng thực hiện.</string>
+    <string name="text_dia_chi_gio_hang">80 Bình Lợi, P13, Bình Thạnh, TP.HCM</string>
+    <string name="text_thay_doi">Thay đổi</string>
 
 
 </resources>

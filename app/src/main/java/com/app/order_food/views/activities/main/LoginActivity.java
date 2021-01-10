@@ -120,10 +120,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             }
-            else {
-                Toast.makeText(LoginActivity.this, "Email hoặc mật khẩu sai", Toast.LENGTH_SHORT).show();
 
-            }
 
         }
     }
