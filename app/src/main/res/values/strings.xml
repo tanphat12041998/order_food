@@ -62,8 +62,7 @@
     <string name="text_gioi_thieu">Giới Thiệu</string>
     <string name="text_so_dien_thoai">Số điện thoại</string>
     <string name="text_cai_dat">Cài đặt</string>
-    <string name="text_lich_su">Lịch sử</string>
-    <string name="text_thong_tin_user">Thông tin khách hàng</string>
+    <string name="text_thong_tin_user">Tài khoản</string>
     <string name="text_danh_sach">Danh sách</string>
     <string name="text_ten_nguoi_dung">Tên người dùng</string>
     <string name="text_dat_hang">Đặt hàng</string>
@@ -97,6 +96,9 @@
     <string name="text_mo_ta_mon_an_dialog">Thỉnh thoảng trong ứng dụng của bạn, nếu bạn muốn hỏi người dùng về quyết định giữa có hoặc không để phản hồi bất kỳ hành động cụ thể nào do người dùng thực hiện.</string>
     <string name="text_dia_chi_gio_hang">80 Bình Lợi, P13, Bình Thạnh, TP.HCM</string>
     <string name="text_thay_doi">Thay đổi</string>
+    <string name="text_ten_khach_hang">Tên khách hàng</string>
+    <string name="text_thanh_vien_moi">Thành viên mới</string>
+    <string name="text_don_mua_cua_toi">Đơn mua của tôi</string>
 
 
 </resources>

@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/title_taikhoan"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorAccent"
+            app:backgroundTint="@color/white"
+            app:navigationIcon="@drawable/ic_back_white"
+            app:title="Tài khoản" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <LinearLayout
         android:id="@+id/Linear"
         android:layout_width="match_parent"
@@ -20,46 +35,45 @@
             android:id="@+id/Circle_Image_view"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:scaleType="fitXY"
-            android:background="@drawable/mipho" />
+            android:background="@drawable/mipho"
+            android:scaleType="fitXY" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/text_setting_user"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:text="@string/text_ten_khach_hang"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                 android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="Tên khách hàng" />
+                tools:ignore="NestedWeights" />
 
             <TextView
                 android:id="@+id/text_setting_description"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:ellipsize="end"
-                android:text="Thành viên mới"
-                android:lines="2"
-                android:maxLines="2"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:text="@string/text_thanh_vien_moi"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@id/text_setting_user"
-                app:layout_constraintStart_toStartOf="@id/text_setting_user"
-                app:layout_constraintTop_toBottomOf="@id/text_setting_user"
+
                 />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -85,11 +99,11 @@
                 android:id="@+id/text_doithongtin"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textColor="@color/blue"
-                android:textAlignment="textEnd"
-                android:text="@string/text_cap_nhat"
                 android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="@string/text_cap_nhat"
+                android:textAlignment="textEnd"
+                android:textColor="@color/blue"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -170,8 +184,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:orientation="horizontal">
 
             <TextView
@@ -186,11 +200,11 @@
                 android:id="@+id/text_doimatkhau"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textColor="@color/blue"
-                android:textAlignment="textEnd"
-                android:text="@string/text_doi"
                 android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="@string/text_doi"
+                android:textAlignment="textEnd"
+                android:textColor="@color/blue"
                 android:textSize="16sp" />
 
         </LinearLayout>
