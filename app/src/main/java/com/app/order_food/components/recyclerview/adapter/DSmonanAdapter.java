@@ -2,11 +2,14 @@ package com.app.order_food.components.recyclerview.adapter;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.NetworkOnMainThreadException;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,7 +26,10 @@ import com.app.order_food.API.Api;
 import com.app.order_food.API.RetrofitClient;
 import com.app.order_food.R;
 import com.app.order_food.components.Model.Foods;
+import com.app.order_food.components.Model.OrderFoodDetails;
 import com.app.order_food.components.Model.Ratings;
+import com.app.order_food.views.activities.main.LichSuActivity;
+import com.app.order_food.views.activities.main.MainActivity;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -41,13 +48,15 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
     Context context;
     List<Foods> foodsList;
     List<Ratings> ratingsList = new ArrayList<>();
+    ArrayList<String> b = new ArrayList<>();
     RetrofitClient retrofit = new RetrofitClient();
     Api api = retrofit.getClient().create(Api.class);
     ImageView image_hinhmonan;
     TextView text_food, text_price, text_rating, text_description;
     Button btn_tru, btn_1, btn_cong, btn_tien;
-    Integer sl;
+    Integer sl, slht;
     Double slmn;
+
     public DSmonanAdapter(Context context, List<Foods> foodsList) {
         this.context = context;
         this.foodsList = foodsList;
@@ -64,6 +73,18 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
             description = itemView.findViewById(R.id.description);
             price = itemView.findViewById(R.id.price);
             rating = itemView.findViewById(R.id.rating);
+
+//            ArrayList<Foods> a = new ArrayList<>();
+//            a.add(foods);
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//                b = (ArrayList<String>) Arrays.asList(a.stream().map(this::convertToString).toArray(String[]::new));
+//            }
+//            Bundle bundle = new Bundle();
+//            bundle.putSerializable("food", b);
+
+//            private Object convertToString(Foods foods) {
+//                return (Object) foods.toString();
+//            }
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -86,8 +107,8 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                         btn_tien = dialog.findViewById(R.id.btn_tien);
                         new GetImage(image_hinhmonan).execute(foods.getImg());
                         text_food.setText(foods.getName());
-                        text_price.setText(String.valueOf(foods.getPrice())+ " VND");
-                        btn_tien.setText(String.valueOf(foods.getPrice())+ " VND");
+                        text_price.setText(String.valueOf(foods.getPrice()) + " VND");
+                        btn_tien.setText(String.valueOf(foods.getPrice()) + " VND");
                         text_description.setText(foods.getDescription());
                         api.getRatingByIdFood(foods.getId()).enqueue(new Callback<List<Ratings>>() {
                             @Override
@@ -104,12 +125,12 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                                 }
                                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                                 if (total != 0 || count != 0) {
-                                    text_rating.setText(""+ Float.valueOf(decimalFormat.format(total / count)));
-                                }
-                                else {
+                                    text_rating.setText("" + Float.valueOf(decimalFormat.format(total / count)));
+                                } else {
                                     text_rating.setText("0.0");
                                 }
                             }
+
                             @Override
                             public void onFailure(Call<List<Ratings>> call, Throwable t) {
 
@@ -121,14 +142,14 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                             public void onClick(View view) {
                                 sl = sl + 1;
                                 slmn = Double.valueOf(sl * foods.getPrice());
-                                btn_1.setText(sl+ "");
-                                btn_tien.setText(String.valueOf(slmn)+ " VND");
-                                if(sl >= 10){
+                                btn_1.setText(sl + "");
+                                btn_tien.setText(String.valueOf(slmn) + " VND");
+                                if (sl >= 10) {
                                     btn_cong.setVisibility(View.INVISIBLE);
                                     btn_tru.setVisibility(View.VISIBLE);
-                                }else if(sl <=1){
+                                } else if (sl <= 1) {
                                     btn_tru.setVisibility(View.INVISIBLE);
-                                }else if(sl >=1){
+                                } else if (sl >= 1) {
                                     btn_cong.setVisibility(View.VISIBLE);
                                     btn_tru.setVisibility(View.VISIBLE);
                                 }
@@ -139,14 +160,14 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                             public void onClick(View view) {
                                 sl = sl - 1;
                                 slmn = Double.valueOf(sl * foods.getPrice());
-                                btn_tien.setText(String.valueOf(slmn)+ " VND");
-                                btn_1.setText(sl+ "");
-                                if(sl >= 10){
+                                btn_tien.setText(String.valueOf(slmn) + " VND");
+                                btn_1.setText(sl + "");
+                                if (sl >= 10) {
                                     btn_cong.setVisibility(View.INVISIBLE);
                                     btn_tru.setVisibility(View.VISIBLE);
-                                }else if(sl <=1){
+                                } else if (sl <= 1) {
                                     btn_tru.setVisibility(View.INVISIBLE);
-                                }else if(sl >=1){
+                                } else if (sl >= 1) {
                                     btn_cong.setVisibility(View.VISIBLE);
                                     btn_tru.setVisibility(View.VISIBLE);
                                 }
@@ -155,19 +176,38 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                         btn_tien.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                ArrayList<Foods> a = new ArrayList<>();
-                                a.add(foods);
-                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                                    ArrayList<String> b = (ArrayList<String>) Arrays.asList(a.stream().map(this::convertToString).toArray(String[]::new));
+                                if (MainActivity.ListFoodDetail.size() > 0) {
+                                    slht = sl;
+                                    boolean exists = false;
+                                    for (int i = 0; i < MainActivity.ListFoodDetail.size(); i++) {
+                                        if (MainActivity.ListFoodDetail.get(i).getId() == foods.getId()) {
+                                            MainActivity.ListFoodDetail.get(i).setSl(slht);
+                                            if (MainActivity.ListFoodDetail.get(i).getSl() >= 10) {
+                                                MainActivity.ListFoodDetail.get(i).setSl(10);
+                                            }
+                                            MainActivity.ListFoodDetail.get(i).setGia(foods.getPrice() * MainActivity.ListFoodDetail.get(i).getSl());
+                                            exists = true;
+                                            notifyDataSetChanged();
+                                        }
+                                    }
+                                    if (exists == false) {
+                                        slht = sl;
+                                        Double giamoi = foods.getPrice() * slht;
+                                        MainActivity.ListFoodDetail.add(new OrderFoodDetails(foods.getId(), slht, foods.getDescription(), foods.getName(),foods.getImg(), giamoi));
+                                        notifyDataSetChanged();
+                                    }
+                                } else {
+                                    slht = sl;
+                                    Double giamoi = foods.getPrice() * slht;
+                                    MainActivity.ListFoodDetail.add(new OrderFoodDetails(foods.getId(), slht, foods.getDescription(), foods.getName(),foods.getImg(), giamoi));
+                                    notifyDataSetChanged();
                                 }
-//                                Bundle bundle = new Bundle();
-//                                bundle.putParcelableArray();
+
+                                dialog.dismiss();
 
                             }
 
-                            private Object convertToString(Foods foods) {
-                                return (Object) foods.toString();
-                            }
+
 
 
                         });
@@ -209,9 +249,8 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                 }
                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                 if (total != 0 || count != 0) {
-                    holder.rating.setText(""+ Float.valueOf(decimalFormat.format(total / count)));
-                }
-                else {
+                    holder.rating.setText("" + Float.valueOf(decimalFormat.format(total / count)));
+                } else {
                     holder.rating.setText("0.0");
                 }
             }
