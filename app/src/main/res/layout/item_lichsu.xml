@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/cbr">
+
+    <LinearLayout
+        android:id="@+id/Linear_lich_su"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_marginBottom="0.5dp"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_da_giao"
+            app:drawableStartCompat="@drawable/ic_check" />
+        <TextView
+            android:id="@+id/text_ten_mon_an_lich_su"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:text="@string/text_ten_mon_an"
+            app:drawableEndCompat="@drawable/ic_arrow" />
+        <TextView
+            android:id="@+id/text_gia_tien_lich_su"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:text="@string/text_gia_tien" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+        <TextView
+            android:id="@+id/text_dat_lai_lich_su"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/text_dat_lai"
+            android:textColor="@color/colorAccent"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:gravity="center"/>
+    </LinearLayout>
+</LinearLayout>

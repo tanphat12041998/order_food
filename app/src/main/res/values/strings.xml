@@ -99,6 +99,8 @@
     <string name="text_ten_khach_hang">Tên khách hàng</string>
     <string name="text_thanh_vien_moi">Thành viên mới</string>
     <string name="text_don_mua_cua_toi">Đơn mua của tôi</string>
+    <string name="text_da_giao">Đã giao</string>
+    <string name="text_dat_lai">Đặt lại</string>
 
 
 </resources>
