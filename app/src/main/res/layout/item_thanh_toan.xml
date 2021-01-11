@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="8dp"
-    android:paddingBottom="8dp"
-    app:cardElevation="2dp">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +13,7 @@
 
 
         <TextView
-            android:id="@+id/text_soluong"
+            android:id="@+id/text_sol_uong"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:text="@string/text_1x"
@@ -29,7 +26,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/text_tenmonan"
+                android:id="@+id/text_ten_mon_an"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
@@ -42,7 +39,7 @@
                 tools:text="Ga ran KFC  " />
 
             <TextView
-                android:id="@+id/text_mota"
+                android:id="@+id/text_mo_ta"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -50,22 +47,22 @@
                 android:lines="1"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/text_giatien"
+                app:layout_constraintEnd_toStartOf="@id/text_gia_tien"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
-                app:layout_constraintStart_toStartOf="@id/text_tenmonan"
-                app:layout_constraintTop_toBottomOf="@id/text_tenmonan"
+                app:layout_constraintStart_toStartOf="@id/text_ten_mon_an"
+                app:layout_constraintTop_toBottomOf="@id/text_ten_mon_an"
                 tools:text="2 miếng gà rán, 1 khoai tây vừa, một nước ngọt" />
 
             <TextView
-                android:id="@+id/text_giatien"
+                android:id="@+id/text_gia_tien"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                app:layout_constraintBottom_toBottomOf="@id/text_mota"
+                app:layout_constraintBottom_toBottomOf="@id/text_mo_ta"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/text_mota"
-                app:layout_constraintTop_toTopOf="@id/text_tenmonan"
+                app:layout_constraintStart_toEndOf="@id/text_mo_ta"
+                app:layout_constraintTop_toTopOf="@id/text_ten_mon_an"
                 app:layout_constraintVertical_bias="0.0"
                 tools:text="50.000đ" />
 
@@ -74,4 +71,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>
