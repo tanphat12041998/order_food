@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/account"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f0eff4">
@@ -20,8 +21,7 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/Circle_Image_view_user"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@drawable/mipho" />
+            android:layout_height="100dp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

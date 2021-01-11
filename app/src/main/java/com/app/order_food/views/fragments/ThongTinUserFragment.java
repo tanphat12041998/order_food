@@ -1,76 +1,85 @@
-package com.app.order_food.views.activities.main;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.app.order_food.views.fragments;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.fragment.app.FragmentTransaction;
 
 import com.app.order_food.API.Api;
 import com.app.order_food.API.RetrofitClient;
 import com.app.order_food.R;
-import com.app.order_food.components.Model.Foods;
-import com.app.order_food.components.Model.Users;
-import com.app.order_food.views.fragments.AccountFragment;
+import com.app.order_food.views.activities.main.ChangeInfoActivity;
+import com.app.order_food.views.activities.main.ChangePassActivity;
+import com.app.order_food.views.activities.main.MainActivity;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-public class ThongTinUserActivity extends AppCompatActivity {
+public class ThongTinUserFragment extends BaseFragment {
     CircleImageView Circle_Image_view;
     TextView text_setting_user, text_doithongtin, text_ten_chitiet, text_diachi_chitiet, text_sodienthoai_chitiet, text_doimatkhau;
+    private static String EMAiL = "Email";
+    String email, img;
+    RetrofitClient retrofit = new RetrofitClient();
+    Api api = retrofit.getClient().create(Api.class);
+    @Override
+    protected void initialVariables() {
+        Circle_Image_view = getView().findViewById(R.id.Circle_Image_view);
+        text_setting_user = getView().findViewById(R.id.text_setting_user);
+        text_doithongtin = getView().findViewById(R.id.text_doithongtin);
+        text_doimatkhau = getView().findViewById(R.id.text_doimatkhau);
+        text_ten_chitiet = getView().findViewById(R.id.text_ten_chitiet);
+        text_diachi_chitiet = getView().findViewById(R.id.text_diachi_chitiet);
+        text_sodienthoai_chitiet = getView().findViewById(R.id.text_sodienthoai_chitiet);
+        Bundle bundle = getArguments();
+        email = bundle.getString(EMAiL);
+
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_user_chitiet);
-        init();
+    protected void initialViewComponent() {
 
+        text_setting_user.setText(MainActivity.Name);
         text_diachi_chitiet.setText(MainActivity.Address);
         text_ten_chitiet.setText(MainActivity.Name);
         text_sodienthoai_chitiet.setText(MainActivity.Phone);
-        text_setting_user.setText(MainActivity.Name);
         new GetImage(Circle_Image_view).execute(MainActivity.Img);
 
         text_doithongtin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ChangeInfoActivity.class));
+                startActivity(new Intent(getActivity(), ChangeInfoActivity.class));
             }
         });
 
         text_doimatkhau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ChangePassActivity.class));
+                startActivity(new Intent(getActivity(), ChangePassActivity.class));
             }
         });
-
     }
 
-    public void init() {
-        Circle_Image_view = findViewById(R.id.Circle_Image_view);
-        text_setting_user = findViewById(R.id.text_setting_user);
-        text_doithongtin = findViewById(R.id.text_doithongtin);
-        text_doimatkhau = findViewById(R.id.text_doimatkhau);
-        text_ten_chitiet = findViewById(R.id.text_ten_chitiet);
-        text_diachi_chitiet = findViewById(R.id.text_diachi_chitiet);
-        text_sodienthoai_chitiet = findViewById(R.id.text_sodienthoai_chitiet);
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_user_chitiet;
+    }
+
+    public static ThongTinUserFragment newInstance(String email) {
+        Bundle args = new Bundle();
+        ThongTinUserFragment fragment = new ThongTinUserFragment();
+        args.putString(EMAiL, email);
+        fragment.setArguments(args);
+        return fragment;
     }
 
     public class GetImage extends AsyncTask<String, Void, Bitmap> {

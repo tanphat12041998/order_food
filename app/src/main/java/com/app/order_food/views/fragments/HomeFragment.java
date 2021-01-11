@@ -1,76 +1,59 @@
 package com.app.order_food.views.fragments;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import androidx.fragment.app.Fragment;
+
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
+import android.os.Build;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.app.order_food.API.Api;
 import com.app.order_food.API.RetrofitClient;
 import com.app.order_food.R;
 import com.app.order_food.components.Model.Foods;
-import com.app.order_food.components.Model.Ratings;
-import com.app.order_food.components.Model.Users;
 import com.app.order_food.components.recyclerview.adapter.DSmonanAdapter;
 import com.app.order_food.components.recyclerview.adapter.DSmonanThinhHanhAdapter;
-import com.app.order_food.views.activities.main.MenuFoodActivity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends BaseFragment {
     Integer idType;
     LinearLayout btna,btnb,btnc,btnd,btne,btnf;
     RecyclerView recyclerView_dsmonanthinhhanh, recyclerView_dstatcamonan;
     RetrofitClient retrofit = new RetrofitClient();
     List<Foods> foodsList = new ArrayList<>();
-    List<Foods> foodsLists = new ArrayList<>();
     Api api = retrofit.getClient().create(Api.class);
     DSmonanThinhHanhAdapter dSmonanThinhHanhAdapter;
     DSmonanAdapter dSmonanAdapter;
     Context context;
     Context contexts;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-        btna = view.findViewById(R.id.btn_com_Phan);
-        btnb = view.findViewById(R.id.btn_mon_Han);
-        btnc = view.findViewById(R.id.btn_Pizza);
-        btnd = view.findViewById(R.id.btn_thuc_An_Nhanh);
-        btne = view.findViewById(R.id.btn_mi_Pho);
-        btnf = view.findViewById(R.id.btn_do_Nuong);
-        recyclerView_dsmonanthinhhanh = view.findViewById(R.id.recyclerview_dsmonanthinhhanh);
-        recyclerView_dstatcamonan = view.findViewById(R.id.recyclerview_dstatcamonan);
-        foodsList = new ArrayList<>();
-        foodsLists = new ArrayList<>();
+    protected int getLayoutId() {
+        return R.layout.fragment_home;
+    }
+
+    @Override
+    protected void initialVariables() {
         api.getAllFood().enqueue(new Callback<List<Foods>>() {
             @Override
             public void onResponse(Call<List<Foods>> call, Response<List<Foods>> response) {
                 foodsList.clear();
-                foodsLists.clear();
                 if (response.isSuccessful() && response.body() != null) {
                     foodsList = response.body();
                     dSmonanThinhHanhAdapter = new DSmonanThinhHanhAdapter(context, foodsList);
                     recyclerView_dsmonanthinhhanh.setAdapter(dSmonanThinhHanhAdapter);
                     dSmonanThinhHanhAdapter.notifyDataSetChanged();
 
-                    foodsLists = response.body();
-                    dSmonanAdapter = new DSmonanAdapter(contexts, foodsLists);
+                    dSmonanAdapter = new DSmonanAdapter(contexts, foodsList);
                     recyclerView_dstatcamonan.setAdapter(dSmonanAdapter);
                     dSmonanAdapter.notifyDataSetChanged();
                 }
@@ -80,10 +63,20 @@ public class HomeFragment extends Fragment {
 
             }
         });
+    }
 
-
+    @Override
+    protected void initialViewComponent() {
+        btna = getView().findViewById(R.id.btn_com_Phan);
+        btnb = getView().findViewById(R.id.btn_mon_Han);
+        btnc = getView().findViewById(R.id.btn_Pizza);
+        btnd = getView().findViewById(R.id.btn_thuc_An_Nhanh);
+        btne = getView().findViewById(R.id.btn_mi_Pho);
+        btnf = getView().findViewById(R.id.btn_do_Nuong);
+        recyclerView_dsmonanthinhhanh = getView().findViewById(R.id.recyclerview_dsmonanthinhhanh);
+        recyclerView_dstatcamonan = getView().findViewById(R.id.recyclerview_dstatcamonan);
+        foodsList = new ArrayList<>();
         init();
-        return view;
     }
 
     public void init(){
@@ -91,60 +84,70 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 idType = 1;
-                Intent intent = new Intent(getActivity(), MenuFoodActivity.class);
-                intent.putExtra("idType", idType);
-                startActivity(intent);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.main, MenuFoodFragment.newInstance(idType));
+                fragmentTransaction.addToBackStack(MenuFoodFragment.class.getSimpleName());
+                fragmentTransaction.commit();
             }
         });
         btnb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 idType = 2;
-                Intent intent = new Intent(getActivity(), MenuFoodActivity.class);
-                intent.putExtra("idType", idType);
-                startActivity(intent);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.main, MenuFoodFragment.newInstance(idType));
+                fragmentTransaction.addToBackStack(MenuFoodFragment.class.getSimpleName());
+                fragmentTransaction.commit();
             }
         });
         btnc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 idType = 3;
-                Intent intent = new Intent(getActivity(), MenuFoodActivity.class);
-                intent.putExtra("idType", idType);
-                startActivity(intent);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.main, MenuFoodFragment.newInstance(idType));
+                fragmentTransaction.addToBackStack(MenuFoodFragment.class.getSimpleName());
+                fragmentTransaction.commit();
+//                ArrayList<Integer> a = new ArrayList<>();
+//                a.add(1);
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//                    ArrayList<String> b = (ArrayList<String>) Arrays.asList(a.stream().map(this::convertToString).toArray(String[]::new));
+//                }
             }
+
+//            private <R> R convertToString(Integer integer) {
+//                return (R) integer.toString();
+//            }
         });
         btnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 idType = 4;
-                Intent intent = new Intent(getActivity(), MenuFoodActivity.class);
-                intent.putExtra("idType", idType);
-                startActivity(intent);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.main, MenuFoodFragment.newInstance(idType));
+                fragmentTransaction.addToBackStack(MenuFoodFragment.class.getSimpleName());
+                fragmentTransaction.commit();
             }
         });
         btne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 idType = 5;
-                Intent intent = new Intent(getActivity(), MenuFoodActivity.class);
-                intent.putExtra("idType", idType);
-                startActivity(intent);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.main, MenuFoodFragment.newInstance(idType));
+                fragmentTransaction.addToBackStack(MenuFoodFragment.class.getSimpleName());
+                fragmentTransaction.commit();
             }
         });
         btnf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 idType = 6;
-                Intent intent = new Intent(getActivity(), MenuFoodActivity.class);
-                intent.putExtra("idType", idType);
-                startActivity(intent);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.main, MenuFoodFragment.newInstance(idType));
+                fragmentTransaction.addToBackStack(MenuFoodFragment.class.getSimpleName());
+                fragmentTransaction.commit();
             }
         });
-
-
-
-
-
     }
 }
