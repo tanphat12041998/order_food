@@ -10,8 +10,9 @@ public class OrderFoods implements Serializable {
     private String date;
     private Integer total;
     private Boolean status;
+    private String note;
 
-    public OrderFoods(Integer id, Integer idUser, Integer idPayment, Integer idFood, Integer quantity, String date, Integer total, Boolean status) {
+    public OrderFoods(Integer id, Integer idUser, Integer idPayment, Integer idFood, Integer quantity, String date, Integer total, Boolean status, String note) {
         this.id = id;
         this.idUser = idUser;
         this.idPayment = idPayment;
@@ -20,6 +21,7 @@ public class OrderFoods implements Serializable {
         this.date = date;
         this.total = total;
         this.status = status;
+        this.note = note;
     }
 
     public Integer getId() {
@@ -84,5 +86,13 @@ public class OrderFoods implements Serializable {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 }
