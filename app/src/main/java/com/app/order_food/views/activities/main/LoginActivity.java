@@ -128,6 +128,7 @@ public class LoginActivity extends BaseActivity {
                 intent.putExtra("Password", user.getPassword());
                 intent.putExtra("Img", user.getImg());
                 startActivity(intent);
+                finish();
                 break;
             }
 

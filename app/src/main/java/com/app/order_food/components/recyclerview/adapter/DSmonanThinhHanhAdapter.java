@@ -13,6 +13,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,7 +22,9 @@ import com.app.order_food.API.Api;
 import com.app.order_food.API.RetrofitClient;
 import com.app.order_food.R;
 import com.app.order_food.components.Model.Foods;
+import com.app.order_food.components.Model.OrderFoodDetails;
 import com.app.order_food.components.Model.Ratings;
+import com.app.order_food.views.activities.main.MainActivity;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,7 +48,7 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
     ImageView image_hinhmonan;
     TextView text_food, text_price, text_rating, text_description;
     Button btn_tru, btn_1, btn_cong, btn_tien;
-    Integer sl;
+    Integer sl, slht;
     Double slmn;
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView_dsmonanthinhhanh;
@@ -148,8 +151,38 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
                         btn_tien.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
+                                if (MainActivity.ListFoodDetail.size() > 0) {
+                                    slht = sl;
+                                    boolean exists = false;
+                                    for (int i = 0; i < MainActivity.ListFoodDetail.size(); i++) {
+                                        if (MainActivity.ListFoodDetail.get(i).getId() == foods.getId()) {
+                                            MainActivity.ListFoodDetail.get(i).setSl(slht);
+                                            if (MainActivity.ListFoodDetail.get(i).getSl() >= 10) {
+                                                MainActivity.ListFoodDetail.get(i).setSl(10);
+                                            }
+                                            MainActivity.ListFoodDetail.get(i).setGia(foods.getPrice() * MainActivity.ListFoodDetail.get(i).getSl());
+                                            exists = true;
+                                            notifyDataSetChanged();
+                                        }
+                                    }
+                                    if (exists == false) {
+                                        slht = sl;
+                                        Double giamoi = foods.getPrice() * slht;
+                                        MainActivity.ListFoodDetail.add(new OrderFoodDetails(foods.getId(), slht, foods.getDescription(), foods.getName(), giamoi));
+                                        notifyDataSetChanged();
+                                    }
+                                } else {
+                                    slht = sl;
+                                    Double giamoi = foods.getPrice() * slht;
+                                    MainActivity.ListFoodDetail.add(new OrderFoodDetails(foods.getId(), slht, foods.getDescription(), foods.getName(), giamoi));
+                                    notifyDataSetChanged();
+                                }
+
+                                dialog.dismiss();
 
                             }
+
+
                         });
                         dialog.show();
                     }
