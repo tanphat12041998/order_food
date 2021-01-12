@@ -173,12 +173,24 @@
 <!--            android:layout_height="match_parent">-->
 <!--            -->
 <!--        </ScrollView>-->
-        <ListView
-            android:id="@+id/listview_dsdonhang"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            tools:listitem="@layout/item_thanh_toan" />
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/text_gio_hang_trong"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="30dp"
+                android:text="Giỏ hàng trống"/>
+            <ListView
+                android:id="@+id/listview_dsdonhang"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_thanh_toan"/>
+        </FrameLayout>
+
 
 
     </LinearLayout>
@@ -281,7 +293,7 @@
                     android:id="@+id/text_tien_mat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="100.000đ"
+                    android:text="0đ"
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"

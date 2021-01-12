@@ -8,17 +8,18 @@ public class Foods {
     private Integer id;
     @SerializedName("idtype")
     private Integer idTypeFood;
+    private Integer price;
 
     private String name,description, img;
-    private Double price;
 
-    public Foods(Integer id, Integer idTypeFood, String name, String description, String img, Double price) {
+
+    public Foods(Integer id, Integer idTypeFood, Integer price, String name, String description, String img) {
         this.id = id;
         this.idTypeFood = idTypeFood;
+        this.price = price;
         this.name = name;
         this.description = description;
         this.img = img;
-        this.price = price;
     }
 
     public Integer getId() {
@@ -35,6 +36,14 @@ public class Foods {
 
     public void setIdTypeFood(Integer idTypeFood) {
         this.idTypeFood = idTypeFood;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 
     public String getName() {
@@ -59,13 +68,5 @@ public class Foods {
 
     public void setImg(String img) {
         this.img = img;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
     }
 }

@@ -6,24 +6,16 @@ import java.util.Date;
 public class OrderFoodDetails implements Serializable {
     private Integer id, sl;
     private String mota, ten, img;
-    private Double gia;
+    private Integer gia, giatong;
 
-
-    public OrderFoodDetails(Integer id, Integer sl, String mota, String ten, String img, Double gia) {
+    public OrderFoodDetails(Integer id, Integer sl, String mota, String ten, String img, Integer gia, Integer giatong) {
         this.id = id;
         this.sl = sl;
         this.mota = mota;
         this.ten = ten;
         this.img = img;
         this.gia = gia;
-    }
-
-    public OrderFoodDetails(Integer id, Integer sl, String mota, String ten, Double gia) {
-        this.id = id;
-        this.sl = sl;
-        this.mota = mota;
-        this.ten = ten;
-        this.gia = gia;
+        this.giatong = giatong;
     }
 
     public Integer getId() {
@@ -66,21 +58,20 @@ public class OrderFoodDetails implements Serializable {
         this.img = img;
     }
 
-    public Double getGia() {
+    public Integer getGia() {
         return gia;
     }
 
-    public void setGia(Double gia) {
+    public void setGia(Integer gia) {
         this.gia = gia;
     }
 
-    public void remove(Integer id, String ten, Integer sl, String mota, Double gia, String img) {
-        this.id = id;
-        this.ten = ten;
-        this.sl = sl;
-        this.mota = mota;
-        this.gia = gia;
-        this.img = img;
+    public Integer getGiatong() {
+        return giatong;
+    }
+
+    public void setGiatong(Integer giatong) {
+        this.giatong = giatong;
     }
 
     public void remove(int i) {

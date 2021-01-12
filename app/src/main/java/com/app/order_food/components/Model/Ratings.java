@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class Ratings {
     private Integer idUser, idFood, rate;
-    private Date date;
+    private String date;
 
-    public Ratings(Integer idUser, Integer idFood, Integer rate, Date date) {
+    public Ratings(Integer idUser, Integer idFood, Integer rate, String date) {
         this.idUser = idUser;
         this.idFood = idFood;
         this.rate = rate;
@@ -37,11 +37,11 @@ public class Ratings {
         this.rate = rate;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }

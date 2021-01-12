@@ -90,7 +90,7 @@ public class AccountFragment extends BaseFragment {
             public void onClick(View view) {
 //                startActivity(new Intent(getActivity(), ThongTinUserActivity.class));
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.add(R.id.account, ThongTinUserFragment.newInstance(MainActivity.Email));
+                fragmentTransaction.add(R.id.main, ThongTinUserFragment.newInstance(MainActivity.Email));
                 fragmentTransaction.addToBackStack(ThongTinUserFragment.class.getSimpleName());
                 fragmentTransaction.commit();
             }
