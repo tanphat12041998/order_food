@@ -49,7 +49,7 @@ public class DsDHAdapter extends BaseAdapter {
     Button btn_tru, btn_1, btn_cong, btn_tien;
     List<Ratings> ratingsList = new ArrayList<>();
     Integer sl, slht;
-    Double slmn;
+    Integer slmn;
     RetrofitClient retrofit = new RetrofitClient();
     Api api = retrofit.getClient().create(Api.class);
     public DsDHAdapter(CartFragment context, ArrayList<OrderFoodDetails> foodDetailsArrayList) {
@@ -97,7 +97,7 @@ public class DsDHAdapter extends BaseAdapter {
         viewHolder.text_ten_mon_an.setText(orderFoodDetails.getTen());
         viewHolder.text_so_luong.setText(orderFoodDetails.getSl()+"x");
         viewHolder.text_mo_ta.setText(orderFoodDetails.getMota());
-        viewHolder.text_gia_tien.setText(orderFoodDetails.getGia()+" VNĐ");
+        viewHolder.text_gia_tien.setText(orderFoodDetails.getGiatong()+" VNĐ");
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -134,7 +134,7 @@ public class DsDHAdapter extends BaseAdapter {
                         }
                         DecimalFormat decimalFormat = new DecimalFormat("#.##");
                         if (total != 0 || count != 0) {
-                            text_rating.setText("" + Float.valueOf(decimalFormat.format(total / count)));
+                            text_rating.setText("" + decimalFormat.format(total / count));
                         } else {
                             text_rating.setText("0.0");
                         }
@@ -150,7 +150,7 @@ public class DsDHAdapter extends BaseAdapter {
                     @Override
                     public void onClick(View view) {
                         sl = sl + 1;
-                        slmn = Double.valueOf(sl * orderFoodDetails1.getGia());
+                        slmn = sl * orderFoodDetails1.getGia();
                         btn_1.setText(sl + "");
                         btn_tien.setText(String.valueOf(slmn) + " VND");
                         if (sl >= 10) {
@@ -169,7 +169,7 @@ public class DsDHAdapter extends BaseAdapter {
                     @Override
                     public void onClick(View view) {
                         sl = sl - 1;
-                        slmn = Double.valueOf(sl * orderFoodDetails1.getGia());
+                        slmn = sl * orderFoodDetails1.getGia();
                         btn_tien.setText(String.valueOf(slmn) + " VND");
                         btn_1.setText(sl + "");
                         if (sl >= 10) {
@@ -196,21 +196,22 @@ public class DsDHAdapter extends BaseAdapter {
                                     if (MainActivity.ListFoodDetail.get(i).getSl() >= 10) {
                                         MainActivity.ListFoodDetail.get(i).setSl(10);
                                     }
-                                    MainActivity.ListFoodDetail.get(i).setGia(orderFoodDetails1.getGia() * MainActivity.ListFoodDetail.get(i).getSl());
+                                    Integer giamoi = orderFoodDetails1.getGia() * slht;
+                                    MainActivity.ListFoodDetail.get(i).setGiatong(giamoi);
                                     exists = true;
                                     notifyDataSetChanged();
                                 }
                             }
                             if (exists == false) {
                                 slht = sl;
-                                Double giamoi = orderFoodDetails1.getGia() * slht;
-                                MainActivity.ListFoodDetail.add(new OrderFoodDetails(orderFoodDetails1.getId(), slht, orderFoodDetails1.getMota(), orderFoodDetails1.getTen(),orderFoodDetails1.getImg(), giamoi));
+                                Integer giamoi = orderFoodDetails1.getGia() * slht;
+                                MainActivity.ListFoodDetail.add(new OrderFoodDetails(orderFoodDetails1.getId(), slht, orderFoodDetails1.getMota(), orderFoodDetails1.getTen(),orderFoodDetails1.getImg(), orderFoodDetails1.getGia(),giamoi));
                                 notifyDataSetChanged();
                             }
                         } else {
                             slht = sl;
-                            Double giamoi = orderFoodDetails1.getGia() * slht;
-                            MainActivity.ListFoodDetail.add(new OrderFoodDetails(orderFoodDetails1.getId(), slht, orderFoodDetails1.getMota(), orderFoodDetails1.getTen(),orderFoodDetails1.getImg(), giamoi));
+                            Integer giamoi = orderFoodDetails1.getGia() * slht;
+                            MainActivity.ListFoodDetail.add(new OrderFoodDetails(orderFoodDetails1.getId(), slht, orderFoodDetails1.getMota(), orderFoodDetails1.getTen(),orderFoodDetails1.getImg(), orderFoodDetails1.getGia(),giamoi));
                             notifyDataSetChanged();
                         }
 
@@ -245,6 +246,7 @@ public class DsDHAdapter extends BaseAdapter {
                 });
                 AlertDialog alert = builder.create();
                 alert.show();
+                notifyDataSetChanged();
                 return true;
             }
         });

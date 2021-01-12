@@ -118,4 +118,5 @@ public class MenuFoodFragment extends BaseFragment {
     private void updateAdapter() {
         dSmonanAdapter.notifyDataSetChanged();
     }
+
 }

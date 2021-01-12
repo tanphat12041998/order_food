@@ -49,7 +49,7 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
     TextView text_food, text_price, text_rating, text_description;
     Button btn_tru, btn_1, btn_cong, btn_tien;
     Integer sl, slht;
-    Double slmn;
+    Integer slmn;
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView_dsmonanthinhhanh;
         TextView nameFood, price, rating;
@@ -100,7 +100,7 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
                                 }
                                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                                 if (total != 0 || count != 0) {
-                                    text_rating.setText(""+ Float.valueOf(decimalFormat.format(total / count)));
+                                    text_rating.setText(""+ decimalFormat.format(total / count));
                                 }
                                 else {
                                     text_rating.setText("0.0");
@@ -116,7 +116,7 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
                             @Override
                             public void onClick(View view) {
                                 sl = sl + 1;
-                                slmn = Double.valueOf(sl * foods.getPrice());
+                                slmn = sl * foods.getPrice();
                                 btn_1.setText(sl+ "");
                                 btn_tien.setText(String.valueOf(slmn)+ " VND");
                                 if(sl >= 10){
@@ -134,7 +134,7 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
                             @Override
                             public void onClick(View view) {
                                 sl = sl - 1;
-                                slmn = Double.valueOf(sl * foods.getPrice());
+                                slmn = sl * foods.getPrice();
                                 btn_tien.setText(String.valueOf(slmn)+ " VND");
                                 btn_1.setText(sl+ "");
                                 if(sl >= 10){
@@ -160,27 +160,30 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
                                             if (MainActivity.ListFoodDetail.get(i).getSl() >= 10) {
                                                 MainActivity.ListFoodDetail.get(i).setSl(10);
                                             }
-                                            MainActivity.ListFoodDetail.get(i).setGia(foods.getPrice() * MainActivity.ListFoodDetail.get(i).getSl());
+                                            Integer giamoi = foods.getPrice() * slht;
+                                            MainActivity.ListFoodDetail.get(i).setGiatong(giamoi);
                                             exists = true;
                                             notifyDataSetChanged();
                                         }
                                     }
                                     if (exists == false) {
                                         slht = sl;
-                                        Double giamoi = foods.getPrice() * slht;
-                                        MainActivity.ListFoodDetail.add(new OrderFoodDetails(foods.getId(), slht, foods.getDescription(), foods.getName(), giamoi));
+                                        Integer giamoi = foods.getPrice() * slht;
+                                        MainActivity.ListFoodDetail.add(new OrderFoodDetails(foods.getId(), slht, foods.getDescription(), foods.getName(),foods.getImg(), foods.getPrice(),giamoi));
                                         notifyDataSetChanged();
                                     }
                                 } else {
                                     slht = sl;
-                                    Double giamoi = foods.getPrice() * slht;
-                                    MainActivity.ListFoodDetail.add(new OrderFoodDetails(foods.getId(), slht, foods.getDescription(), foods.getName(), giamoi));
+                                    Integer giamoi = foods.getPrice() * slht;
+                                    MainActivity.ListFoodDetail.add(new OrderFoodDetails(foods.getId(), slht, foods.getDescription(), foods.getName(),foods.getImg(), foods.getPrice(),giamoi));
                                     notifyDataSetChanged();
                                 }
 
                                 dialog.dismiss();
 
                             }
+
+
 
 
                         });
@@ -221,7 +224,7 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
                 }
                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                 if (total != 0 || count != 0) {
-                    holder.rating.setText(""+Float.valueOf(decimalFormat.format(total / count)));
+                    holder.rating.setText(decimalFormat.format(total / count)+"");
                 }
                 else {
                     holder.rating.setText("0.0");

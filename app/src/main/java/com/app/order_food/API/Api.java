@@ -7,6 +7,7 @@ import com.app.order_food.components.Model.Ratings;
 import com.app.order_food.components.Model.TypeFoods;
 import com.app.order_food.components.Model.Users;
 
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -68,6 +69,11 @@ public interface Api {
 
     @POST("getorderfood/{id}")
     Call<OrderFoods> getOrderFoodById(@Path("id") int Id);
+
+    @FormUrlEncoded
+    @POST("addorderfood")
+    Call<OrderFoods> addOrderFood(@Field("id") int Id, @Field("iduser") int idUser, @Field("idpayment") int idPayment, @Field("idfood") int idFood
+            , @Field("date") String date, @Field("total") int total, @Field("quantity") int quantity, @Field("status") Boolean status);
 
     @POST("getrating/{idfood}")
     Call<List<Ratings>> getRatingByIdFood(@Path("idfood") int Id);

@@ -7,18 +7,18 @@ import java.util.Date;
 
 public class OrderFoods implements Serializable {
     private Integer id, idUser, idPayment, idFood, quantity;
-    private Date date;
-    private Double price;
+    private String date;
+    private Integer total;
     private Boolean status;
 
-    public OrderFoods(Integer id, Integer idUser, Integer idPayment, Integer idFood, Integer quantity, Date date, Double price, Boolean status) {
+    public OrderFoods(Integer id, Integer idUser, Integer idPayment, Integer idFood, Integer quantity, String date, Integer total, Boolean status) {
         this.id = id;
         this.idUser = idUser;
         this.idPayment = idPayment;
         this.idFood = idFood;
         this.quantity = quantity;
         this.date = date;
-        this.price = price;
+        this.total = total;
         this.status = status;
     }
 
@@ -62,20 +62,20 @@ public class OrderFoods implements Serializable {
         this.quantity = quantity;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Double getPrice() {
-        return price;
+    public Integer getTotal() {
+        return total;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setTotal(Integer total) {
+        this.total = total;
     }
 
     public Boolean getStatus() {
