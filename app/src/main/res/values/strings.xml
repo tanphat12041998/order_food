@@ -101,6 +101,10 @@
     <string name="text_don_mua_cua_toi">Đơn mua của tôi</string>
     <string name="text_da_giao">Đã giao</string>
     <string name="text_dat_lai">Đặt lại</string>
+    <string name="text_thanh_toan_bang">Thanh toán bằng</string>
+    <string name="text_tien_mat">Tiền mặt</string>
+    <string name="text_phieu_mua_hang">Phiếu mua hàng</string>
+    <string name="text_39_000">-39.000đ</string>
 
 
 </resources>
