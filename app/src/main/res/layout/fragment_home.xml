@@ -245,6 +245,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                 android:fontFamily="@font/robotoregular"
                 android:text="@string/text_xem_tat_ca"
                 android:gravity="end|bottom"
@@ -258,7 +259,8 @@
             android:orientation="vertical"
             android:paddingHorizontal="10dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_monan_chitiet" />
+            tools:listitem="@layout/item_monan_chitiet"
+            tools:itemCount="10"/>
     </LinearLayout>
 
 
