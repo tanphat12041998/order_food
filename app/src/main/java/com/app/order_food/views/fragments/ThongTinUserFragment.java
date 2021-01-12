@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.app.order_food.API.Api;
@@ -29,6 +29,7 @@ public class ThongTinUserFragment extends BaseFragment {
     TextView text_setting_user, text_doithongtin, text_ten_chitiet, text_diachi_chitiet, text_sodienthoai_chitiet, text_doimatkhau;
     private static String EMAiL = "Email";
     String email, img;
+    Toolbar title_taikhoan;
     RetrofitClient retrofit = new RetrofitClient();
     Api api = retrofit.getClient().create(Api.class);
     @Override
@@ -40,6 +41,7 @@ public class ThongTinUserFragment extends BaseFragment {
         text_ten_chitiet = getView().findViewById(R.id.text_ten_chitiet);
         text_diachi_chitiet = getView().findViewById(R.id.text_diachi_chitiet);
         text_sodienthoai_chitiet = getView().findViewById(R.id.text_sodienthoai_chitiet);
+        title_taikhoan = getView().findViewById(R.id.title_taikhoan);
         Bundle bundle = getArguments();
         email = bundle.getString(EMAiL);
 
@@ -47,6 +49,7 @@ public class ThongTinUserFragment extends BaseFragment {
 
     @Override
     protected void initialViewComponent() {
+
 
         text_setting_user.setText(MainActivity.Name);
         text_diachi_chitiet.setText(MainActivity.Address);
@@ -65,6 +68,14 @@ public class ThongTinUserFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), ChangePassActivity.class));
+            }
+        });
+
+        title_taikhoan.setNavigationIcon(R.drawable.ic_back_white);
+        title_taikhoan.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
             }
         });
     }
