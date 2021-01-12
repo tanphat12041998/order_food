@@ -23,7 +23,7 @@
             android:background="@color/colorAccent"
             app:backgroundTint="@color/white"
             app:navigationIcon="@drawable/ic_close"
-            app:title="             Thông tin đơn hàng" />
+            app:title="         Thông tin đơn hàng" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -166,7 +166,7 @@
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:textSize="30sp"
-                android:text="@string/text_gio_hang_trong"/>
+                android:text="Giỏ hàng trống"/>
             <ListView
                 android:id="@+id/listview_dsdonhang"
                 android:layout_width="match_parent"

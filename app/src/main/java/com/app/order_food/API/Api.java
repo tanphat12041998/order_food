@@ -73,7 +73,7 @@ public interface Api {
     @FormUrlEncoded
     @POST("addorderfood")
     Call<OrderFoods> addOrderFood(@Field("id") int Id, @Field("iduser") int idUser, @Field("idpayment") int idPayment, @Field("idfood") int idFood
-            , @Field("date") String date, @Field("total") int total, @Field("quantity") int quantity, @Field("status") Boolean status);
+            , @Field("date") String date, @Field("total") int total, @Field("quantity") int quantity, @Field("note") String note, @Field("status") Boolean status);
 
     @POST("getrating/{idfood}")
     Call<List<Ratings>> getRatingByIdFood(@Path("idfood") int Id);
