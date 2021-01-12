@@ -107,6 +107,7 @@
     <string name="text_tien_mat">Tiền mặt</string>
     <string name="text_ma_uu_dai">Mã ưu đãi</string>
     <string name="text_0d">0đ</string>
+    <string name="text_gio_hang_trong">Giỏ hàng trống</string>
 
 
 </resources>
