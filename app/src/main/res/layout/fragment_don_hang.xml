@@ -5,7 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/cbr">
+    android:background="?colorBackgroundFloating"
+    android:focusable="true"
+    android:clickable="true">
 
 
     <com.google.android.material.appbar.AppBarLayout

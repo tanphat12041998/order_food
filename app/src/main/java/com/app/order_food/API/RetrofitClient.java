@@ -1,13 +1,14 @@
 package com.app.order_food.API;
 
+import android.content.Context;
+import android.net.wifi.WifiManager;
+import android.text.format.Formatter;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-        public static final String ROOT_URL = "http://192.168.1.27:3000/";
-
-
-
+    public static final String ROOT_URL = "http://192.168.0.102:3000/";
         public static Retrofit retrofit = null;
         public static Retrofit getClient() {
             if (retrofit == null) {

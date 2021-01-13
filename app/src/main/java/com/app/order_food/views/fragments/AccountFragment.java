@@ -10,11 +10,9 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.app.order_food.R;
 import com.app.order_food.views.activities.main.GioiThieuActivity;
-import com.app.order_food.views.activities.main.LichSuActivity;
 import com.app.order_food.views.activities.main.LoginActivity;
 import com.app.order_food.views.activities.main.MainActivity;
 
@@ -74,21 +72,26 @@ public class AccountFragment extends BaseFragment {
         button_lich_su.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), LichSuActivity.class));
+//                startActivity(new Intent(getActivity(), LichSuActivity.class));
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.main, LichSuFragment.newInstance());
+                fragmentTransaction.addToBackStack(LichSuFragment.class.getSimpleName());
+                fragmentTransaction.commit();
             }
         });
         button_cai_dat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Coming soon", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(getActivity(), GioiThieuActivity.class));
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.main, CaiDatFragment.newInstance());
+                fragmentTransaction.addToBackStack(CaiDatFragment.class.getSimpleName());
+                fragmentTransaction.commit();
             }
         });
 
         button_thong_tin_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(getActivity(), ThongTinUserActivity.class));
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.add(R.id.main, ThongTinUserFragment.newInstance(MainActivity.Email));
                 fragmentTransaction.addToBackStack(ThongTinUserFragment.class.getSimpleName());
