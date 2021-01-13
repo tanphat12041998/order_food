@@ -16,10 +16,9 @@
             android:id="@+id/title_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            android:background="@color/white"
             app:navigationIcon="@drawable/ic_close"
             app:backgroundTint="@color/white"
-            app:title="Order Food App"/>
+            app:title="Lịch sử chi tiết"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 

@@ -34,14 +34,14 @@ public class DSlichsuAdapter extends RecyclerView.Adapter<DSlichsuAdapter.Recycl
     @Override
     public void onBindViewHolder(@NonNull DSlichsuAdapter.RecyclerViewHolder holder, int position) {
         final OrderFoods orderFoods = this.orderFoodsList.get(position);
-        holder.text_ten_don_hang_lich_su.setText("Đơn hàng số: " + orderFoods.getId());
+        holder.text_ten_don_hang_lich_su.setText("Mã đơn hàng số: #00" + orderFoods.getId());
         holder.text_gia_tien_lich_su.setText(orderFoods.getTotal() + " VNĐ");
-//        holder.text_dat_lai_lich_su.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(context.getApplicationContext(), "Coming soon", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        holder.text_dat_lai_lich_su.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     @Override
