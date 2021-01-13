@@ -24,12 +24,12 @@
             android:text="@string/text_da_giao"
             app:drawableStartCompat="@drawable/ic_check" />
         <TextView
-            android:id="@+id/text_ten_mon_an_lich_su"
+            android:id="@+id/text_ten_don_hang_lich_su"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:text="@string/text_ten_mon_an"
+            android:text="Tên đơn hàng"
             app:drawableEndCompat="@drawable/ic_arrow" />
         <TextView
             android:id="@+id/text_gia_tien_lich_su"
