@@ -8,8 +8,7 @@
     android:orientation="vertical"
     android:weightSum="10"
     tools:context=".views.fragments.CartFragment"
-    tools:ignore="ScrollViewCount"
-    >
+    tools:ignore="ScrollViewCount">
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -21,20 +20,23 @@
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:background="@color/colorAccent"
+            app:titleMarginStart="80dp"
+            app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             app:backgroundTint="@color/white"
             app:navigationIcon="@drawable/ic_close"
-            app:title="         Thông tin đơn hàng" />
+            app:title="Thông tin đơn hàng"
+            app:titleTextColor="@color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="0.5dp"
-        android:background="@color/white"
-        android:layout_weight="9"
-        android:orientation="vertical"
         android:layout_gravity="top"
+        android:layout_marginTop="0.5dp"
+        android:layout_weight="9"
+        android:background="@color/white"
+        android:orientation="vertical"
         android:padding="8dp">
 
         <LinearLayout
@@ -77,16 +79,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@color/white"
+            android:baselineAligned="false"
             android:orientation="horizontal"
-            android:padding="8dp"
-            android:baselineAligned="false">
+            android:padding="8dp">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
 
                 <TextView
@@ -95,9 +96,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
                     android:ellipsize="end"
+                    android:gravity="center|left"
                     android:lines="2"
                     android:maxLines="2"
-                    android:gravity="center|left"
                     android:text="@string/text_dia_chi_gio_hang"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -109,14 +110,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autofillHints="@string/text_1"
+                    android:gravity="center|left"
                     android:hint="@string/text_ghi_chu"
                     android:lines="2"
-                    android:gravity="center|left"
                     android:maxLines="2"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    tools:text="Ghi chú "
                     tools:ignore="RtlHardcoded"
-                    />
+                    tools:text="Ghi chú " />
 
             </LinearLayout>
 
@@ -143,8 +143,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@color/cbr"
         android:layout_weight="1"
+        android:background="@color/cbr"
         android:orientation="vertical">
 
         <TextView
@@ -159,19 +159,21 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <TextView
                 android:id="@+id/text_gio_hang_trong"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
                 android:layout_gravity="center"
-                android:textSize="30sp"
-                android:text="Giỏ hàng trống"/>
+                android:gravity="center"
+                android:text="@string/text_gio_hang_trong"
+                android:textSize="30sp" />
+
             <ListView
                 android:id="@+id/listview_dsdonhang"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/item_thanh_toan"/>
+                tools:listitem="@layout/item_thanh_toan" />
         </FrameLayout>
 
     </LinearLayout>
@@ -180,8 +182,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0.5dp"
-        android:background="@color/a6gray"
         android:layout_weight="2"
+        android:background="@color/a6gray"
         android:orientation="vertical">
 
         <LinearLayout
@@ -328,16 +330,14 @@
                     android:layout_width="120dp"
                     android:layout_height="30dp"
                     android:text="@string/text_tongcong"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                    />
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
 
                 <TextView
                     android:id="@+id/text_tong_cong"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:text="@string/text_0d"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                    />
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
             </LinearLayout>
 
             <Button
@@ -348,6 +348,7 @@
                 android:background="@drawable/btn_w_shadow2"
                 android:text="@string/text_dat_hang"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/white"
                 android:textSize="24sp" />
         </LinearLayout>
 
