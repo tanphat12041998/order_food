@@ -18,7 +18,7 @@
             android:background="@color/colorAccent"
             app:backgroundTint="@color/white"
             app:navigationIcon="@drawable/ic_close"
-            app:title="@string/text_cap_nhat_thong_tin"
+            app:title="Sửa thông tin"
             app:titleMarginStart="80dp"/>
 
     </com.google.android.material.appbar.AppBarLayout>
