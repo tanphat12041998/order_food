@@ -26,9 +26,6 @@ public interface Api {
     @GET("getalluser")
     Call<List<Users>> getAllUsers();
 
-    @POST("getuseremail/{email}")
-    Call<Users> getUserbyEmail(@Path("email") String email);
-
     @FormUrlEncoded
     @POST("adduser")
     Call<Users> addUser(@Field("email") String email, @Field("name") String name, @Field("password") String password
@@ -46,29 +43,14 @@ public interface Api {
     @PUT("updateuser/img/{id}")
     Call<Users> updateUserImg(@Field("img") String img);
 
-    @GET("getalltypefood")
-    Call<List<TypeFoods>> getAllTypeFood(@Body TypeFoods typeFoods);
-
-    @POST("gettypefood/{id}")
-    Call<TypeFoods> getTypeFoodById(@Path("id") int Id);
-
     @GET("getallfood")
     Call<List<Foods>> getAllFood();
-
-    @POST("getfood/{id}")
-    Call<Foods> getAllFoodById(@Path("id") int Id);
 
     @POST("getfood/type/{idtype}")
     Call<List<Foods>> getAllFoodByIdType(@Path("idtype") int Id);
 
-    @GET("getallpayment")
-    Call<List<PaymentMethods>> getAllPayment(@Body PaymentMethods paymentMethods);
-
-    @POST("getpayment/{id}")
-    Call<PaymentMethods> getPaymentById(@Path("id") int Id);
-
-    @POST("getorderfood/{id}")
-    Call<OrderFoods> getOrderFoodById(@Path("id") int Id);
+    @POST("getorderfood/{iduser}")
+    Call<List<OrderFoods>> getOrderFoodById(@Path("iduser") int idUser);
 
     @FormUrlEncoded
     @POST("addorderfood")

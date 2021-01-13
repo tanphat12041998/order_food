@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?colorBackgroundFloating"
+    android:focusable="true"
+    android:clickable="true"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -11,6 +14,7 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/text_cai_dat"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:background="@color/colorAccent"

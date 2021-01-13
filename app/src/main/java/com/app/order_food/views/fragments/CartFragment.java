@@ -4,6 +4,7 @@ import android.content.Context;
 
 import android.content.SharedPreferences;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -102,7 +103,6 @@ public class CartFragment extends BaseFragment {
                 ghi_chu = text_ghichu.getText().toString().trim();
                 Calendar cal = Calendar.getInstance(Locale.getDefault());
                 String dateTime = DateFormat.format("dd/MM/yyyy hh:mm:ss", cal).toString();
-
                 for (int i = 0; i < MainActivity.ListFoodDetail.size(); i++) {
                     api.addOrderFood(id, iduser, idpayment, MainActivity.ListFoodDetail.get(i).getId(), dateTime
                             , MainActivity.ListFoodDetail.get(i).getGiatong()
@@ -110,7 +110,7 @@ public class CartFragment extends BaseFragment {
                             .enqueue(new Callback<OrderFoods>() {
                                 @Override
                                 public void onResponse(Call<OrderFoods> call, Response<OrderFoods> response) {
-
+                                    Log.d("TAG",response.message());
                                 }
 
                                 @Override
@@ -167,7 +167,5 @@ public class CartFragment extends BaseFragment {
         super.onResume();
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         id = sharedPref.getInt("id",id);
-
-
     }
 }

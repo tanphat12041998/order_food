@@ -53,7 +53,7 @@
                         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                         android:text="@string/text_thit_bo"
                         android:textColor="#2c3e50"
-                        android:textSize="24sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
