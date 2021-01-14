@@ -14,17 +14,11 @@ public class GioiThieuActivity extends BaseActivity {
 
     @Override
     protected void initialViewComponent() {
-        btn_back_gt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+
     }
 
     @Override
     protected void initialVariables() {
-        btn_back_gt = findViewById(R.id.btn_back_gt);
     }
 
     @Override
