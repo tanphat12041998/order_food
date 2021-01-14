@@ -40,7 +40,6 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
     Context context;
     List<Foods> foodsList;
     List<Ratings> ratingsList = new ArrayList<>();
-    ArrayList<String> b = new ArrayList<>();
     RetrofitClient retrofit = new RetrofitClient();
     Api api = retrofit.getClient().create(Api.class);
     ImageView image_hinhmonan;
@@ -127,11 +126,11 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                                 if (sl <= 1) {
                                     btn_cong.setVisibility(View.VISIBLE);
                                     btn_tru.setVisibility(View.INVISIBLE);
-                                } else if (sl >= 1) {
-                                    btn_cong.setVisibility(View.VISIBLE);
-                                    btn_tru.setVisibility(View.VISIBLE);
                                 }else if (sl >= 10) {
                                     btn_cong.setVisibility(View.INVISIBLE);
+                                    btn_tru.setVisibility(View.VISIBLE);
+                                }else if (sl >= 1) {
+                                    btn_cong.setVisibility(View.VISIBLE);
                                     btn_tru.setVisibility(View.VISIBLE);
                                 }
                             }
@@ -146,11 +145,11 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                                 if (sl <= 1) {
                                     btn_cong.setVisibility(View.VISIBLE);
                                     btn_tru.setVisibility(View.INVISIBLE);
-                                } else if (sl >= 1) {
-                                    btn_cong.setVisibility(View.VISIBLE);
-                                    btn_tru.setVisibility(View.VISIBLE);
-                                }else if (sl >= 10) {
+                                } else if (sl >= 10) {
                                     btn_cong.setVisibility(View.INVISIBLE);
+                                    btn_tru.setVisibility(View.VISIBLE);
+                                }else if (sl >= 1) {
+                                    btn_cong.setVisibility(View.VISIBLE);
                                     btn_tru.setVisibility(View.VISIBLE);
                                 }
                             }

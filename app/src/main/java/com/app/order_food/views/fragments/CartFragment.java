@@ -194,6 +194,8 @@ public class CartFragment extends BaseFragment {
     }
 
     public void updated() {
+        dsDHAdapter = new DsDHAdapter(CartFragment.this, MainActivity.ListFoodDetail);
+        listview_dsdonhang.setAdapter(dsDHAdapter);
         dsDHAdapter.notifyDataSetChanged();
         tonggia();
     }

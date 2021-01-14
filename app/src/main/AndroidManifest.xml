@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Orderfood"
         android:usesCleartextTraffic="true">
-        <activity android:name=".views.fragments.CaiDatFragment"></activity>
+        <activity android:name=".views.activities.main.LichSuChiTietActivity"></activity>
+        <activity android:name=".views.fragments.CaiDatFragment" />
         <activity android:name=".views.activities.main.GioiThieuActivity" />
         <activity android:name=".views.activities.main.ChangePassActivity" />
         <activity android:name=".views.activities.main.ChangeInfoActivity" />
@@ -29,8 +30,8 @@
         </activity>
         <activity android:name=".views.activities.main.MainActivity" />
     </application>
-    <uses-permission android:name="Android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="Android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

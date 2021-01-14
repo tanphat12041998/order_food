@@ -22,7 +22,7 @@ import retrofit2.Response;
 
 public class ChangePassActivity extends BaseActivity {
     EditText edtMatKhauCu, edtpassword_change, edtpassword_change_again;
-    Button btn_passchange_confirm;
+    Button btn_passchange_confirm, btn_passchange_cancel;
     RetrofitClient retrofit = new RetrofitClient();
     Api api = retrofit.getClient().create(Api.class);
     String PASS = MainActivity.Password;
@@ -36,6 +36,13 @@ public class ChangePassActivity extends BaseActivity {
                 clickconfirm();
             }
         });
+
+        btn_passchange_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
     @Override
@@ -44,6 +51,7 @@ public class ChangePassActivity extends BaseActivity {
         edtpassword_change = findViewById(R.id.edtpassword_change);
         edtpassword_change_again = findViewById(R.id.edtpassword_change_again);
         btn_passchange_confirm = findViewById(R.id.btn_passchange_confirm);
+        btn_passchange_cancel= findViewById(R.id.btn_passchange_cancel);
     }
 
     @Override
