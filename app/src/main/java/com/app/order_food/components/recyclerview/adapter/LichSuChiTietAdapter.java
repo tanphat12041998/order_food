@@ -33,7 +33,6 @@ public class LichSuChiTietAdapter extends BaseAdapter {
     LichSuFragment context;
     List<OrderFoods> orderFoodsList;
     List<OrderFoods> orderFoodsLists = new ArrayList<>();
-    List<OrderFoods> orderFoodsListss = new ArrayList<>();
     RetrofitClient retrofit = new RetrofitClient();
     Api api = retrofit.getClient().create(Api.class);
     String name;
@@ -78,32 +77,7 @@ public class LichSuChiTietAdapter extends BaseAdapter {
             viewHolder = (LichSuChiTietAdapter.ViewHolder) view.getTag();
         }
         OrderFoods orderFoods = orderFoodsList.get(i);
-//        for (int k = 0; k < DSlichsuAdapter.ListOrderNameFood.size(); k++){
-//            viewHolder.text_ten_mon_an_.setText(DSlichsuAdapter.ListOrderNameFood.get(k).getNameFood());
-//        }
         orderFoodsLists = new ArrayList<>();
-        orderFoodsListss = new ArrayList<>();
-//        api.getAllOrderFoodByIdID(orderFoods.getId()).enqueue(new Callback<List<OrderFoods>>() {
-//            @Override
-//            public void onResponse(Call<List<OrderFoods>> call, Response<List<OrderFoods>> response) {
-//                orderFoodsLists = response.body();
-//                if (orderFoodsLists != null) {
-//                    for (int k = 0; k < orderFoodsLists.size(); k++) {
-//                        if(orderFoodsLists.get(k).getId().equals(orderFoods.getId())){
-//                            name = orderFoodsLists.get(k).getNamefood();
-//                        }
-//
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<OrderFoods>> call, Throwable t) {
-//
-//            }
-//        });
-
-
         ViewHolder finalViewHolder = viewHolder;
         api.getAllOrderFood().enqueue(new Callback<List<OrderFoods>>() {
             @Override
@@ -111,21 +85,8 @@ public class LichSuChiTietAdapter extends BaseAdapter {
                 orderFoodsLists.clear();
                 orderFoodsLists = response.body();
                 for (int k = 0; k < orderFoodsLists.size(); k++) {
-                    if ((orderFoods.getId()).equals(orderFoodsLists.get(k).getId())) {
-                        api.getAllOrderFoodByIdID(orderFoods.getId()).enqueue(new Callback<List<OrderFoods>>() {
-                            @Override
-                            public void onResponse(Call<List<OrderFoods>> call, Response<List<OrderFoods>> response) {
-                                orderFoodsListss.clear();
-                                orderFoodsListss = response.body();
-                                for (int l = 0; l < orderFoodsListss.size(); l++) {
-                                    finalViewHolder.text_ten_mon_an_.setText(orderFoodsListss.get(l).getNamefood() + "");
-                                }
-
-                            }
-                            @Override
-                            public void onFailure(Call<List<OrderFoods>> call, Throwable t) {
-                            }
-                        });
+                    if ((orderFoods.getNamefood()).equals(orderFoodsLists.get(k).getNamefood())) {
+                        finalViewHolder.text_ten_mon_an_.setText(orderFoods.getNamefood() + "");
                     }
                 }
             }
@@ -133,8 +94,6 @@ public class LichSuChiTietAdapter extends BaseAdapter {
             public void onFailure(Call<List<OrderFoods>> call, Throwable t) {
             }
         });
-
-
         viewHolder.text_so_luong_.setText(orderFoods.getQuantity() + "x");
         viewHolder.text_gia_tien_.setText(orderFoods.getTotal() + " VNĐ");
         return view;
