@@ -1,14 +1,14 @@
 package com.app.order_food.views.activities.main;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.widget.Toolbar;
 
 import com.app.order_food.API.Api;
 import com.app.order_food.API.RetrofitClient;
@@ -27,7 +27,7 @@ public class ChangePassActivity extends BaseActivity {
     Api api = retrofit.getClient().create(Api.class);
     String PASS = MainActivity.Password;
     Integer ID = MainActivity.ID;
-
+    Toolbar title_taikhoanmk;
     @Override
     protected void initialViewComponent() {
         btn_passchange_confirm.setOnClickListener(new View.OnClickListener() {
@@ -36,10 +36,10 @@ public class ChangePassActivity extends BaseActivity {
                 clickconfirm();
             }
         });
-
-        btn_passchange_cancel.setOnClickListener(new View.OnClickListener() {
+        title_taikhoanmk.setNavigationIcon(R.drawable.ic_close);
+        title_taikhoanmk.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 onBackPressed();
             }
         });
@@ -51,7 +51,7 @@ public class ChangePassActivity extends BaseActivity {
         edtpassword_change = findViewById(R.id.edtpassword_change);
         edtpassword_change_again = findViewById(R.id.edtpassword_change_again);
         btn_passchange_confirm = findViewById(R.id.btn_passchange_confirm);
-        btn_passchange_cancel= findViewById(R.id.btn_passchange_cancel);
+        title_taikhoanmk = findViewById(R.id.title_taikhoanmk);
     }
 
     @Override

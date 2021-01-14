@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="?colorBackgroundFloating"
     android:clickable="true"
     android:focusable="true"
@@ -25,11 +25,11 @@
 <!--    </com.google.android.material.appbar.AppBarLayout>-->
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_lichsuchitiet"
+    <ListView
+        android:id="@+id/listview_lichsuchitiet"
         android:layout_width="match_parent"
         android:layout_height="210dp"
-        tools:listitem="@layout/item_thanh_toan"
+        tools:listitem="@layout/item_lich_su_chi_tiet"
         />
 
 
@@ -186,7 +186,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="8dp">
 
@@ -212,7 +212,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="8dp">
 
@@ -238,7 +238,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="8dp">
 

@@ -58,14 +58,17 @@ public interface Api {
     @POST("getorderfood/order/{id}")
     Call<List<OrderFoods>> getAllOrderFoodById(@Path("id") int Id);
 
+    @POST("getorderfood/orderid/{id}")
+    Call<OrderFoods> getAllOrderFoodByIdID(@Path("id") int Id);
+
     @POST("getorderfood/{iduser}")
     Call<List<OrderFoods>> getOrderFoodById(@Path("iduser") int idUser);
 
     @FormUrlEncoded
     @POST("addorderfood")
     Call<OrderFoods> addOrderFood(@Field("id") int Id, @Field("iduser") int idUser, @Field("idpayment") int idPayment, @Field("idfood") int idFood
-            , @Field("date") String date, @Field("total") int total, @Field("quantity") int quantity, @Field("note") String note
-            , @Field("name") String name, @Field("phone") String phone, @Field("address") String address, @Field("status") Boolean status);
+            , @Field("namefood") String nameFood, @Field("date") String date, @Field("total") int total, @Field("quantity") int quantity, @Field("note") String note
+            , @Field("name") String name, @Field("phone") String phone, @Field("address") String address, @Field("status") Integer status);
 
     @POST("getrating/{idfood}")
     Call<List<Ratings>> getRatingByIdFood(@Path("idfood") int Id);
