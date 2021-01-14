@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?colorBackgroundFloating"
-    >
+    android:background="?colorBackgroundFloating">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/title_taikhoan"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorAccent"
+            app:backgroundTint="@color/white"
+            app:title="Sửa Thông Tin"
+            app:titleMarginStart="140dp"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <RelativeLayout
         android:id="@+id/relayForgot"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:background="@drawable/btn_w_shadow4"
         android:paddingTop="10dp"
         android:paddingBottom="20dp">
@@ -114,31 +126,36 @@
             </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
 
-        <Button
-            android:id="@+id/btn_confirm"
-            android:layout_width="320dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/DiaChiCu"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/btn_w_shadow2"
-            android:text="@string/text_cap_nhat"
+            android:layout_margin="24dp"
+            android:orientation="horizontal">
 
-            android:textColor="@drawable/button_change_text_color_white_login" />
-        <Button
-            android:id="@+id/btn_cancel"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_confirm"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/btn_cong_muoi_radious_tran"
-            android:text="Hủy"
-            android:textColor="@drawable/button_change_text_color_white_login" />
+            <Button
+                android:id="@+id/btn_confirm"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_w_shadow2"
+                android:text="@string/text_cap_nhat"
+                android:textColor="@drawable/button_change_text_color_white_login" />
 
-            android:textColor="@color/white" />
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/btn_cong_muoi_radious_tran"
+                android:text="@string/text_huy"
+                android:textColor="@drawable/button_change_text_color_white_login" />
 
 
+        </LinearLayout>
     </RelativeLayout>
 
 </RelativeLayout>
