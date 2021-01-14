@@ -133,7 +133,7 @@ public class CartFragment extends BaseFragment {
         button_thanhtoan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Boolean status = false;
+                Integer status = 0;
                 id = id + 1;
                 iduser = MainActivity.ID;
                 ghi_chu = text_ghichu.getText().toString().trim();
@@ -149,7 +149,7 @@ public class CartFragment extends BaseFragment {
                 }else {
 
                     for (int i = 0; i < MainActivity.ListFoodDetail.size(); i++) {
-                        api.addOrderFood(id, iduser, idpayment, MainActivity.ListFoodDetail.get(i).getId(), dateTime
+                        api.addOrderFood(id, iduser, idpayment, MainActivity.ListFoodDetail.get(i).getId(),MainActivity.ListFoodDetail.get(i).getTen(), dateTime
                                 , MainActivity.ListFoodDetail.get(i).getGiatong()
                                 , MainActivity.ListFoodDetail.get(i).getSl(), ghi_chu, name, phone, address , status)
                                 .enqueue(new Callback<OrderFoods>() {

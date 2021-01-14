@@ -9,11 +9,11 @@ public class OrderFoods implements Serializable {
     private Integer id, idUser, idPayment, idFood, quantity;
     private String date;
     private Integer total;
-    private Boolean status;
-    private String name, phone, address;
+    private Integer status;
+    private String name, phone, address, nameFood;
     private String note;
 
-    public OrderFoods(Integer id, Integer idUser, Integer idPayment, Integer idFood, Integer quantity, String date, Integer total, Boolean status, String name, String phone, String address, String note) {
+    public OrderFoods(Integer id, Integer idUser, Integer idPayment, Integer idFood, Integer quantity, String date, Integer total, Integer status, String name, String phone, String address, String nameFood, String note) {
         this.id = id;
         this.idUser = idUser;
         this.idPayment = idPayment;
@@ -25,6 +25,7 @@ public class OrderFoods implements Serializable {
         this.name = name;
         this.phone = phone;
         this.address = address;
+        this.nameFood = nameFood;
         this.note = note;
     }
 
@@ -84,11 +85,11 @@ public class OrderFoods implements Serializable {
         this.total = total;
     }
 
-    public Boolean getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -114,6 +115,14 @@ public class OrderFoods implements Serializable {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getNameFood() {
+        return nameFood;
+    }
+
+    public void setNameFood(String nameFood) {
+        this.nameFood = nameFood;
     }
 
     public String getNote() {

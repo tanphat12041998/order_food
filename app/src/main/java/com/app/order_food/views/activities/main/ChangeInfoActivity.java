@@ -26,10 +26,11 @@ import retrofit2.Response;
 
 public class ChangeInfoActivity extends BaseActivity {
     EditText edtTenCu, edtSdtCu, edtDiaChiCu;
-    Button btn_confirm, btn_cancel;
+    Button btn_confirm;
     RetrofitClient retrofit = new RetrofitClient();
     Api api = retrofit.getClient().create(Api.class);
     Integer ID = MainActivity.ID;
+    Toolbar title_taikhoancn;
     @Override
     protected void initialViewComponent() {
         btn_confirm.setOnClickListener(new View.OnClickListener() {
@@ -38,9 +39,10 @@ public class ChangeInfoActivity extends BaseActivity {
                 clickConfirm();
             }
         });
-        btn_cancel.setOnClickListener(new View.OnClickListener() {
+        title_taikhoancn.setNavigationIcon(R.drawable.ic_close);
+        title_taikhoancn.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 onBackPressed();
             }
         });
@@ -56,7 +58,7 @@ public class ChangeInfoActivity extends BaseActivity {
         edtSdtCu.setText(MainActivity.Phone);
         edtDiaChiCu.setText(MainActivity.Address);
         btn_confirm = findViewById(R.id.btn_confirm);
-        btn_cancel = findViewById(R.id.btn_cancel);
+        title_taikhoancn = findViewById(R.id.title_taikhoancn);
     }
 
     @Override
