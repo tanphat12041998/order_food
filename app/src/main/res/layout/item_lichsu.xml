@@ -21,15 +21,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center|start"
             android:text="@string/text_da_giao"
-            app:drawableStartCompat="@drawable/ic_check" />
+            app:drawableStartCompat="@drawable/ic_check1" />
         <TextView
             android:id="@+id/text_ten_don_hang_lich_su"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:text="Tên đơn hàng"
+            android:text="@string/text_ten_don_hang"
             app:drawableEndCompat="@drawable/ic_arrow" />
         <TextView
             android:id="@+id/text_gia_tien_lich_su"

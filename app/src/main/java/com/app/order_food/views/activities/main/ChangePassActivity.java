@@ -1,9 +1,7 @@
 package com.app.order_food.views.activities.main;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -37,12 +35,12 @@ public class ChangePassActivity extends BaseActivity {
             }
         });
 
-        btn_passchange_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+//        btn_passchange_cancel.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                onBackPressed();
+//            }
+//        });
     }
 
     @Override
@@ -51,7 +49,7 @@ public class ChangePassActivity extends BaseActivity {
         edtpassword_change = findViewById(R.id.edtpassword_change);
         edtpassword_change_again = findViewById(R.id.edtpassword_change_again);
         btn_passchange_confirm = findViewById(R.id.btn_passchange_confirm);
-        btn_passchange_cancel= findViewById(R.id.btn_passchange_cancel);
+//        btn_passchange_cancel= findViewById(R.id.btn_passchange_cancel);
     }
 
     @Override
