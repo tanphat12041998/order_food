@@ -5,9 +5,7 @@
     android:layout_height="match_parent"
     >
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/title_taikhoan"
@@ -134,7 +132,28 @@
             android:text="@string/text_dong_y"
             android:background="@drawable/btn_w_shadow2" />
 
+        <Button
+            android:id="@+id/btn_passchange_cancel"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_passchange_confirm"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_cong_muoi_radious_tran"
+            android:text="Hủy"
+            android:textColor="@drawable/button_change_text_color_white_login" />
 
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:text="@string/text_doi_mat_khau"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
