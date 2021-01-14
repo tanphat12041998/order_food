@@ -108,6 +108,12 @@
     <string name="text_ma_uu_dai">Mã ưu đãi</string>
     <string name="text_0d">0đ</string>
     <string name="text_gio_hang_trong">Giỏ hàng trống</string>
+    <string name="text_member">Member</string>
+    <string name="text_minh">Nguyễn Cao Minh</string>
+    <string name="text_lam">Nguyễn Thanh Lâm</string>
+    <string name="text_quang">Hồ Xuân Quang</string>
+    <string name="text_tuan">Nguyễn Minh Tuấn</string>
+    <string name="text_thanh_vien">Các Thành Viên Nhóm</string>
 
 
 </resources>
