@@ -114,86 +114,92 @@ public class DSlichsuAdapter extends RecyclerView.Adapter<DSlichsuAdapter.Recycl
                         text_tennguoidat.setText(orderFoods.getName());
                         text_phonenguoidat.setText(orderFoods.getPhone());
                         text_addressnguoidat.setText(orderFoods.getAddress());
+
+                        if (orderFoods.getStatus().equals(a)) {
+                            btn_danhgia.setVisibility(View.INVISIBLE);
+                        } else if (orderFoods.getStatus().equals(b)) {
+                            btn_danhgia.setVisibility(View.INVISIBLE);
+                        } else {
+                            btn_danhgia.setVisibility(View.VISIBLE);
+                        }
                         btn_danhgia.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
                                 dialog.dismiss();
-                                int poss = getAdapterPosition();
-                                if (poss != RecyclerView.NO_POSITION) {
-                                    final OrderFoods orderFood = orderFoodsList.get(poss);
-                                    final Dialog dialogs = new Dialog(itemView.getContext());
-                                    dialogs.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                                    dialogs.setContentView(R.layout.activity_danh_gia);
-                                    btn_danhgia_confirm = dialogs.findViewById(R.id.btn_danhgia_confirm);
-                                    ratingBar = dialogs.findViewById(R.id.ratingBar);
+                                final OrderFoods orderFood = orderFoodsList.get(pos);
+                                final Dialog dialogs = new Dialog(itemView.getContext());
+                                dialogs.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                                dialogs.setContentView(R.layout.activity_danh_gia);
+                                btn_danhgia_confirm = dialogs.findViewById(R.id.btn_danhgia_confirm);
+                                ratingBar = dialogs.findViewById(R.id.ratingBar);
 
-                                    api.getAllFood().enqueue(new Callback<List<Foods>>() {
-                                        @Override
-                                        public void onResponse(Call<List<Foods>> call, Response<List<Foods>> response) {
-                                            foodsList.clear();
-                                            foodsList = response.body();
-                                            api.getAllOrderFood().enqueue(new Callback<List<OrderFoods>>() {
-                                                @Override
-                                                public void onResponse(Call<List<OrderFoods>> call, Response<List<OrderFoods>> response) {
-                                                    orderFoodssLists.clear();
-                                                    orderFoodssLists = response.body();
-                                                    foodsList1.clear();
-                                                    for (int j = 0; j < 42; j++) {
-                                                        for (OrderFoods orderFoods1 : orderFoodssLists) {
-                                                            if(orderFood.getId().equals(orderFoods1.getId())){
-                                                                if (foodsList.get(j).getName().equals(orderFoods1.getNamefood())) {
-                                                                    foodsList1.add(foodsList.get(j).getId());
-                                                                    Log.d("TAG", foodsList1.toString());
-                                                                    btn_danhgia_confirm.setOnClickListener(new View.OnClickListener() {
-                                                                        @Override
-                                                                        public void onClick(View view) {
-                                                                            ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-                                                                                @Override
-                                                                                public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                                                                                    float rate = v;
-                                                                                    Calendar cal = Calendar.getInstance(Locale.getDefault());
-                                                                                    String date = DateFormat.format("dd/MM/yyyy hh:mm:ss", cal).toString();
-                                                                                    for (int h = 0; h < foodsList1.size(); h++){
-                                                                                        api.addRating(MainActivity.ID, foodsList1.get(h), rate, date).enqueue(new Callback<Ratings>() {
-                                                                                            @Override
-                                                                                            public void onResponse(Call<Ratings> call, Response<Ratings> response) {
+                                api.getAllFood().enqueue(new Callback<List<Foods>>() {
+                                    @Override
+                                    public void onResponse(Call<List<Foods>> call, Response<List<Foods>> response) {
+                                        foodsList.clear();
+                                        foodsList = response.body();
+                                        api.getAllOrderFood().enqueue(new Callback<List<OrderFoods>>() {
+                                            @Override
+                                            public void onResponse(Call<List<OrderFoods>> call, Response<List<OrderFoods>> response) {
+                                                orderFoodssLists.clear();
+                                                orderFoodssLists = response.body();
+                                                foodsList1.clear();
+                                                for (int j = 0; j < 42; j++) {
+                                                    for (OrderFoods orderFoods1 : orderFoodssLists) {
+                                                        if (orderFood.getId().equals(orderFoods1.getId())) {
+                                                            if (foodsList.get(j).getName().equals(orderFoods1.getNamefood())) {
+                                                                foodsList1.add(foodsList.get(j).getId());
+                                                                Log.d("TAG", foodsList1.toString());
+                                                                btn_danhgia_confirm.setOnClickListener(new View.OnClickListener() {
+                                                                    @Override
+                                                                    public void onClick(View view) {
+                                                                        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+                                                                            @Override
+                                                                            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                                                                                float rate = v;
+                                                                                Calendar cal = Calendar.getInstance(Locale.getDefault());
+                                                                                String date = DateFormat.format("dd/MM/yyyy hh:mm:ss", cal).toString();
+                                                                                for (int h = 0; h < foodsList1.size(); h++) {
+                                                                                    api.addRating(MainActivity.ID, foodsList1.get(h), rate, date).enqueue(new Callback<Ratings>() {
+                                                                                        @Override
+                                                                                        public void onResponse(Call<Ratings> call, Response<Ratings> response) {
 
-                                                                                            }
+                                                                                        }
 
-                                                                                            @Override
-                                                                                            public void onFailure(Call<Ratings> call, Throwable t) {
+                                                                                        @Override
+                                                                                        public void onFailure(Call<Ratings> call, Throwable t) {
 
-                                                                                            }
-                                                                                        });
-                                                                                    }
-
+                                                                                        }
+                                                                                    });
                                                                                 }
-                                                                            });
-                                                                        }
-                                                                    });
-                                                                }
+
+                                                                            }
+                                                                        });
+                                                                    }
+                                                                });
                                                             }
-
                                                         }
+
                                                     }
-
-
                                                 }
 
-                                                @Override
-                                                public void onFailure(Call<List<OrderFoods>> call, Throwable t) {
-                                                }
-                                            });
-                                        }
 
-                                        @Override
-                                        public void onFailure(Call<List<Foods>> call, Throwable t) {
-                                        }
-                                    });
+                                            }
+
+                                            @Override
+                                            public void onFailure(Call<List<OrderFoods>> call, Throwable t) {
+                                            }
+                                        });
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<List<Foods>> call, Throwable t) {
+                                    }
+                                });
 
 
-                                    dialogs.show();
-                                }
+                                dialogs.show();
+
                             }
                         });
 
