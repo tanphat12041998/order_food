@@ -19,6 +19,7 @@ import com.app.order_food.components.Model.OrderFoodDetails;
 import com.app.order_food.components.Model.OrderFoods;
 import com.app.order_food.views.fragments.HomeFragment;
 import com.app.order_food.views.fragments.LichSuFragment;
+import com.app.order_food.views.fragments.MenuFoodFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,9 +33,10 @@ public class LichSuChiTietAdapter extends BaseAdapter {
     LichSuFragment context;
     List<OrderFoods> orderFoodsList;
     List<OrderFoods> orderFoodsLists = new ArrayList<>();
+    List<OrderFoods> orderFoodsListss = new ArrayList<>();
     RetrofitClient retrofit = new RetrofitClient();
     Api api = retrofit.getClient().create(Api.class);
-    String name, mo_ta;
+    String name;
 
     public LichSuChiTietAdapter(LichSuFragment context, List<OrderFoods> orderFoodsList) {
         this.context = context;
@@ -80,27 +82,17 @@ public class LichSuChiTietAdapter extends BaseAdapter {
 //            viewHolder.text_ten_mon_an_.setText(DSlichsuAdapter.ListOrderNameFood.get(k).getNameFood());
 //        }
         orderFoodsLists = new ArrayList<>();
-        api.getAllOrderFoodByIdID(orderFoods.getId()).enqueue(new Callback<OrderFoods>() {
-            @Override
-            public void onResponse(Call<OrderFoods> call, Response<OrderFoods> response) {
-                name = response.body().getNamefood();
-            }
-
-            @Override
-            public void onFailure(Call<OrderFoods> call, Throwable t) {
-
-            }
-        });
-//        api.getAllOrderFood().enqueue(new Callback<List<OrderFoods>>() {
+        orderFoodsListss = new ArrayList<>();
+//        api.getAllOrderFoodByIdID(orderFoods.getId()).enqueue(new Callback<List<OrderFoods>>() {
 //            @Override
 //            public void onResponse(Call<List<OrderFoods>> call, Response<List<OrderFoods>> response) {
-//                orderFoodsLists.clear();
 //                orderFoodsLists = response.body();
+//                if (orderFoodsLists != null) {
+//                    for (int k = 0; k < orderFoodsLists.size(); k++) {
+//                        if(orderFoodsLists.get(k).getId().equals(orderFoods.getId())){
+//                            name = orderFoodsLists.get(k).getNamefood();
+//                        }
 //
-//                for (int k = 0; k < orderFoodsLists.size(); k++) {
-//                    if ((orderFoods.getId()).equals(orderFoodsLists.get(k).getId())) {
-//                        Log.d("TAG", orderFoods.getId()+" id "+ orderFoodsLists.get(k).getId());
-//                        name = orderFoodsLists.get(k).getNameFood() + "";
 //                    }
 //                }
 //            }
@@ -110,7 +102,39 @@ public class LichSuChiTietAdapter extends BaseAdapter {
 //
 //            }
 //        });
-        viewHolder.text_ten_mon_an_.setText(name + "");
+
+
+        ViewHolder finalViewHolder = viewHolder;
+        api.getAllOrderFood().enqueue(new Callback<List<OrderFoods>>() {
+            @Override
+            public void onResponse(Call<List<OrderFoods>> call, Response<List<OrderFoods>> response) {
+                orderFoodsLists.clear();
+                orderFoodsLists = response.body();
+                for (int k = 0; k < orderFoodsLists.size(); k++) {
+                    if ((orderFoods.getId()).equals(orderFoodsLists.get(k).getId())) {
+                        api.getAllOrderFoodByIdID(orderFoods.getId()).enqueue(new Callback<List<OrderFoods>>() {
+                            @Override
+                            public void onResponse(Call<List<OrderFoods>> call, Response<List<OrderFoods>> response) {
+                                orderFoodsListss.clear();
+                                orderFoodsListss = response.body();
+                                for (int l = 0; l < orderFoodsListss.size(); l++) {
+                                    finalViewHolder.text_ten_mon_an_.setText(orderFoodsListss.get(l).getNamefood() + "");
+                                }
+
+                            }
+                            @Override
+                            public void onFailure(Call<List<OrderFoods>> call, Throwable t) {
+                            }
+                        });
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<List<OrderFoods>> call, Throwable t) {
+            }
+        });
+
+
         viewHolder.text_so_luong_.setText(orderFoods.getQuantity() + "x");
         viewHolder.text_gia_tien_.setText(orderFoods.getTotal() + " VNĐ");
         return view;
