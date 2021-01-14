@@ -33,8 +33,8 @@ public class LichSuFragment extends BaseFragment {
     List<OrderFoods> orderFoodsList = new ArrayList<>();
     RetrofitClient retrofit = new RetrofitClient();
     Api api = retrofit.getClient().create(Api.class);
-    Context context;
     DSlichsuAdapter dSlichsuAdapter;
+    Context context;
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_don_hang;

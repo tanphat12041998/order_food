@@ -122,11 +122,11 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
                                 if (sl <= 1) {
                                     btn_cong.setVisibility(View.VISIBLE);
                                     btn_tru.setVisibility(View.INVISIBLE);
-                                } else if (sl >= 1) {
-                                    btn_cong.setVisibility(View.VISIBLE);
-                                    btn_tru.setVisibility(View.VISIBLE);
-                                }else if (sl >= 10) {
+                                } else if (sl >= 10) {
                                     btn_cong.setVisibility(View.INVISIBLE);
+                                    btn_tru.setVisibility(View.VISIBLE);
+                                }else if (sl >= 1) {
+                                    btn_cong.setVisibility(View.VISIBLE);
                                     btn_tru.setVisibility(View.VISIBLE);
                                 }
                             }
@@ -141,11 +141,11 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
                                 if (sl <= 1) {
                                     btn_cong.setVisibility(View.VISIBLE);
                                     btn_tru.setVisibility(View.INVISIBLE);
-                                } else if (sl >= 1) {
-                                    btn_cong.setVisibility(View.VISIBLE);
-                                    btn_tru.setVisibility(View.VISIBLE);
                                 }else if (sl >= 10) {
                                     btn_cong.setVisibility(View.INVISIBLE);
+                                    btn_tru.setVisibility(View.VISIBLE);
+                                }else if (sl >= 1) {
+                                    btn_cong.setVisibility(View.VISIBLE);
                                     btn_tru.setVisibility(View.VISIBLE);
                                 }
                             }

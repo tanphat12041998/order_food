@@ -7,23 +7,7 @@
     android:background="?colorBackgroundFloating"
     >
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border_bottom"
-        app:popupTheme="@color/blue">
 
-        <TextView
-            android:id="@+id/tv_monan_detail_ten"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-    </androidx.appcompat.widget.Toolbar>
 
     <RelativeLayout
         android:id="@+id/relayForgot"
@@ -152,7 +136,16 @@
             android:background="@drawable/btn_cong"
             android:text="@string/text_cap_nhat"
             android:textColor="@drawable/button_change_text_color_white_login" />
-
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_confirm"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_cong_muoi_radious_tran"
+            android:text="Hủy"
+            android:textColor="@drawable/button_change_text_color_white_login" />
 
     </RelativeLayout>
 
