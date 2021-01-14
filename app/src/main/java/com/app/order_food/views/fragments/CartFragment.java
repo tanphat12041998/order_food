@@ -149,9 +149,9 @@ public class CartFragment extends BaseFragment {
                 }else {
 
                     for (int i = 0; i < MainActivity.ListFoodDetail.size(); i++) {
-                        api.addOrderFood(id, iduser, idpayment, MainActivity.ListFoodDetail.get(i).getId(),MainActivity.ListFoodDetail.get(i).getTen(), dateTime
+                        api.addOrderFood(id, iduser, idpayment, MainActivity.ListFoodDetail.get(i).getId(), dateTime
                                 , MainActivity.ListFoodDetail.get(i).getGiatong()
-                                , MainActivity.ListFoodDetail.get(i).getSl(), ghi_chu, name, phone, address , status)
+                                , MainActivity.ListFoodDetail.get(i).getSl(), ghi_chu, name, phone, address ,MainActivity.ListFoodDetail.get(i).getTen(), status)
                                 .enqueue(new Callback<OrderFoods>() {
                                     @Override
                                     public void onResponse(Call<OrderFoods> call, Response<OrderFoods> response) {
