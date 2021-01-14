@@ -10,9 +10,10 @@ public class OrderFoods implements Serializable {
     private String date;
     private Integer total;
     private Boolean status;
+    private String name, phone, address;
     private String note;
 
-    public OrderFoods(Integer id, Integer idUser, Integer idPayment, Integer idFood, Integer quantity, String date, Integer total, Boolean status, String note) {
+    public OrderFoods(Integer id, Integer idUser, Integer idPayment, Integer idFood, Integer quantity, String date, Integer total, Boolean status, String name, String phone, String address, String note) {
         this.id = id;
         this.idUser = idUser;
         this.idPayment = idPayment;
@@ -21,6 +22,9 @@ public class OrderFoods implements Serializable {
         this.date = date;
         this.total = total;
         this.status = status;
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
         this.note = note;
     }
 
@@ -86,6 +90,30 @@ public class OrderFoods implements Serializable {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getNote() {

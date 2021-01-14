@@ -1,6 +1,7 @@
 package com.app.order_food.views.activities.main;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,11 +26,10 @@ import retrofit2.Response;
 
 public class ChangeInfoActivity extends BaseActivity {
     EditText edtTenCu, edtSdtCu, edtDiaChiCu;
-    Button btn_confirm;
+    Button btn_confirm, btn_cancel;
     RetrofitClient retrofit = new RetrofitClient();
     Api api = retrofit.getClient().create(Api.class);
     Integer ID = MainActivity.ID;
-
     @Override
     protected void initialViewComponent() {
         btn_confirm.setOnClickListener(new View.OnClickListener() {
@@ -38,6 +38,13 @@ public class ChangeInfoActivity extends BaseActivity {
                 clickConfirm();
             }
         });
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
     }
 
     @Override
@@ -49,6 +56,7 @@ public class ChangeInfoActivity extends BaseActivity {
         edtSdtCu.setText(MainActivity.Phone);
         edtDiaChiCu.setText(MainActivity.Address);
         btn_confirm = findViewById(R.id.btn_confirm);
+        btn_cancel = findViewById(R.id.btn_cancel);
     }
 
     @Override

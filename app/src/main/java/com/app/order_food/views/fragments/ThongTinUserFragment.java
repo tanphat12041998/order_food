@@ -30,8 +30,6 @@ public class ThongTinUserFragment extends BaseFragment {
     private static String EMAiL = "Email";
     String email, img;
     Toolbar title_taikhoan;
-    RetrofitClient retrofit = new RetrofitClient();
-    Api api = retrofit.getClient().create(Api.class);
     @Override
     protected void initialVariables() {
         Circle_Image_view = getView().findViewById(R.id.Circle_Image_view);

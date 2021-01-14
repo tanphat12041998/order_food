@@ -46,8 +46,17 @@ public interface Api {
     @GET("getallfood")
     Call<List<Foods>> getAllFood();
 
+    @POST("getfood/{id}")
+    Call<Foods> getFoodById(@Path("id") int Id);
+
     @POST("getfood/type/{idtype}")
     Call<List<Foods>> getAllFoodByIdType(@Path("idtype") int Id);
+
+    @GET("getallorderfood")
+    Call<List<OrderFoods>> getAllOrderFood();
+
+    @POST("getorderfood/order/{id}")
+    Call<List<OrderFoods>> getAllOrderFoodById(@Path("id") int Id);
 
     @POST("getorderfood/{iduser}")
     Call<List<OrderFoods>> getOrderFoodById(@Path("iduser") int idUser);
@@ -55,7 +64,8 @@ public interface Api {
     @FormUrlEncoded
     @POST("addorderfood")
     Call<OrderFoods> addOrderFood(@Field("id") int Id, @Field("iduser") int idUser, @Field("idpayment") int idPayment, @Field("idfood") int idFood
-            , @Field("date") String date, @Field("total") int total, @Field("quantity") int quantity, @Field("note") String note, @Field("status") Boolean status);
+            , @Field("date") String date, @Field("total") int total, @Field("quantity") int quantity, @Field("note") String note
+            , @Field("name") String name, @Field("phone") String phone, @Field("address") String address, @Field("status") Boolean status);
 
     @POST("getrating/{idfood}")
     Call<List<Ratings>> getRatingByIdFood(@Path("idfood") int Id);

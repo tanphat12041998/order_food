@@ -81,7 +81,7 @@ public class ResgisterActivity extends BaseActivity {
         String passwordagain = ed_repassword.getText().toString().trim();
         String phone = ed_phone.getText().toString().trim();
         String address = ed_diachi.getText().toString().trim();
-        String img = "https://lh3.googleusercontent.com/GNDUidbUKXYmFRtuH15RzwXGvyQ2oJiMrOPTycd5_SFUKN4RQ1r4lLZFyOTKZ1V74RIwWsemNRo_An1JnsXlmkiYcV6mFCw-a-5qADJPO4_n-72AcYeHnpmcfZsgiIjvw6KcWeLryRPt1iQjmD0G4YJveG5lEsNHn6gE_Fap-MoNN7XL4eb2vyrnfch1TFgFNBPAzJ7WHdoc_1nIrvJA-0BsQXPK-h3rUtEsqR-XVzWNEWxuvMqwh13ACdwXOacJf2Qfg0EEfCUZ7rgiAfYtFVwUjQQB2W4xllhJXXETtwxk00Kq3QlihlOBZ5wTn7gvRCLubE2e0dC_LGJNCTKX5I2LmgzqNw-ieS3G2BA0_mbyy4rIKnUCtj6HQfdXqkSt-gvr1XO4-MgenUv72n5u4o8f8mAEv_aiWqpBsU7IWZtQq8-LEs2Tj-nI8TN07r2hCh9tSafKtRCqJVxJj2szijy5ppebSO5SQgZBeNPGDrSYnbPUumnQUEUTWgEZ2TMjPBDJLdanLEecrsZCX-hJxYtYjUT5UpgClcn0LMxrXIpK28uS6yBIGeckpIcebz-oqQ0n27VOxJtKgl_4Ny7FNqTY3AJgSpRniAVjzK3AqhM6nGD3Z1p-_QzWAndPM31-dINBVwueLI7AwPwTl33--lGV9EIVvclmQsDbjiaV-z4R1ok0kMLhr9g4zbUD=w1046-h924-no?authuser=0";
+        String img = "https://previews.123rf.com/images/olgastrelnikova/olgastrelnikova1901/olgastrelnikova190100001/115903194-food-icon-with-smile-label-for-food-company-grocery-store-icon-vector-illustration-with-smiling-mout.jpg";
         if(usersList == null || usersList.isEmpty()){
             return;
         }

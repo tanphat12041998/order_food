@@ -108,16 +108,8 @@ public class HomeFragment extends BaseFragment {
                 fragmentTransaction.add(R.id.main, MenuFoodFragment.newInstance(idType));
                 fragmentTransaction.addToBackStack(MenuFoodFragment.class.getSimpleName());
                 fragmentTransaction.commit();
-//                ArrayList<Integer> a = new ArrayList<>();
-//                a.add(1);
-//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-//                    ArrayList<String> b = (ArrayList<String>) Arrays.asList(a.stream().map(this::convertToString).toArray(String[]::new));
-//                }
             }
 
-//            private <R> R convertToString(Integer integer) {
-//                return (R) integer.toString();
-//            }
         });
         btnd.setOnClickListener(new View.OnClickListener() {
             @Override

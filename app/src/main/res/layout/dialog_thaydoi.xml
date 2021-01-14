@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thay đổi thông tin"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold|italic"
+        android:textSize="30sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:text="Tên: "
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/thay_ten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên của bạn"/>
+    <TextView
+        android:textColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Số điện thoại: "
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/thay_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Số điện thoại của bạn"/>
+    <TextView
+        android:textColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Địa chỉ: "
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/thay_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Địa chỉ của bạn"/>
+    <Button
+        android:id="@+id/btn_thay"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="240dp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Đổi"
+        android:textSize="24sp" />
+
+
+</LinearLayout>

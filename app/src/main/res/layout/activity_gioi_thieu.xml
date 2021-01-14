@@ -32,6 +32,7 @@
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         android:fontFamily="@font/freehani"
         android:text="Thành Viên Nhóm"
+
         />
 
     <LinearLayout
@@ -66,6 +67,7 @@
                 android:layout_weight="1"
                 android:gravity="center|start"
                 android:text="@string/text_quang"
+
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                 android:textSize="24sp" />
 
@@ -94,6 +96,7 @@
                 android:layout_weight="1"
                 android:gravity="center|start"
                 android:text="@string/text_minh"
+
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                 android:textSize="24sp" />
 
@@ -122,6 +125,7 @@
                 android:layout_weight="1"
                 android:gravity="center|start"
                 android:text="@string/text_lam"
+
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                 android:textSize="24sp" />
 

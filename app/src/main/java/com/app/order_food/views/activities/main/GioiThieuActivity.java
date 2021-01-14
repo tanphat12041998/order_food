@@ -19,6 +19,7 @@ public class GioiThieuActivity extends BaseActivity {
 
     @Override
     protected void initialVariables() {
+
     }
 
     @Override
