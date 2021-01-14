@@ -8,7 +8,6 @@
     >
 
 
-
     <RelativeLayout
         android:id="@+id/relayForgot"
         android:layout_width="380dp"
@@ -19,23 +18,12 @@
         android:paddingTop="10dp"
         android:paddingBottom="20dp">
 
-        <TextView
-            android:id="@+id/tv_capnhat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="10dp"
-            android:text="@string/text_cap_nhat_thong_tin"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+
 
         <RelativeLayout
             android:id="@+id/TenCu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_capnhat"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
@@ -133,8 +121,9 @@
             android:layout_below="@+id/DiaChiCu"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:background="@drawable/btn_cong"
+            android:background="@drawable/btn_w_shadow2"
             android:text="@string/text_cap_nhat"
+
             android:textColor="@drawable/button_change_text_color_white_login" />
         <Button
             android:id="@+id/btn_cancel"
@@ -146,6 +135,9 @@
             android:background="@drawable/btn_cong_muoi_radious_tran"
             android:text="Hủy"
             android:textColor="@drawable/button_change_text_color_white_login" />
+
+            android:textColor="@color/white" />
+
 
     </RelativeLayout>
 

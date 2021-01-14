@@ -6,30 +6,33 @@
     >
 
 
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/title_taikhoan"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorAccent"
+            app:backgroundTint="@color/white"
+            app:navigationIcon="@drawable/ic_close"
+            app:title="Đổi mật khẩu"
+            app:titleMarginStart="80dp"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
     <RelativeLayout
         android:id="@+id/relayForgot"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="140dp"
         android:background="@drawable/btn_w_shadow4"
         android:paddingTop="10dp"
         android:paddingBottom="20dp">
 
-        <TextView
-            android:id="@+id/tv_forgot_instruc"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/login"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="@string/text_mat_khau_ky_tu" />
+
         <RelativeLayout
             android:id="@+id/matKhauCu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_forgot_instruc"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
@@ -125,9 +128,9 @@
             android:layout_below="@+id/relayPasswordChangeAgain"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:background="@drawable/btn_cong"
+            android:textColor="@color/white"
             android:text="@string/text_dong_y"
-            android:textColor="@drawable/button_change_text_color_white_login" />
+            android:background="@drawable/btn_w_shadow2" />
 
         <Button
             android:id="@+id/btn_passchange_cancel"

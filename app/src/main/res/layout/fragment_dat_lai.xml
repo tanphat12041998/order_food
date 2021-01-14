@@ -24,6 +24,7 @@
 
 <!--    </com.google.android.material.appbar.AppBarLayout>-->
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_lichsuchitiet"
         android:layout_width="match_parent"
@@ -101,33 +102,6 @@
 
         </LinearLayout>
 
-        <!--        <LinearLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:orientation="horizontal"-->
-        <!--            android:padding="8dp">-->
-
-        <!--            <TextView-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_weight="1"-->
-        <!--                android:text="@string/text_phieu_mua_hang"-->
-        <!--                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"-->
-        <!--                android:textColor="@color/colorAccent"-->
-        <!--                android:textSize="16sp" />-->
-
-        <!--            <TextView-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_weight="1"-->
-        <!--                android:gravity="end"-->
-        <!--                android:text="@string/text_39_000"-->
-        <!--                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"-->
-        <!--                android:textColor="@color/colorAccent"-->
-        <!--                android:textSize="16sp" />-->
-
-
-        <!--        </LinearLayout>-->
 
     </LinearLayout>
 
@@ -289,13 +263,4 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!--    <Button-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_margin="24dp"-->
-    <!--        android:background="@drawable/btn_w_shadow2"-->
-    <!--        android:text="@string/text_dat_lai"-->
-    <!--        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"-->
-    <!--        android:textColor="@color/white"-->
-    <!--        android:textSize="24sp" />-->
 </LinearLayout>
