@@ -51,6 +51,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:maxLines="1"
                 android:text="@string/text_ten_nguoi_dung"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
@@ -65,6 +66,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/text_sodienthoai"
+                android:maxLength="11"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                 app:drawableLeftCompat="@drawable/ic_phone"
@@ -112,11 +114,11 @@
                     android:autofillHints="@string/text_1"
                     android:gravity="center|left"
                     android:hint="@string/text_ghi_chu"
-                    android:lines="2"
-                    android:maxLines="2"
+                    android:maxLines="1"
+                    android:lines="1"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                     tools:ignore="RtlHardcoded"
-                    tools:text="Ghi chú " />
+                    />
 
             </LinearLayout>
 

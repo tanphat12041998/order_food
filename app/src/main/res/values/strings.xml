@@ -114,5 +114,7 @@
     <string name="text_minh">Nguyễn Cao Minh</string>
     <string name="text_quang">Hồ Xuân Quang</string>
     <string name="text_huy">Hủy</string>
+    <string name="text_thay_doi_thong_tin">Thay đổi thông tin</string>
+    <string name="text_ten_don_hang">Tên đơn hàng</string>
 
 </resources>

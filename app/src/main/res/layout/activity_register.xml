@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -25,7 +26,6 @@
             android:layout_height="53dp"
             android:layout_marginTop="36dp"
             android:background="@drawable/box"
-            android:elevation="@android:dimen/thumbnail_width"
             android:hint="@string/text_ho_ten"
             android:textAlignment="center" />
 
@@ -35,9 +35,10 @@
             android:layout_height="53dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/box"
-            android:elevation="@android:dimen/thumbnail_width"
+            android:inputType="number"
             android:hint="@string/text_so_dien_thoai"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            tools:ignore="TextFields" />
 
 
         <EditText
@@ -46,7 +47,6 @@
             android:layout_height="53dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/box"
-            android:elevation="@android:dimen/thumbnail_width"
             android:hint="@string/text_dia_chi"
             android:textAlignment="center" />
 
@@ -56,7 +56,6 @@
             android:layout_height="53dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/box"
-            android:elevation="@android:dimen/thumbnail_width"
             android:hint="@string/text_email"
             android:textAlignment="center" />
 
@@ -68,7 +67,6 @@
             android:layout_height="53dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/box"
-            android:elevation="@android:dimen/thumbnail_width"
             android:hint="@string/text_nhap_mat_khau"
             android:inputType="textPassword"
             android:textAlignment="center" />
@@ -79,7 +77,6 @@
             android:layout_height="53dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/box"
-            android:elevation="@android:dimen/thumbnail_width"
             android:hint="@string/text_nhap_lai_mat_khau"
             android:inputType="textPassword"
             android:textAlignment="center" />

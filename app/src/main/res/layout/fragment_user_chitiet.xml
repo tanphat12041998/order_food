@@ -180,8 +180,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/text_sodienthoai"
+                android:inputType="number"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:ignore="TextViewEdits" />
 
         </LinearLayout>
 
