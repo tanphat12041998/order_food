@@ -125,10 +125,10 @@ public class DSlichsuAdapter extends RecyclerView.Adapter<DSlichsuAdapter.Recycl
         holder.text_thoi_gian.setText(orderFoods.getDate());
         if(orderFoods.getStatus().equals(a)){
             holder.text_da_giao.setText("Đang giao hàng");
-//            imageView.setImageResource(R.drawable.check1);
+            holder.text_da_giao.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_check1,0,0,0);
         }else {
             holder.text_da_giao.setText("Đã giao hàng");
-//            imageView.setImageResource(R.drawable.check);
+            holder.text_da_giao.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_check,0,0,0);
         }
     }
 

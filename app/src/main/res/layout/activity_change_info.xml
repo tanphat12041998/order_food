@@ -3,18 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?colorBackgroundFloating">
 
-    android:background="?colorBackgroundFloating"
-    >
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/title_taikhoancn"
-    android:background="?colorBackgroundFloating">
-
-
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:background="@color/colorAccent"
@@ -22,6 +18,7 @@
             app:navigationIcon="@drawable/ic_close"
             app:title="Cập nhật thông tin"
             app:titleMarginStart="70dp"/>
+
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -34,8 +31,6 @@
         android:background="@drawable/btn_w_shadow4"
         android:paddingTop="10dp"
         android:paddingBottom="20dp">
-
-
 
         <RelativeLayout
             android:id="@+id/TenCu"
@@ -131,21 +126,17 @@
             </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/DiaChiCu"
-
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:background="@drawable/btn_w_shadow2"
-            android:text="@string/text_cap_nhat"
             android:textColor="@color/white"
-             />
+            android:text="@string/text_dong_y"
+            android:background="@drawable/btn_w_shadow2" />
 
-
-
-        </LinearLayout>
     </RelativeLayout>
 
 </RelativeLayout>
