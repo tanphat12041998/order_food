@@ -1,57 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="340dp"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_margin="16dp"
+    android:orientation="vertical"
+    android:background="@drawable/custom_dialog1"
+    android:padding="8dp">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Thay đổi thông tin"
         android:gravity="center"
-        android:textColor="@color/colorAccent"
-        android:textStyle="bold|italic"
-        android:textSize="30sp"/>
+        android:text="@string/text_thay_doi_thong_tin"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold|italic" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorAccent"
-        android:text="Tên: "
-        android:textSize="20sp"/>
+        android:text="@string/text_ten"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
     <EditText
         android:id="@+id/thay_ten"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Tên của bạn"/>
+        android:layout_height="wrap_content" />
+
     <TextView
-        android:textColor="@color/colorAccent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Số điện thoại: "
-        android:textSize="20sp"/>
+        android:text="@string/text_so_dien_thoai"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
     <EditText
         android:id="@+id/thay_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Số điện thoại của bạn"/>
+        android:maxLength="11"
+        android:inputType="number"
+        tools:ignore="TextFields" />
+
     <TextView
-        android:textColor="@color/colorAccent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Địa chỉ: "
-        android:textSize="20sp"/>
+        android:text="@string/text_dia_chi"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
     <EditText
         android:id="@+id/thay_address"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Địa chỉ của bạn"/>
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/btn_thay"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="240dp"
-        android:backgroundTint="@color/colorAccent"
-        android:text="Đổi"
-        android:textSize="24sp" />
+        android:background="@drawable/btn_w_shadow2"
+        android:layout_gravity="end"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:text="@string/text_thay_doi"
+        android:textSize="16sp" />
 
 
 </LinearLayout>

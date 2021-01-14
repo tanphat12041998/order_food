@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="?colorBackgroundFloating"
     >
     <com.google.android.material.appbar.AppBarLayout
@@ -12,6 +12,9 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/title_taikhoancn"
+    android:background="?colorBackgroundFloating">
+
+
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:background="@color/colorAccent"
@@ -128,11 +131,11 @@
             </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
 
-        <Button
-            android:id="@+id/btn_confirm"
-            android:layout_width="320dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/DiaChiCu"
+
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:background="@drawable/btn_w_shadow2"
@@ -141,6 +144,8 @@
              />
 
 
+
+        </LinearLayout>
     </RelativeLayout>
 
 </RelativeLayout>

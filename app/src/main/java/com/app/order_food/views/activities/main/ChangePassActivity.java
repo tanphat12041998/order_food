@@ -36,6 +36,7 @@ public class ChangePassActivity extends BaseActivity {
                 clickconfirm();
             }
         });
+
         title_taikhoanmk.setNavigationIcon(R.drawable.ic_close);
         title_taikhoanmk.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +44,7 @@ public class ChangePassActivity extends BaseActivity {
                 onBackPressed();
             }
         });
+
     }
 
     @Override
@@ -51,6 +53,7 @@ public class ChangePassActivity extends BaseActivity {
         edtpassword_change = findViewById(R.id.edtpassword_change);
         edtpassword_change_again = findViewById(R.id.edtpassword_change_again);
         btn_passchange_confirm = findViewById(R.id.btn_passchange_confirm);
+
         title_taikhoanmk = findViewById(R.id.title_taikhoanmk);
     }
 
