@@ -73,4 +73,9 @@ public interface Api {
     @POST("getrating/{idfood}")
     Call<List<Ratings>> getRatingByIdFood(@Path("idfood") int Id);
 
+    @FormUrlEncoded
+    @POST("addrating")
+    Call<Ratings> addRating(@Field("iduser") int idUser,@Field("idfood") int idFood
+            ,@Field("rate") Float rate,@Field("date") String date);
+
 }

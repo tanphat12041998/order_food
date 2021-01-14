@@ -205,6 +205,7 @@ public class CartFragment extends BaseFragment {
         super.onPause();
         SharedPreferences sharedPref = Objects.requireNonNull(getActivity()).getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
+
         editor.putInt("id", id);
         editor.apply();
     }

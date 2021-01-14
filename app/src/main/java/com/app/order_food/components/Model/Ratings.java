@@ -3,10 +3,11 @@ package com.app.order_food.components.Model;
 import java.util.Date;
 
 public class Ratings {
-    private Integer idUser, idFood, rate;
+    private Integer idUser, idFood;
+    private Float rate;
     private String date;
 
-    public Ratings(Integer idUser, Integer idFood, Integer rate, String date) {
+    public Ratings(Integer idUser, Integer idFood, Float rate, String date) {
         this.idUser = idUser;
         this.idFood = idFood;
         this.rate = rate;
@@ -29,11 +30,11 @@ public class Ratings {
         this.idFood = idFood;
     }
 
-    public Integer getRate() {
+    public Float getRate() {
         return rate;
     }
 
-    public void setRate(Integer rate) {
+    public void setRate(Float rate) {
         this.rate = rate;
     }
 

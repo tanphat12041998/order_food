@@ -9,22 +9,6 @@
     android:focusable="true"
     android:orientation="vertical">
 
-<!--    <com.google.android.material.appbar.AppBarLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        >-->
-
-<!--        <androidx.appcompat.widget.Toolbar-->
-<!--            android:id="@+id/title_toolbar"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="?actionBarSize"-->
-<!--            app:navigationIcon="@drawable/ic_close"-->
-<!--            app:backgroundTint="@color/white"-->
-<!--            app:title="Lịch sử chi tiết"/>-->
-
-<!--    </com.google.android.material.appbar.AppBarLayout>-->
-
-
     <ListView
         android:id="@+id/listview_lichsuchitiet"
         android:layout_width="match_parent"
@@ -261,6 +245,17 @@
 
 
         </LinearLayout>
+        <Button
+            android:id="@+id/btn_danhgia"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/DiaChiCu"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/white"
+            android:text="Đánh giá"
+            android:background="@drawable/btn_w_shadow2" />
     </LinearLayout>
 
 </LinearLayout>
