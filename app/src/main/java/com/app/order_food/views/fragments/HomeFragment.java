@@ -30,6 +30,7 @@ public class HomeFragment extends BaseFragment {
     RecyclerView recyclerView_dsmonanthinhhanh, recyclerView_dstatcamonan;
     RetrofitClient retrofit = new RetrofitClient();
     List<Foods> foodsList = new ArrayList<>();
+    public static List<Foods> foods;
     Api api = retrofit.getClient().create(Api.class);
     DSmonanThinhHanhAdapter dSmonanThinhHanhAdapter;
     DSmonanAdapter dSmonanAdapter;
@@ -52,7 +53,7 @@ public class HomeFragment extends BaseFragment {
                     dSmonanThinhHanhAdapter = new DSmonanThinhHanhAdapter(context, foodsList);
                     recyclerView_dsmonanthinhhanh.setAdapter(dSmonanThinhHanhAdapter);
                     dSmonanThinhHanhAdapter.notifyDataSetChanged();
-
+                    foods = response.body();
                     dSmonanAdapter = new DSmonanAdapter(contexts, foodsList);
                     recyclerView_dstatcamonan.setAdapter(dSmonanAdapter);
                     dSmonanAdapter.notifyDataSetChanged();
