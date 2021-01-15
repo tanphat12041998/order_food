@@ -48,7 +48,7 @@ public class MenuFoodFragment extends BaseFragment {
     protected void initialViewComponent() {
         switch (a){
             case 1:
-                title_dsmonan.setTitle("Danh sách Cơm Phần");
+                title_dsmonan.setTitle("Danh sách cơm phần");
                 callData(a);
                 break;
             case 2:
