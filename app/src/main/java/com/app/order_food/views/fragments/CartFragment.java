@@ -133,7 +133,7 @@ public class CartFragment extends BaseFragment {
         button_thanhtoan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Boolean status = false;
+                Integer status = 0;
                 id = id + 1;
                 iduser = MainActivity.ID;
                 ghi_chu = text_ghichu.getText().toString().trim();
@@ -151,7 +151,7 @@ public class CartFragment extends BaseFragment {
                     for (int i = 0; i < MainActivity.ListFoodDetail.size(); i++) {
                         api.addOrderFood(id, iduser, idpayment, MainActivity.ListFoodDetail.get(i).getId(), dateTime
                                 , MainActivity.ListFoodDetail.get(i).getGiatong()
-                                , MainActivity.ListFoodDetail.get(i).getSl(), ghi_chu, name, phone, address , status)
+                                , MainActivity.ListFoodDetail.get(i).getSl(), ghi_chu, name, phone, address ,MainActivity.ListFoodDetail.get(i).getTen(), status)
                                 .enqueue(new Callback<OrderFoods>() {
                                     @Override
                                     public void onResponse(Call<OrderFoods> call, Response<OrderFoods> response) {
@@ -205,6 +205,7 @@ public class CartFragment extends BaseFragment {
         super.onPause();
         SharedPreferences sharedPref = Objects.requireNonNull(getActivity()).getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
+
         editor.putInt("id", id);
         editor.apply();
     }
