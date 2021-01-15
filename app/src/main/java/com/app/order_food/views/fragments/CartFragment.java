@@ -65,9 +65,7 @@ public class CartFragment extends BaseFragment {
         text_ghichu = getView().findViewById(R.id.text_ghichu);
         text_thay_doi = getView().findViewById(R.id.text_thay_doi);
         text_tamtinhgiatien = getView().findViewById(R.id.text_tam_tinh_gia_tien);
-        text_tien_mat = getView().findViewById(R.id.text_tien_mat);
         text_tong_cong = getView().findViewById(R.id.text_tong_cong);
-        text_ma_uu_dai = getView().findViewById(R.id.text_ma_uu_dai);
         button_thanhtoan = getView().findViewById(R.id.button_thanhtoan);
         listview_dsdonhang = getView().findViewById(R.id.listview_dsdonhang);
         text_gio_hang_trong = getView().findViewById(R.id.text_gio_hang_trong);
@@ -81,12 +79,7 @@ public class CartFragment extends BaseFragment {
         text_diachi_donhang.setText(MainActivity.Address);
         dsDHAdapter = new DsDHAdapter(CartFragment.this, MainActivity.ListFoodDetail);
         listview_dsdonhang.setAdapter(dsDHAdapter);
-        text_ma_uu_dai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "Coming soon", Toast.LENGTH_SHORT).show();
-            }
-        });
+
         text_thay_doi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -178,14 +171,12 @@ public class CartFragment extends BaseFragment {
         if (MainActivity.ListFoodDetail.size() <= 0) {
             tongtien = 0;
             text_tamtinhgiatien.setText(tongtien + " VNĐ");
-            text_tien_mat.setText(tongtien + " VNĐ");
             text_tong_cong.setText(tongtien + " VNĐ");
         } else {
             tongtien = 0;
             for (int i = 0; i < MainActivity.ListFoodDetail.size(); i++) {
                 tongtien += MainActivity.ListFoodDetail.get(i).getGiatong();
                 text_tamtinhgiatien.setText(tongtien + " VNĐ");
-                text_tien_mat.setText(tongtien + " VNĐ");
                 text_tong_cong.setText(tongtien + " VNĐ");
             }
 

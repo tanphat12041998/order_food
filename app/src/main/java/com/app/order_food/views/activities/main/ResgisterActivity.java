@@ -87,7 +87,7 @@ public class ResgisterActivity extends BaseActivity {
         }
         for (Users users: usersList){
             if(email.equals(users.getEmail())) {
-                Toast.makeText(getApplicationContext(), "Email này đã tồn tại", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Tài khoản này đã tồn tại", Toast.LENGTH_SHORT).show();
                 break;
             }
         }
@@ -95,7 +95,9 @@ public class ResgisterActivity extends BaseActivity {
                 || TextUtils.isEmpty(passwordagain) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(address)) {
             Toast.makeText(getApplicationContext(), "Thông tin bạn nhập chưa đủ", Toast.LENGTH_SHORT).show();
         }else if(password.length() <= 5 || passwordagain.length() <= 5){
-            Toast.makeText(getApplicationContext(), "Mật khẩu ít nhất có 6 kí tự", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Mật khẩu ít nhất 6 kí tự", Toast.LENGTH_SHORT).show();
+        }else if(password.length() >=17 || passwordagain.length() >=17 ){
+            Toast.makeText(getApplicationContext(), "Mật khẩu tối đa 16 kí tự", Toast.LENGTH_SHORT).show();
         }else if(!password.equals(passwordagain)){
             Toast.makeText(getApplicationContext(), "Mật khẩu không trùng khớp", Toast.LENGTH_SHORT).show();
         }else {
