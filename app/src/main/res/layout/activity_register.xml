@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="109dp"
+        android:layout_height="150dp"
         android:layout_marginHorizontal="44dp"
         android:layout_marginTop="40dp"
         app:srcCompat="@drawable/logo2" />
@@ -27,17 +26,20 @@
             android:layout_marginTop="36dp"
             android:background="@drawable/box"
             android:hint="@string/text_ho_ten"
-            android:textAlignment="center" />
+            android:padding="8dp"
+            android:textAlignment="textStart" />
 
         <EditText
             android:id="@+id/ed_phone"
             android:layout_width="match_parent"
             android:layout_height="53dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/box"
-            android:inputType="number"
             android:hint="@string/text_so_dien_thoai"
-            android:textAlignment="center"
+            android:inputType="number"
+            android:maxLength="11"
+            android:padding="8dp"
+            android:textAlignment="textStart"
             tools:ignore="TextFields" />
 
 
@@ -45,48 +47,55 @@
             android:id="@+id/ed_diachi"
             android:layout_width="match_parent"
             android:layout_height="53dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/box"
             android:hint="@string/text_dia_chi"
-            android:textAlignment="center" />
+
+            android:padding="8dp"
+            android:textAlignment="textStart" />
 
         <EditText
             android:id="@+id/ed_email"
             android:layout_width="match_parent"
             android:layout_height="53dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/box"
-            android:hint="@string/text_email"
-            android:textAlignment="center" />
-
+            android:hint="@string/text_tai_khoan"
+            android:padding="8dp"
+            android:textAlignment="textStart" />
 
 
         <EditText
             android:id="@+id/ed_password"
             android:layout_width="match_parent"
             android:layout_height="53dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/box"
             android:hint="@string/text_nhap_mat_khau"
             android:inputType="textPassword"
-            android:textAlignment="center" />
+
+            android:padding="8dp"
+            android:textAlignment="textStart" />
 
         <EditText
             android:id="@+id/ed_repassword"
             android:layout_width="match_parent"
             android:layout_height="53dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/box"
             android:hint="@string/text_nhap_lai_mat_khau"
             android:inputType="textPassword"
-            android:textAlignment="center" />
+            android:padding="8dp"
+
+            android:textAlignment="textStart" />
 
         <Button
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:background="@drawable/boxbutton"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:background="@drawable/btn_w_shadow2"
             android:text="@string/text_dang_ky_tai_khoan"
             android:textColor="#fff" />
 
@@ -95,10 +104,11 @@
             android:id="@+id/tv_quaylaidn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/robotoregular"
             android:text="@string/text_da_co_tai_khoan"
             android:textAlignment="center"
-            android:textColor="#2537D8"
+            android:textColor="@color/black"
             android:textSize="24sp" />
     </LinearLayout>
 </LinearLayout>

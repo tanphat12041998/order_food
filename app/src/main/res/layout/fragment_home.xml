@@ -13,214 +13,241 @@
         tools:ignore="ExtraText">
         //header
 
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_close"
-            android:text="Order Food App"
-            android:gravity="center"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
-
-        <EditText
-            android:id="@+id/tvHintSearch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="20dp"
-            android:gravity="center"
-            android:hint="@string/text_nhap_mon_an"
-            android:padding="10dp"
-            app:drawableLeftCompat="@drawable/ic_search_black_24dp" />
-
-        //header
-        // 3 hàng menu
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:baselineAligned="false"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_height="110dp"
+            android:background="@color/white"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/btn_com_Phan"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/box"
-                android:gravity="center"
-                android:orientation="vertical"
-                tools:ignore="UnusedAttribute">
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_giao_hang_den"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
 
-                <ImageView
-                    android:layout_width="53dp"
-                    android:layout_height="53dp"
-                    android:src="@drawable/rice_bowl"
-                    tools:ignore="ContentDescription" />
+            <TextView
+                android:id="@+id/dia_chi_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@string/text_dia_chi_gio_hang"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                app:drawableEndCompat="@drawable/ic_arrow"
+                app:drawableStartCompat="@drawable/ic_location" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="@string/text_com_phan"
-                    android:textAlignment="center"
-                    android:textColor="#000" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/text_thanh_tim_kiem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:gravity="center|start"
+                android:background="@drawable/boxbutton_chon"
+                android:padding="8dp"
+                android:text="@string/text_tim_mon_an"
+                android:textSize="16sp"
+                app:drawableStartCompat="@drawable/ic_search_black_24dp" />
 
-            <LinearLayout
-                android:id="@+id/btn_mon_Han"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:background="@drawable/box"
-                android:gravity="center"
-                android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="53dp"
-                    android:layout_height="53dp"
-                    android:src="@drawable/kimchi"
-                    tools:ignore="ContentDescription" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="@string/text_han"
-                    android:textAlignment="center"
-                    android:textColor="#000" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/btn_Pizza"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/box"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="53dp"
-                    android:layout_height="53dp"
-                    android:src="@drawable/pizza"
-                    tools:ignore="ContentDescription" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="@string/text_pizza"
-                    android:textAlignment="center"
-                    android:textColor="#000" />
-            </LinearLayout>
+            //header
+            // 3 hàng menu
         </LinearLayout>
 
-        // hang 2
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:baselineAligned="false"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:background="@color/white"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/btn_thuc_An_Nhanh"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:baselineAligned="false"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="53dp"
-                    android:layout_height="53dp"
-                    android:src="@drawable/thucannhanh"
-                    tools:ignore="ContentDescription" />
+                <LinearLayout
+                    android:id="@+id/btn_com_Phan"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/box"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UnusedAttribute">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="@string/text_thuc_an_nhanh"
-                    android:textAlignment="center"
-                    android:textColor="#000" />
+                    <ImageView
+                        android:layout_width="53dp"
+                        android:layout_height="53dp"
+                        android:src="@drawable/rice_bowl"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/robotoregular"
+                        android:text="@string/text_com_phan"
+                        android:textAlignment="center"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_mon_Han"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/box"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="53dp"
+                        android:layout_height="53dp"
+                        android:src="@drawable/kimchi"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/robotoregular"
+                        android:text="@string/text_han"
+                        android:textAlignment="center"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_Pizza"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/box"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="53dp"
+                        android:layout_height="53dp"
+                        android:src="@drawable/pizza"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/robotoregular"
+                        android:text="@string/text_pizza"
+                        android:textAlignment="center"
+                        android:textColor="#000" />
+                </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/btn_mi_Pho"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:background="@drawable/box"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="53dp"
-                    android:layout_height="53dp"
-                    android:src="@drawable/banh"
-                    tools:ignore="ContentDescription" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="@string/text_mi_pho"
-                    android:textAlignment="center"
-                    android:textColor="#000" />
-            </LinearLayout>
+            // hang 2
 
             <LinearLayout
-                android:id="@+id/btn_do_Nuong"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:baselineAligned="false"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="53dp"
-                    android:layout_height="53dp"
-                    android:src="@drawable/xienque"
-                    tools:ignore="ContentDescription" />
+                <LinearLayout
+                    android:id="@+id/btn_thuc_An_Nhanh"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/box"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="@string/text_do_nuong"
-                    android:textAlignment="center"
-                    android:textColor="#000" />
+                    <ImageView
+                        android:layout_width="53dp"
+                        android:layout_height="53dp"
+                        android:src="@drawable/thucannhanh"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/robotoregular"
+                        android:text="@string/text_thuc_an_nhanh"
+                        android:textAlignment="center"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_mi_Pho"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/box"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="53dp"
+                        android:layout_height="53dp"
+                        android:src="@drawable/noodle"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/robotoregular"
+                        android:text="@string/text_mi_pho"
+                        android:textAlignment="center"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_do_Nuong"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/box"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="53dp"
+                        android:layout_height="53dp"
+                        android:src="@drawable/barbecue"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/robotoregular"
+                        android:text="@string/text_do_nuong"
+                        android:textAlignment="center"
+                        android:textColor="#000" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
         <TextView
             android:id="@+id/tvMATH"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/freehani"
             android:paddingStart="10dp"
             android:paddingTop="5dp"
             android:paddingEnd="5dp"
             android:paddingBottom="5dp"
             android:text="@string/text_mon_an_thinh_hanh"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:textSize="21sp"
             android:textStyle="bold" />
 
@@ -239,23 +266,15 @@
             android:paddingHorizontal="10dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:fontFamily="@font/freehani"
                 android:text="@string/text_tat_ca_mon_an"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:textColor="#000"
                 android:textSize="24sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/robotoregular"
-                android:gravity="end|bottom"
-                android:text="@string/text_xem_tat_ca"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                android:textColor="#000" />
+
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

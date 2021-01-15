@@ -191,9 +191,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="0.5dp"
             android:background="@color/white"
             android:orientation="vertical"
+            android:layout_marginBottom="0.5dp"
             android:padding="8dp">
 
             <LinearLayout
@@ -247,78 +247,39 @@
                     android:textSize="16sp" />
             </LinearLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="0.5dp"
-            android:layout_marginBottom="0.5dp"
-            android:background="@color/a6gray"
-            android:baselineAligned="false"
-            android:orientation="horizontal">
-
             <LinearLayout
-                android:id="@+id/text_tienmat"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="0.5dp"
-                    android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="@string/text_tien_mat"
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    android:textSize="16sp"
-                    tools:ignore="NestedWeights" />
+                    android:layout_weight="2"
+                    android:text="@string/text_phuong_thuc"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/text_tien_mat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="0.5dp"
                     android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="@string/text_0d"
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/text_khuyenmai"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/text_ma_uu_dai"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="0.5dp"
-                    android:background="@color/white"
-                    android:gravity="center"
-                    android:text="@string/text_ma_uu_dai"
-                    android:textAlignment="center"
+                    android:gravity="end"
+                    android:text="@string/text_thanh_toan_khi_nhan_hang"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                     android:textSize="16sp" />
             </LinearLayout>
-
 
         </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0.5dp"
             android:background="@color/white"
+            android:layout_marginTop="0.5dp"
             android:orientation="horizontal">
 
             <LinearLayout
