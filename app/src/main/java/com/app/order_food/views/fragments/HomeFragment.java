@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Build;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.app.order_food.API.Api;
 import com.app.order_food.API.RetrofitClient;
@@ -39,7 +40,7 @@ public class HomeFragment extends BaseFragment {
     DSmonanAdapter dSmonanAdapter;
     Context context;
     Context contexts;
-
+    TextView text_thanh_tim_kiem;
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_home;
@@ -85,6 +86,7 @@ public class HomeFragment extends BaseFragment {
 
             }
         });
+
     }
 
     @Override
@@ -95,6 +97,7 @@ public class HomeFragment extends BaseFragment {
         btnd = getView().findViewById(R.id.btn_thuc_An_Nhanh);
         btne = getView().findViewById(R.id.btn_mi_Pho);
         btnf = getView().findViewById(R.id.btn_do_Nuong);
+        text_thanh_tim_kiem = getView().findViewById(R.id.text_thanh_tim_kiem);
         recyclerView_dsmonanthinhhanh = getView().findViewById(R.id.recyclerview_dsmonanthinhhanh);
         recyclerView_dstatcamonan = getView().findViewById(R.id.recyclerview_dstatcamonan);
         foodsList = new ArrayList<>();
@@ -163,6 +166,15 @@ public class HomeFragment extends BaseFragment {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.add(R.id.main, MenuFoodFragment.newInstance(idType));
                 fragmentTransaction.addToBackStack(MenuFoodFragment.class.getSimpleName());
+                fragmentTransaction.commit();
+            }
+        });
+        text_thanh_tim_kiem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.main, TimKiemFragment.newInstance());
+                fragmentTransaction.addToBackStack(TimKiemFragment.class.getSimpleName());
                 fragmentTransaction.commit();
             }
         });
