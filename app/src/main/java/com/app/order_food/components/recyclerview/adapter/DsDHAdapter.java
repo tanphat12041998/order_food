@@ -132,7 +132,7 @@ public class DsDHAdapter extends BaseAdapter {
                             count++;
 
                         }
-                        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                        DecimalFormat decimalFormat = new DecimalFormat("#.#");
                         if (total != 0 || count != 0) {
                             text_rating.setText("" + decimalFormat.format(total / count));
                         } else {
@@ -146,6 +146,7 @@ public class DsDHAdapter extends BaseAdapter {
                     }
                 });
                 sl = 1;
+                btn_tru.setVisibility(View.INVISIBLE);
                 btn_cong.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

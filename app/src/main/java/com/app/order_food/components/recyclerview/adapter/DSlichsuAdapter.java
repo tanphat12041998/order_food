@@ -159,11 +159,14 @@ public class DSlichsuAdapter extends RecyclerView.Adapter<DSlichsuAdapter.Recycl
                                                                                 float rate = v;
                                                                                 Calendar cal = Calendar.getInstance(Locale.getDefault());
                                                                                 String date = DateFormat.format("dd/MM/yyyy hh:mm:ss", cal).toString();
+                                                                                if(rate <= 0){
+                                                                                    rate = 1;
+                                                                                }
                                                                                 for (int h = 0; h < foodsList1.size(); h++) {
                                                                                     api.addRating(MainActivity.ID, foodsList1.get(h), rate, date).enqueue(new Callback<Ratings>() {
                                                                                         @Override
                                                                                         public void onResponse(Call<Ratings> call, Response<Ratings> response) {
-
+                                                                                            dialogs.dismiss();
                                                                                         }
 
                                                                                         @Override
