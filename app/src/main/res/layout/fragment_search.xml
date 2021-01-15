@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/boxbutton_chon"
+        android:layout_margin="8dp"
+        android:weightSum="10">
+
+        <EditText
+            android:id="@+id/text_thanh_tim_kiem"
+            android:background="@android:color/transparent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center|start"
+            android:hint="@string/text_tim_mon_an"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:layout_weight="9"
+            app:drawableStartCompat="@drawable/ic_search_black_24dp" />
+        <TextView
+            android:id="@+id/text_huy_tim_kiem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:text="@string/text_huy"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/text_mon_an_dang_hot"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_timkiem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_tim_kiem" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_monan_chitiet" />
+</LinearLayout>
