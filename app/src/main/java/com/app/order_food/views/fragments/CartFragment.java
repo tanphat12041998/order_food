@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.app.order_food.API.Api;
 import com.app.order_food.API.RetrofitClient;
@@ -164,9 +165,14 @@ public class CartFragment extends BaseFragment {
                                     }
                                 });
                     }
+                    Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
                     MainActivity.ListFoodDetail.clear();
                     text_ghichu.setText("");
                     updated();
+                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                    fragmentTransaction.add(R.id.main, LichSuFragment.newInstance());
+                    fragmentTransaction.addToBackStack(LichSuFragment.class.getSimpleName());
+                    fragmentTransaction.commit();
                 }
             }
         });

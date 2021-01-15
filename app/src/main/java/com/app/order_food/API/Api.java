@@ -55,6 +55,9 @@ public interface Api {
     @GET("getallorderfood")
     Call<List<OrderFoods>> getAllOrderFood();
 
+    @GET("getallorderfood/namefood")
+    Call<List<OrderFoods>> getAllOrderFoodNameFood();
+
     @POST("getorderfood/order/{id}")
     Call<List<OrderFoods>> getAllOrderFoodById(@Path("id") int Id);
 

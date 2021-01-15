@@ -252,7 +252,7 @@
             android:layout_below="@+id/DiaChiCu"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="23dp"
             android:textColor="@color/white"
             android:text="Đánh giá"
             android:background="@drawable/btn_w_shadow2" />

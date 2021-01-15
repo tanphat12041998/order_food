@@ -13,6 +13,7 @@ import com.app.order_food.API.Api;
 import com.app.order_food.API.RetrofitClient;
 import com.app.order_food.R;
 import com.app.order_food.components.Model.Foods;
+import com.app.order_food.components.Model.OrderFoods;
 import com.app.order_food.components.recyclerview.adapter.DSmonanAdapter;
 import com.app.order_food.components.recyclerview.adapter.DSmonanThinhHanhAdapter;
 
@@ -30,6 +31,8 @@ public class HomeFragment extends BaseFragment {
     RecyclerView recyclerView_dsmonanthinhhanh, recyclerView_dstatcamonan;
     RetrofitClient retrofit = new RetrofitClient();
     List<Foods> foodsList = new ArrayList<>();
+    List<Foods> foodsLists = new ArrayList<>();
+    List<OrderFoods> orderFoodsList = new ArrayList<>();
     public static List<Foods> foods;
     Api api = retrofit.getClient().create(Api.class);
     DSmonanThinhHanhAdapter dSmonanThinhHanhAdapter;
@@ -50,7 +53,25 @@ public class HomeFragment extends BaseFragment {
                 foodsList.clear();
                 if (response.isSuccessful() && response.body() != null) {
                     foodsList = response.body();
-                    dSmonanThinhHanhAdapter = new DSmonanThinhHanhAdapter(context, foodsList);
+                    api.getAllOrderFoodNameFood().enqueue(new Callback<List<OrderFoods>>() {
+                        @Override
+                        public void onResponse(Call<List<OrderFoods>> call, Response<List<OrderFoods>> response) {
+                            orderFoodsList.clear();
+                            orderFoodsList = response.body();
+                            for (int a = 0; a < 42; a++){
+                                for(OrderFoods orderFoods: orderFoodsList){
+                                    if(orderFoods.getNamefood().equals(foodsList.get(a).getName()) && orderFoods.getQuantity() >= 5){
+                                        foodsLists.add(foodsList.get(a));
+                                    }
+                                }
+                            }
+                        }
+                        @Override
+                        public void onFailure(Call<List<OrderFoods>> call, Throwable t) {
+                        }
+                    });
+
+                    dSmonanThinhHanhAdapter = new DSmonanThinhHanhAdapter(context, foodsLists);
                     recyclerView_dsmonanthinhhanh.setAdapter(dSmonanThinhHanhAdapter);
                     dSmonanThinhHanhAdapter.notifyDataSetChanged();
                     foods = response.body();
@@ -77,8 +98,11 @@ public class HomeFragment extends BaseFragment {
         recyclerView_dsmonanthinhhanh = getView().findViewById(R.id.recyclerview_dsmonanthinhhanh);
         recyclerView_dstatcamonan = getView().findViewById(R.id.recyclerview_dstatcamonan);
         foodsList = new ArrayList<>();
+        orderFoodsList= new ArrayList<>();
+        foodsLists = new ArrayList<>();
         init();
     }
+
 
     public void init(){
         btna.setOnClickListener(new View.OnClickListener() {

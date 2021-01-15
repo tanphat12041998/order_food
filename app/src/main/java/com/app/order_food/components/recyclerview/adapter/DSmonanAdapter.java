@@ -102,7 +102,7 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                                     count++;
 
                                 }
-                                DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                                DecimalFormat decimalFormat = new DecimalFormat("#.#");
                                 if (total != 0 || count != 0) {
                                     text_rating.setText("" +decimalFormat.format(total / count));
                                 } else {
@@ -116,6 +116,7 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                             }
                         });
                         sl = 1;
+                        btn_tru.setVisibility(View.INVISIBLE);
                         btn_cong.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
@@ -229,7 +230,7 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                     count++;
 
                 }
-                DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                DecimalFormat decimalFormat = new DecimalFormat("#.#");
                 if (total != 0 || count != 0) {
                     holder.rating.setText("" +decimalFormat.format(total / count));
                 } else {
