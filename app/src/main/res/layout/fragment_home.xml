@@ -20,9 +20,9 @@
             android:orientation="vertical">
 
             <TextView
-                android:padding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:text="@string/text_giao_hang_den"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
 
@@ -42,8 +42,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="8dp"
-                android:gravity="center|start"
                 android:background="@drawable/boxbutton_chon"
+                android:gravity="center|start"
                 android:padding="8dp"
                 android:text="@string/text_tim_mon_an"
                 android:textSize="16sp"
@@ -58,7 +58,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"

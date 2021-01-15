@@ -100,7 +100,6 @@ public class LoginActivity extends BaseActivity {
         ed_login_password = findViewById(R.id.ed_login_password);
         btn_dangnhap = findViewById(R.id.btn_dangnhap);
         btn_dangky = findViewById(R.id.btn_dangky);
-        tv_quenmatkhau = findViewById(R.id.tv_quenmatkhau);
         checkbox_login = findViewById(R.id.checkbox_login);
         usersList = new ArrayList<>();
     }
