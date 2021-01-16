@@ -80,7 +80,6 @@ public class CartFragment extends BaseFragment {
         text_diachi_donhang.setText(MainActivity.Address);
         dsDHAdapter = new DsDHAdapter(CartFragment.this, MainActivity.ListFoodDetail);
         listview_dsdonhang.setAdapter(dsDHAdapter);
-
         text_thay_doi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,16 +136,16 @@ public class CartFragment extends BaseFragment {
                 Calendar cal = Calendar.getInstance(Locale.getDefault());
                 String dateTime = DateFormat.format("yyyy/MM/dd", cal).toString();
 
-                if(MainActivity.ListFoodDetail.size() <= 0){
+                if (MainActivity.ListFoodDetail.size() <= 0) {
                     Toast.makeText(getContext(), "Giỏ hàng trống - không thể đặt", Toast.LENGTH_SHORT).show();
-                }else if (TextUtils.isEmpty(name) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(address)) {
+                } else if (TextUtils.isEmpty(name) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(address)) {
                     Toast.makeText(getContext(), "Không để trống thông tin", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
 
                     for (int i = 0; i < MainActivity.ListFoodDetail.size(); i++) {
                         api.addOrderFood(id, iduser, idpayment, MainActivity.ListFoodDetail.get(i).getId(), dateTime
                                 , MainActivity.ListFoodDetail.get(i).getGiatong()
-                                , MainActivity.ListFoodDetail.get(i).getSl(), ghi_chu, name, phone, address ,MainActivity.ListFoodDetail.get(i).getTen(), status)
+                                , MainActivity.ListFoodDetail.get(i).getSl(), ghi_chu, name, phone, address, MainActivity.ListFoodDetail.get(i).getTen(), status)
                                 .enqueue(new Callback<OrderFoods>() {
                                     @Override
                                     public void onResponse(Call<OrderFoods> call, Response<OrderFoods> response) {
@@ -176,6 +175,7 @@ public class CartFragment extends BaseFragment {
 
     public void tonggia() {
         if (MainActivity.ListFoodDetail.size() <= 0) {
+
             tongtien = 0;
             text_tamtinhgiatien.setText(tongtien + " VNĐ");
             text_tong_cong.setText(tongtien + " VNĐ");
@@ -213,7 +213,7 @@ public class CartFragment extends BaseFragment {
         super.onResume();
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         id = sharedPref.getInt("id", id);
-        if(id == null){
+        if (id == null) {
         }
         id = id + 1;
     }

@@ -70,6 +70,7 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void onPause() {
+
         super.onPause();
         SharedPreferences preferences = getSharedPreferences(luuThongTinDangNhap, MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
@@ -130,11 +131,6 @@ public class LoginActivity extends BaseActivity {
                 finish();
                 break;
             }
-            else {
-                Toast.makeText(LoginActivity.this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
-
-            }
-
 
         }
     }

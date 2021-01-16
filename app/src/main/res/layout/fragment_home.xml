@@ -1,10 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cbr">
+    android:background="@color/cbr"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/text_giao_hang_den"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+
+        <TextView
+            android:id="@+id/dia_chi_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="@string/text_dia_chi_gio_hang"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:drawableEndCompat="@drawable/ic_arrow"
+            app:drawableStartCompat="@drawable/ic_location" />
+
+        <TextView
+            android:id="@+id/text_thanh_tim_kiem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@drawable/boxbutton_chon"
+            android:gravity="center|start"
+            android:padding="8dp"
+            android:text="@string/text_tim_mon_an"
+            android:textSize="16sp"
+            app:drawableStartCompat="@drawable/ic_search_black_24dp" />
+
+    </LinearLayout>
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,47 +56,6 @@
         android:orientation="vertical"
         tools:ignore="ExtraText">
         //header
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:background="@color/white"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="@string/text_giao_hang_den"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
-
-            <TextView
-                android:id="@+id/dia_chi_home"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:text="@string/text_dia_chi_gio_hang"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                app:drawableEndCompat="@drawable/ic_arrow"
-                app:drawableStartCompat="@drawable/ic_location" />
-
-            <TextView
-                android:id="@+id/text_thanh_tim_kiem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="8dp"
-                android:background="@drawable/boxbutton_chon"
-                android:gravity="center|start"
-                android:padding="8dp"
-                android:text="@string/text_tim_mon_an"
-                android:textSize="16sp"
-                app:drawableStartCompat="@drawable/ic_search_black_24dp" />
-
-
-            //header
-            // 3 hàng menu
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -289,5 +292,5 @@
             tools:listitem="@layout/item_monan_chitiet" />
     </LinearLayout>
 
-
-</ScrollView>
+    </ScrollView>
+</LinearLayout>
