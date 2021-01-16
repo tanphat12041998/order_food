@@ -123,7 +123,7 @@ public class CartFragment extends BaseFragment {
             text_gio_hang_trong.setVisibility(View.INVISIBLE);
             listview_dsdonhang.setVisibility(View.VISIBLE);
         }
-        tonggia();
+        tong_gia();
         button_thanhtoan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -174,7 +174,7 @@ public class CartFragment extends BaseFragment {
     }
 
 
-    public void tonggia() {
+    public void tong_gia() {
         if (MainActivity.ListFoodDetail.size() <= 0) {
             tongtien = 0;
             text_tamtinhgiatien.setText(tongtien + " VNĐ");
@@ -195,7 +195,7 @@ public class CartFragment extends BaseFragment {
         dsDHAdapter = new DsDHAdapter(CartFragment.this, MainActivity.ListFoodDetail);
         listview_dsdonhang.setAdapter(dsDHAdapter);
         dsDHAdapter.notifyDataSetChanged();
-        tonggia();
+        tong_gia();
     }
 
     @Override
