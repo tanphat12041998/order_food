@@ -135,7 +135,8 @@ public class CartFragment extends BaseFragment {
                 phone = text_so_dien_thoai_don_hang.getText().toString().trim();
                 address = text_diachi_donhang.getText().toString().trim();
                 Calendar cal = Calendar.getInstance(Locale.getDefault());
-                String dateTime = DateFormat.format("dd/MM/yyyy hh:mm:ss", cal).toString();
+                String dateTime = DateFormat.format("yyyy/MM/dd", cal).toString();
+
                 if(MainActivity.ListFoodDetail.size() <= 0){
                     Toast.makeText(getContext(), "Giỏ hàng trống - không thể đặt", Toast.LENGTH_SHORT).show();
                 }else if (TextUtils.isEmpty(name) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(address)) {

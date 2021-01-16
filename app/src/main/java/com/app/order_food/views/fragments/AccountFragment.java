@@ -15,6 +15,7 @@ import com.app.order_food.R;
 import com.app.order_food.views.activities.main.GioiThieuActivity;
 import com.app.order_food.views.activities.main.LoginActivity;
 import com.app.order_food.views.activities.main.MainActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.IOException;
 import java.io.InputStream;

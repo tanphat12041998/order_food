@@ -14,6 +14,7 @@ import com.app.order_food.API.RetrofitClient;
 import com.app.order_food.R;
 import com.app.order_food.components.Model.Foods;
 import com.app.order_food.components.recyclerview.adapter.DSmonanAdapter;
+import com.app.order_food.views.activities.main.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,9 +38,9 @@ public class MenuFoodFragment extends BaseFragment {
     protected void initialVariables() {
         recyclerView_dsmonan = getView().findViewById(R.id.recyclerview_dsmonan);
         title_dsmonan = getView().findViewById(R.id.title_dsmonan);
+        MainActivity.bottomNavigationView.setVisibility(View.INVISIBLE);
         Bundle bundle = getArguments();
         a = bundle.getInt(ID, 0);
-//        Log.d("MenuFoodFragment", String.valueOf(a));
 
 
     }
@@ -79,6 +80,7 @@ public class MenuFoodFragment extends BaseFragment {
         title_dsmonan.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.bottomNavigationView.setVisibility(View.VISIBLE);
                 getFragmentManager().popBackStack();
             }
         });
