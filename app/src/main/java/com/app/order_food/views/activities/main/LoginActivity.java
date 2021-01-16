@@ -130,6 +130,10 @@ public class LoginActivity extends BaseActivity {
                 finish();
                 break;
             }
+            else {
+                Toast.makeText(LoginActivity.this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
+
+            }
 
 
         }
