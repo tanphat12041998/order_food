@@ -17,6 +17,7 @@ import com.app.order_food.components.Model.Foods;
 import com.app.order_food.components.Model.OrderFoods;
 import com.app.order_food.components.recyclerview.adapter.DSmonanAdapter;
 import com.app.order_food.components.recyclerview.adapter.DSmonanThinhHanhAdapter;
+import com.app.order_food.views.activities.main.MainActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,7 +41,7 @@ public class HomeFragment extends BaseFragment {
     DSmonanAdapter dSmonanAdapter;
     Context context;
     Context contexts;
-    TextView text_thanh_tim_kiem;
+    TextView text_thanh_tim_kiem, dia_chi_home;
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_home;
@@ -48,6 +49,23 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected void initialVariables() {
+        btna = getView().findViewById(R.id.btn_com_Phan);
+        btnb = getView().findViewById(R.id.btn_mon_Han);
+        btnc = getView().findViewById(R.id.btn_Pizza);
+        btnd = getView().findViewById(R.id.btn_thuc_An_Nhanh);
+        btne = getView().findViewById(R.id.btn_mi_Pho);
+        btnf = getView().findViewById(R.id.btn_do_Nuong);
+        dia_chi_home = getView().findViewById(R.id.dia_chi_home);
+        text_thanh_tim_kiem = getView().findViewById(R.id.text_thanh_tim_kiem);
+        recyclerView_dsmonanthinhhanh = getView().findViewById(R.id.recyclerview_dsmonanthinhhanh);
+        recyclerView_dstatcamonan = getView().findViewById(R.id.recyclerview_dstatcamonan);
+        foodsList = new ArrayList<>();
+        orderFoodsList= new ArrayList<>();
+        foodsLists = new ArrayList<>();
+    }
+
+    @Override
+    protected void initialViewComponent() {
         api.getAllFood().enqueue(new Callback<List<Foods>>() {
             @Override
             public void onResponse(Call<List<Foods>> call, Response<List<Foods>> response) {
@@ -86,23 +104,7 @@ public class HomeFragment extends BaseFragment {
 
             }
         });
-
-    }
-
-    @Override
-    protected void initialViewComponent() {
-        btna = getView().findViewById(R.id.btn_com_Phan);
-        btnb = getView().findViewById(R.id.btn_mon_Han);
-        btnc = getView().findViewById(R.id.btn_Pizza);
-        btnd = getView().findViewById(R.id.btn_thuc_An_Nhanh);
-        btne = getView().findViewById(R.id.btn_mi_Pho);
-        btnf = getView().findViewById(R.id.btn_do_Nuong);
-        text_thanh_tim_kiem = getView().findViewById(R.id.text_thanh_tim_kiem);
-        recyclerView_dsmonanthinhhanh = getView().findViewById(R.id.recyclerview_dsmonanthinhhanh);
-        recyclerView_dstatcamonan = getView().findViewById(R.id.recyclerview_dstatcamonan);
-        foodsList = new ArrayList<>();
-        orderFoodsList= new ArrayList<>();
-        foodsLists = new ArrayList<>();
+        dia_chi_home.setText(MainActivity.Address);
         init();
     }
 

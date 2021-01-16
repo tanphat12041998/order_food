@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.app.order_food">
 
     <application
         android:name=".views.application.MainAppication"
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/omf3"
         android:label="@string/app_name"
+        tools:replace="android:icon"
         android:largeHeap="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/omf3"
         android:supportsRtl="true"
         android:theme="@style/Theme.Orderfood"
         android:usesCleartextTraffic="true">
-        <activity android:name=".views.activities.main.LichSuChiTietActivity" />
-        <activity android:name=".views.fragments.CaiDatFragment" />
         <activity android:name=".views.activities.main.GioiThieuActivity" />
         <activity android:name=".views.activities.main.ChangePassActivity" />
         <activity android:name=".views.activities.main.ChangeInfoActivity" />
