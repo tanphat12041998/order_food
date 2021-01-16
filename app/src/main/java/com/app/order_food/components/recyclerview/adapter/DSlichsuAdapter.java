@@ -228,7 +228,7 @@ public class DSlichsuAdapter extends RecyclerView.Adapter<DSlichsuAdapter.Recycl
         final OrderFoods orderFoods = this.orderFoodsList.get(position);
         holder.text_ten_don_hang_lich_su.setText("Mã đơn hàng số: #00" + orderFoods.getId());
         holder.text_gia_tien_lich_su.setText(orderFoods.getTotal() + " VNĐ");
-        holder.text_thoi_gian.setText(orderFoods.getDate());
+        holder.text_thoi_gian.setText(orderFoods.getDate()+"");
         if (orderFoods.getStatus().equals(a)) {
             holder.text_da_giao.setText("Đang xử lý");
             holder.text_da_giao.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_check1, 0, 0, 0);

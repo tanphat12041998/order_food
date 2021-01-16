@@ -42,7 +42,7 @@ public class ThongTinUserFragment extends BaseFragment {
         title_taikhoan = getView().findViewById(R.id.title_taikhoan);
         Bundle bundle = getArguments();
         email = bundle.getString(EMAiL);
-
+        MainActivity.bottomNavigationView.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -73,6 +73,7 @@ public class ThongTinUserFragment extends BaseFragment {
         title_taikhoan.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.bottomNavigationView.setVisibility(View.VISIBLE);
                 getFragmentManager().popBackStack();
             }
         });

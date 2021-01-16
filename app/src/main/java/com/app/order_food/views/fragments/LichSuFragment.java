@@ -44,6 +44,7 @@ public class LichSuFragment extends BaseFragment {
     protected void initialVariables() {
         title_don_hang_cua_toi = getView().findViewById(R.id.title_don_hang_cua_toi);
         recyclerview_lich_su = getView().findViewById(R.id.recyclerview_lich_su);
+        MainActivity.bottomNavigationView.setVisibility(View.INVISIBLE);
         orderFoodsList = new ArrayList<>();
     }
 
@@ -70,6 +71,7 @@ public class LichSuFragment extends BaseFragment {
         title_don_hang_cua_toi.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.bottomNavigationView.setVisibility(View.VISIBLE);
                 getFragmentManager().popBackStack();
             }
         });

@@ -5,6 +5,7 @@ package com.app.order_food.views.activities.main;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Handler;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -30,8 +31,10 @@ public class MainActivity extends BaseActivity {
     public static String Password;
     public static String Img;
     public static ArrayList<OrderFoodDetails> ListFoodDetail;
+    public static BottomNavigationView bottomNavigationView ;
     @Override
     protected void initialViewComponent() {
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();

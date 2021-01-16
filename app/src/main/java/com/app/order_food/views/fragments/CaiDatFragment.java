@@ -6,6 +6,7 @@ import android.view.View;
 import androidx.appcompat.widget.Toolbar;
 
 import com.app.order_food.R;
+import com.app.order_food.views.activities.main.MainActivity;
 import com.app.order_food.views.fragments.BaseFragment;
 
 public class CaiDatFragment extends BaseFragment {
@@ -18,6 +19,7 @@ public class CaiDatFragment extends BaseFragment {
     @Override
     protected void initialVariables() {
         text_cai_dat = getView().findViewById(R.id.text_cai_dat);
+        MainActivity.bottomNavigationView.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -26,6 +28,7 @@ public class CaiDatFragment extends BaseFragment {
         text_cai_dat.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.bottomNavigationView.setVisibility(View.VISIBLE);
                 getFragmentManager().popBackStack();
             }
         });
