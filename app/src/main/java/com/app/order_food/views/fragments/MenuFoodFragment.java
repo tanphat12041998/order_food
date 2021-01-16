@@ -49,27 +49,27 @@ public class MenuFoodFragment extends BaseFragment {
     protected void initialViewComponent() {
         switch (a){
             case 1:
-                title_dsmonan.setTitle("Danh sách cơm phần");
+                title_dsmonan.setTitle("Cơm phần");
                 callData(a);
                 break;
             case 2:
-                title_dsmonan.setTitle("Danh sách món Hàn");
+                title_dsmonan.setTitle("Món Hàn");
                 callData(a);
                 break;
             case 3:
-                title_dsmonan.setTitle("Danh sách món Pizza");
+                title_dsmonan.setTitle("Món Pizza");
                 callData(a);
                 break;
             case 4:
-                title_dsmonan.setTitle("Danh sách món ăn nhanh");
+                title_dsmonan.setTitle("Món ăn nhanh");
                 callData(a);
                 break;
             case 5:
-                title_dsmonan.setTitle("Danh sách món ăn Mì-Phở");
+                title_dsmonan.setTitle("Món ăn Mì-Phở");
                 callData(a);
                 break;
             case 6:
-                title_dsmonan.setTitle("Danh sách món ăn Nướng");
+                title_dsmonan.setTitle("Món ăn Nướng");
                 callData(a);
                 break;
             default:

@@ -21,6 +21,8 @@ public class TimKiemFragment extends BaseFragment{
     protected void initialVariables() {
         MainActivity.bottomNavigationView.setVisibility(View.INVISIBLE);
         text_huy_tim_kiem = getView().findViewById(R.id.text_huy_tim_kiem);
+
+
     }
 
     @Override
@@ -33,11 +35,16 @@ public class TimKiemFragment extends BaseFragment{
                 getFragmentManager().popBackStack();
             }
         });
+
+
+
     }
+
     public static TimKiemFragment newInstance() {
         Bundle args = new Bundle();
         TimKiemFragment fragment = new TimKiemFragment();
         fragment.setArguments(args);
         return fragment;
+
     }
 }
