@@ -111,6 +111,7 @@ public class LoginActivity extends BaseActivity {
             Toast.makeText(getApplicationContext(), "Email hoặc mật khẩu bạn nhập chưa đúng", Toast.LENGTH_SHORT).show();
         }
         if(usersList == null || usersList.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Lỗi đăng nhập", Toast.LENGTH_SHORT).show();
             return;
         }
         for (Users users: usersList){
