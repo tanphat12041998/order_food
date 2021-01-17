@@ -40,22 +40,14 @@
             android:text="@string/text_huy"
             />
     </LinearLayout>
-
     <TextView
+        android:id="@+id/text_ok"
+        android:textSize="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:text="@string/text_mon_an_dang_hot"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+        android:text="Ok"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_timkiem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:itemCount="10"
-        tools:listitem="@layout/item_tim_kiem" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_show"

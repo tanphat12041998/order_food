@@ -82,8 +82,9 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
                         btn_tien = dialog.findViewById(R.id.btn_tien);
                         new GetImage(image_hinhmonan).execute(foods.getImg());
                         text_food.setText(foods.getName());
-                        text_price.setText(String.valueOf(foods.getPrice())+ " VND");
-                        btn_tien.setText(String.valueOf(foods.getPrice())+ " VND");
+                        DecimalFormat decimalFor= new DecimalFormat("##,###,###");
+                        text_price.setText(decimalFor.format(foods.getPrice())+ " VND");
+                        btn_tien.setText(decimalFor.format(foods.getPrice())+ " VND");
                         text_description.setText(foods.getDescription());
                         api.getRatingByIdFood(foods.getId()).enqueue(new Callback<List<Ratings>>() {
                             @Override
@@ -119,7 +120,7 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
                                 sl = sl + 1;
                                 slmn = sl * foods.getPrice();
                                 btn_1.setText(sl+ "");
-                                btn_tien.setText(String.valueOf(slmn)+ " VND");
+                                btn_tien.setText(decimalFor.format(slmn)+ " VND");
                                 if (sl <= 1) {
                                     btn_cong.setVisibility(View.VISIBLE);
                                     btn_tru.setVisibility(View.INVISIBLE);
@@ -137,7 +138,7 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
                             public void onClick(View view) {
                                 sl = sl - 1;
                                 slmn = sl * foods.getPrice();
-                                btn_tien.setText(String.valueOf(slmn)+ " VND");
+                                btn_tien.setText(decimalFor.format(slmn)+ " VND");
                                 btn_1.setText(sl+ "");
                                 if (sl <= 1) {
                                     btn_cong.setVisibility(View.VISIBLE);
@@ -240,10 +241,10 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
             }
         });
 
-
+        DecimalFormat decimalFor= new DecimalFormat("##,###,###");
         new GetImage(holder.imageView_dsmonanthinhhanh).execute(foods.getImg());
         holder.nameFood.setText(foods.getName());
-        holder.price.setText(foods.getPrice() + " VND");
+        holder.price.setText(decimalFor.format(foods.getPrice()) + " VND");
 
     }
 

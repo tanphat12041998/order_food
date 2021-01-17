@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Orderfood"
         android:usesCleartextTraffic="true">
+        <activity android:name=".views.activities.main.TimKiemActivity"/>
         <activity android:name=".views.activities.main.GioiThieuActivity" />
         <activity android:name=".views.activities.main.ChangePassActivity" />
         <activity android:name=".views.activities.main.ChangeInfoActivity" />

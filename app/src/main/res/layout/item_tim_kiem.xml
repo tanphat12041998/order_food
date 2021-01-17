@@ -5,6 +5,7 @@
     android:layout_margin="8dp">
 
     <TextView
+        android:id="@+id/text_title_tim_kiem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mì xào bò"

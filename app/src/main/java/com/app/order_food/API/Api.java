@@ -81,4 +81,6 @@ public interface Api {
     Call<Ratings> addRating(@Field("iduser") int idUser,@Field("idfood") int idFood
             ,@Field("rate") Float rate,@Field("date") String date);
 
+    @GET("getalltypefood")
+    Call<List<TypeFoods>> getAllTypeFood();
 }

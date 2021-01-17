@@ -26,6 +26,7 @@ import com.app.order_food.components.Model.Ratings;
 import com.app.order_food.views.activities.main.MainActivity;
 import com.app.order_food.views.fragments.LichSuFragment;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -89,6 +90,7 @@ public class DSlichsuAdapter extends RecyclerView.Adapter<DSlichsuAdapter.Recycl
                         orderLists = new ArrayList<>();
                         foodsList = new ArrayList<>();
                         foodsList1 = new ArrayList<>();
+                        DecimalFormat decimalFor= new DecimalFormat("##,###,###");
                         api.getAllOrderFoodById(orderFoods.getId()).enqueue(new Callback<List<OrderFoods>>() {
                             @Override
                             public void onResponse(Call<List<OrderFoods>> call, Response<List<OrderFoods>> response) {
@@ -99,8 +101,8 @@ public class DSlichsuAdapter extends RecyclerView.Adapter<DSlichsuAdapter.Recycl
                                 for (int i = 0; i < orderFoodsLists.size(); i++) {
 
                                     tongtien += orderFoodsLists.get(i).getTotal();
-                                    text_tamtinhgiatien.setText(tongtien + " VNĐ");
-                                    text_tongconggiatien.setText(tongtien + " VNĐ");
+                                    text_tamtinhgiatien.setText(decimalFor.format(tongtien) + " VNĐ");
+                                    text_tongconggiatien.setText(decimalFor.format(tongtien) + " VNĐ");
                                 }
                                 lichSuChiTietAdapter = new LichSuChiTietAdapter(LichSuFragment.newInstance(), orderFoodsLists);
                                 recyclerview_lichsuchitiet.setAdapter(lichSuChiTietAdapter);
@@ -226,8 +228,9 @@ public class DSlichsuAdapter extends RecyclerView.Adapter<DSlichsuAdapter.Recycl
     @Override
     public void onBindViewHolder(@NonNull DSlichsuAdapter.RecyclerViewHolder holder, int position) {
         final OrderFoods orderFoods = this.orderFoodsList.get(position);
+        DecimalFormat decimalFor= new DecimalFormat("##,###,###");
         holder.text_ten_don_hang_lich_su.setText("Mã đơn hàng số: #00" + orderFoods.getId());
-        holder.text_gia_tien_lich_su.setText(orderFoods.getTotal() + " VNĐ");
+        holder.text_gia_tien_lich_su.setText(decimalFor.format(orderFoods.getTotal()) + " VNĐ");
         holder.text_thoi_gian.setText(orderFoods.getDate()+"");
         if (orderFoods.getStatus().equals(a)) {
             holder.text_da_giao.setText("Đang xử lý");
