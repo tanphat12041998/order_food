@@ -93,11 +93,12 @@ public class DsDHAdapter extends BaseAdapter {
         }else {
             viewHolder = (ViewHolder) view.getTag();
         }
+        DecimalFormat decimalFor= new DecimalFormat("##,###,###");
         OrderFoodDetails orderFoodDetails = (OrderFoodDetails) getItem(i);
         viewHolder.text_ten_mon_an.setText(orderFoodDetails.getTen());
         viewHolder.text_so_luong.setText(orderFoodDetails.getSl()+"x");
         viewHolder.text_mo_ta.setText(orderFoodDetails.getMota());
-        viewHolder.text_gia_tien.setText(orderFoodDetails.getGiatong()+" VNĐ");
+        viewHolder.text_gia_tien.setText(decimalFor.format(orderFoodDetails.getGiatong())+" VNĐ");
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,8 +117,9 @@ public class DsDHAdapter extends BaseAdapter {
                 btn_tien = dialog.findViewById(R.id.btn_tien);
                 new DsDHAdapter.GetImage(image_hinhmonan).execute(orderFoodDetails1.getImg());
                 text_food.setText(orderFoodDetails1.getTen());
-                text_price.setText(String.valueOf(orderFoodDetails1.getGia()) + " VND");
-                btn_tien.setText(String.valueOf(orderFoodDetails1.getGia()) + " VND");
+                DecimalFormat decimalFor= new DecimalFormat("##,###,###");
+                text_price.setText(decimalFor.format(orderFoodDetails1.getGia()) + " VND");
+                btn_tien.setText(decimalFor.format(orderFoodDetails1.getGia()) + " VND");
                 text_description.setText(orderFoodDetails1.getMota());
                 api.getRatingByIdFood(orderFoodDetails1.getId()).enqueue(new Callback<List<Ratings>>() {
                     @Override
@@ -153,7 +155,7 @@ public class DsDHAdapter extends BaseAdapter {
                         sl = sl + 1;
                         slmn = sl * orderFoodDetails1.getGia();
                         btn_1.setText(sl + "");
-                        btn_tien.setText(String.valueOf(slmn) + " VND");
+                        btn_tien.setText(decimalFor.format(slmn) + " VND");
                         if (sl <= 1) {
                             btn_cong.setVisibility(View.VISIBLE);
                             btn_tru.setVisibility(View.INVISIBLE);
@@ -171,7 +173,7 @@ public class DsDHAdapter extends BaseAdapter {
                     public void onClick(View view) {
                         sl = sl - 1;
                         slmn = sl * orderFoodDetails1.getGia();
-                        btn_tien.setText(String.valueOf(slmn) + " VND");
+                        btn_tien.setText(decimalFor.format(slmn) + " VND");
                         btn_1.setText(sl + "");
                         if (sl <= 1) {
                             btn_cong.setVisibility(View.VISIBLE);

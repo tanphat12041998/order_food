@@ -5,7 +5,7 @@ import android.content.Context;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Build;
+import android.content.Intent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -18,9 +18,9 @@ import com.app.order_food.components.Model.OrderFoods;
 import com.app.order_food.components.recyclerview.adapter.DSmonanAdapter;
 import com.app.order_food.components.recyclerview.adapter.DSmonanThinhHanhAdapter;
 import com.app.order_food.views.activities.main.MainActivity;
+import com.app.order_food.views.activities.main.TimKiemActivity;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
@@ -77,10 +77,12 @@ public class HomeFragment extends BaseFragment {
                         public void onResponse(Call<List<OrderFoods>> call, Response<List<OrderFoods>> response) {
                             orderFoodsList.clear();
                             orderFoodsList = response.body();
-                            for (int a = 0; a < 42; a++){
-                                for(OrderFoods orderFoods: orderFoodsList){
-                                    if(orderFoods.getNamefood().equals(foodsList.get(a).getName()) && orderFoods.getQuantity() >= 5){
-                                        foodsLists.add(foodsList.get(a));
+                            if(orderFoodsList != null){
+                                for (int a = 0; a < 42; a++){
+                                    for(OrderFoods orderFoods: orderFoodsList){
+                                        if(orderFoods.getNamefood().equals(foodsList.get(a).getName()) && orderFoods.getQuantity() >= 5){
+                                            foodsLists.add(foodsList.get(a));
+                                        }
                                     }
                                 }
                             }
@@ -174,10 +176,8 @@ public class HomeFragment extends BaseFragment {
         text_thanh_tim_kiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.add(R.id.main, TimKiemFragment.newInstance());
-                fragmentTransaction.addToBackStack(TimKiemFragment.class.getSimpleName());
-                fragmentTransaction.commit();
+                Intent intent = new Intent(getActivity(), TimKiemActivity.class);
+                startActivity(intent);
             }
         });
     }

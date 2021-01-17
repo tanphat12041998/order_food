@@ -21,6 +21,7 @@ import com.app.order_food.views.fragments.HomeFragment;
 import com.app.order_food.views.fragments.LichSuFragment;
 import com.app.order_food.views.fragments.MenuFoodFragment;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,6 +80,7 @@ public class LichSuChiTietAdapter extends BaseAdapter {
         OrderFoods orderFoods = orderFoodsList.get(i);
         orderFoodsLists = new ArrayList<>();
         ViewHolder finalViewHolder = viewHolder;
+        DecimalFormat decimalFor= new DecimalFormat("##,###,###");
         api.getAllOrderFood().enqueue(new Callback<List<OrderFoods>>() {
             @Override
             public void onResponse(Call<List<OrderFoods>> call, Response<List<OrderFoods>> response) {
@@ -95,7 +97,7 @@ public class LichSuChiTietAdapter extends BaseAdapter {
             }
         });
         viewHolder.text_so_luong_.setText(orderFoods.getQuantity() + "x");
-        viewHolder.text_gia_tien_.setText(orderFoods.getTotal() + " VNĐ");
+        viewHolder.text_gia_tien_.setText(decimalFor.format(orderFoods.getTotal()) + " VNĐ");
         return view;
     }
 }
