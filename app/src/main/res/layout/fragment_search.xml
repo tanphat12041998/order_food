@@ -26,6 +26,7 @@
             android:gravity="center|start"
             android:hint="@string/text_tim_mon_an"
             android:padding="8dp"
+            android:maxLines="1"
             android:textSize="16sp"
             android:layout_weight="9"
             app:drawableStartCompat="@drawable/ic_search_black_24dp" />
@@ -43,6 +44,8 @@
     <TextView
         android:id="@+id/text_ok"
         android:textSize="20dp"
+        android:padding="5dp"
+        android:layout_marginStart="365dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ok"/>
@@ -52,9 +55,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_show"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:itemCount="4"
         tools:listitem="@layout/item_monan_chitiet" />
 </LinearLayout>
