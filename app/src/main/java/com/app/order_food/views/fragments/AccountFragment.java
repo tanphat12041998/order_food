@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.order_food.R;
 import com.app.order_food.views.activities.main.GioiThieuActivity;
@@ -83,10 +84,11 @@ public class AccountFragment extends BaseFragment {
         button_cai_dat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.add(R.id.main, CaiDatFragment.newInstance());
-                fragmentTransaction.addToBackStack(CaiDatFragment.class.getSimpleName());
-                fragmentTransaction.commit();
+                Toast.makeText(getContext(), "Coming soon", Toast.LENGTH_SHORT).show();
+//                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+//                fragmentTransaction.add(R.id.main, CaiDatFragment.newInstance());
+//                fragmentTransaction.addToBackStack(CaiDatFragment.class.getSimpleName());
+//                fragmentTransaction.commit();
             }
         });
 
