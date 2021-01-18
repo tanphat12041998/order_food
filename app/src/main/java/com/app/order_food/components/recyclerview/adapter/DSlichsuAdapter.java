@@ -146,7 +146,7 @@ public class DSlichsuAdapter extends RecyclerView.Adapter<DSlichsuAdapter.Recycl
                                                 orderFoodssLists.clear();
                                                 orderFoodssLists = response.body();
                                                 foodsList1.clear();
-                                                for (int j = 0; j < 42; j++) {
+                                                for (int j = 0; j < foodsList.size(); j++) {
                                                     for (OrderFoods orderFoods1 : orderFoodssLists) {
                                                         if (orderFood.getId().equals(orderFoods1.getId())) {
                                                             if (foodsList.get(j).getName().equals(orderFoods1.getNamefood())) {

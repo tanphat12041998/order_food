@@ -78,7 +78,7 @@ public class HomeFragment extends BaseFragment {
                             orderFoodsList.clear();
                             orderFoodsList = response.body();
                             if(orderFoodsList != null){
-                                for (int a = 0; a < 42; a++){
+                                for (int a = 0; a < foodsList.size(); a++){
                                     for(OrderFoods orderFoods: orderFoodsList){
                                         if(orderFoods.getNamefood().equals(foodsList.get(a).getName()) && orderFoods.getQuantity() >= 5){
                                             foodsLists.add(foodsList.get(a));
