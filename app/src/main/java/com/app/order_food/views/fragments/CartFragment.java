@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -71,10 +72,29 @@ public class CartFragment extends BaseFragment {
         listview_dsdonhang = getView().findViewById(R.id.listview_dsdonhang);
         text_gio_hang_trong = getView().findViewById(R.id.text_gio_hang_trong);
         title_don_hang_cua_toi = getView().findViewById(R.id.title_don_hang_cua_toi);
+
+
     }
 
     @Override
     protected void initialViewComponent() {
+        MainActivity.bottomNavigationView.setVisibility(View.VISIBLE);
+        if(HomeFragment.abc.equals("1")){
+            MainActivity.button_sheet.setVisibility(View.INVISIBLE);
+            MainActivity.bottomNavigationView.setVisibility(View.INVISIBLE);
+        }else if(MainActivity.abc.equals("2")) {
+            MainActivity.button_sheet.setVisibility(View.INVISIBLE);
+            MainActivity.bottomNavigationView.setVisibility(View.VISIBLE);
+        }
+
+        title_don_hang_cua_toi.setNavigationIcon(R.drawable.ic_close);
+        title_don_hang_cua_toi.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.bottomNavigationView.setVisibility(View.VISIBLE);
+                getFragmentManager().popBackStack();
+            }
+        });
         text_ten_nguoi_dung_don_hang.setText(MainActivity.Name);
         text_so_dien_thoai_don_hang.setText(MainActivity.Phone);
         text_diachi_donhang.setText(MainActivity.Address);
@@ -216,5 +236,12 @@ public class CartFragment extends BaseFragment {
         if (id == null) {
         }
         id = id + 1;
+    }
+
+    public static CartFragment newInstance() {
+        Bundle args = new Bundle();
+        CartFragment fragment = new CartFragment();
+        fragment.setArguments(args);
+        return fragment;
     }
 }

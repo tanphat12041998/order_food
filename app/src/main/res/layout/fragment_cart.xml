@@ -7,6 +7,8 @@
     android:background="@color/a6gray"
     android:orientation="vertical"
     android:weightSum="10"
+    android:clickable="true"
+    android:focusable="true"
     tools:context=".views.fragments.CartFragment"
     tools:ignore="ScrollViewCount">
 

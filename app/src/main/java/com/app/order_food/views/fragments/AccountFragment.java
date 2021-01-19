@@ -51,7 +51,7 @@ public class AccountFragment extends BaseFragment {
 
     @Override
     protected void initialViewComponent() {
-
+        MainActivity.button_sheet.setVisibility(View.INVISIBLE);
     }
 
 

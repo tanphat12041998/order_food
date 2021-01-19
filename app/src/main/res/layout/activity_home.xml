@@ -13,6 +13,38 @@
         android:background="@color/white"
         android:layout_above="@+id/bottom_navigation" />
 
+    <LinearLayout
+        android:id="@+id/button_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_above="@+id/bottom_navigation"
+        android:background="@color/colorAccent"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/slmon"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="Món"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xem Giỏ hàng"
+            android:layout_marginLeft="20dp"
+            android:textSize="24sp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/slgia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 VNĐ"
+            android:textSize="24sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"

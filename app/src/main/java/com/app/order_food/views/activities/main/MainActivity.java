@@ -6,9 +6,12 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Handler;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.app.order_food.R;
 
@@ -18,6 +21,7 @@ import com.app.order_food.views.activities.BaseActivity;
 import com.app.order_food.views.fragments.AccountFragment;
 import com.app.order_food.views.fragments.CartFragment;
 import com.app.order_food.views.fragments.HomeFragment;
+import com.app.order_food.views.fragments.ThongTinUserFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -32,9 +36,18 @@ public class MainActivity extends BaseActivity {
     public static String Img;
     public static ArrayList<OrderFoodDetails> ListFoodDetail;
     public static BottomNavigationView bottomNavigationView ;
+    @SuppressLint("StaticFieldLeak")
+    public static LinearLayout button_sheet;
+    public static TextView slmon, slgia;
+    public static String abc;
     @Override
     protected void initialViewComponent() {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+        button_sheet = findViewById(R.id.button_sheet);
+        slmon = findViewById(R.id.slmon);
+        slgia = findViewById(R.id.slgia);
+        abc = "";
+        button_sheet.setVisibility(View.INVISIBLE);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
@@ -49,6 +62,7 @@ public class MainActivity extends BaseActivity {
                         break;
                     case R.id.nav_cart:
                         selectedFragment = new CartFragment();
+                        abc = "2";
                         break;
                     case R.id.nav_user:
                         selectedFragment = new AccountFragment();
@@ -74,6 +88,7 @@ public class MainActivity extends BaseActivity {
         }else {
             ListFoodDetail = new ArrayList<>();
         }
+
     }
 
     @Override

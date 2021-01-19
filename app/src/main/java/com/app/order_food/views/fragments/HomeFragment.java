@@ -20,8 +20,11 @@ import com.app.order_food.components.recyclerview.adapter.DSmonanThinhHanhAdapte
 import com.app.order_food.views.activities.main.MainActivity;
 import com.app.order_food.views.activities.main.TimKiemActivity;
 
+import java.text.DecimalFormat;
+import java.time.chrono.MinguoChronology;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.PropertyPermission;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,12 +39,14 @@ public class HomeFragment extends BaseFragment {
     List<Foods> foodsLists = new ArrayList<>();
     List<OrderFoods> orderFoodsList = new ArrayList<>();
     public static List<Foods> foods;
+    public static String abc;
     Api api = retrofit.getClient().create(Api.class);
     DSmonanThinhHanhAdapter dSmonanThinhHanhAdapter;
     DSmonanAdapter dSmonanAdapter;
     Context context;
     Context contexts;
     TextView text_thanh_tim_kiem, dia_chi_home;
+    Integer gia_tong = 0;
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_home;
@@ -106,7 +111,30 @@ public class HomeFragment extends BaseFragment {
 
             }
         });
+        abc = "";
+        if(MainActivity.ListFoodDetail.size() <= 0){
+            MainActivity.button_sheet.setVisibility(View.INVISIBLE);
+        }else {
+            MainActivity.button_sheet.setVisibility(View.VISIBLE);
+            MainActivity.button_sheet.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    abc = "1";
+                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                    fragmentTransaction.add(R.id.main, CartFragment.newInstance());
+                    fragmentTransaction.addToBackStack(CartFragment.class.getSimpleName());
+                    fragmentTransaction.commit();
+                }
+            });
+            DecimalFormat decimalFor = new DecimalFormat("##,###,###");
+            for (int k = 0; k < MainActivity.ListFoodDetail.size() ; k++){
+                gia_tong += MainActivity.ListFoodDetail.get(k).getGiatong();
+                MainActivity.slgia.setText(decimalFor.format(gia_tong) + " VNĐ");
+            }
+            MainActivity.slmon.setText(MainActivity.ListFoodDetail.size() +" Món");
+        }
         dia_chi_home.setText(MainActivity.Address);
+
         init();
     }
 
