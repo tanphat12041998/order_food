@@ -233,13 +233,13 @@ public class DSlichsuAdapter extends RecyclerView.Adapter<DSlichsuAdapter.Recycl
         holder.text_gia_tien_lich_su.setText(decimalFor.format(orderFoods.getTotal()) + " VNĐ");
         holder.text_thoi_gian.setText(orderFoods.getDate()+"");
         if (orderFoods.getStatus().equals(a)) {
-            holder.text_da_giao.setText("Đang xử lý");
+            holder.text_da_giao.setText(" Đang xử lý");
             holder.text_da_giao.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_check1, 0, 0, 0);
         } else if (orderFoods.getStatus().equals(b)) {
-            holder.text_da_giao.setText("Đang giao hàng");
-            holder.text_da_giao.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_check1, 0, 0, 0);
+            holder.text_da_giao.setText(" Đang giao hàng");
+            holder.text_da_giao.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_check2, 0, 0, 0);
         } else {
-            holder.text_da_giao.setText("Đã giao hàng");
+            holder.text_da_giao.setText(" Đã giao hàng");
             holder.text_da_giao.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_check, 0, 0, 0);
         }
     }
