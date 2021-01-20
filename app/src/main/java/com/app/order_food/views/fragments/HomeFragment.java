@@ -127,12 +127,13 @@ public class HomeFragment extends BaseFragment {
                     fragmentTransaction.commit();
                 }
             });
-            DecimalFormat decimalFor = new DecimalFormat("##,###,###");
-            for (int k = 0; k < MainActivity.ListFoodDetail.size() ; k++){
-                gia_tong += MainActivity.ListFoodDetail.get(k).getGiatong();
-                MainActivity.slgia.setText(decimalFor.format(gia_tong) + " VNĐ");
-            }
-            MainActivity.slmon.setText(MainActivity.ListFoodDetail.size() +" Món");
+
+//            DecimalFormat decimalFor = new DecimalFormat("##,###,###");
+//            for (int k = 0; k < MainActivity.ListFoodDetail.size() ; k++){
+//                gia_tong += MainActivity.ListFoodDetail.get(k).getGiatong();
+//                MainActivity.slgia.setText(decimalFor.format(gia_tong) + " VNĐ");
+//            }
+//            MainActivity.slmon.setText(MainActivity.ListFoodDetail.size() +" Món");
         }
         dia_chi_home.setText(MainActivity.Address);
 
