@@ -41,16 +41,15 @@
             android:text="@string/text_huy"
             />
     </LinearLayout>
+
     <TextView
         android:id="@+id/text_ok"
-        android:textSize="20dp"
         android:padding="5dp"
-        android:layout_marginStart="365dp"
+        android:layout_marginStart="330dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ok"/>
-
-
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:text="@string/text_dong_y"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_show"
