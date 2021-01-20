@@ -24,6 +24,7 @@ import java.text.DecimalFormat;
 import java.time.chrono.MinguoChronology;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.PropertyPermission;
 
 import retrofit2.Call;
@@ -120,7 +121,7 @@ public class HomeFragment extends BaseFragment {
                 @Override
                 public void onClick(View view) {
                     abc = "1";
-                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                    FragmentTransaction fragmentTransaction = Objects.requireNonNull(getFragmentManager()).beginTransaction();
                     fragmentTransaction.add(R.id.main, CartFragment.newInstance());
                     fragmentTransaction.addToBackStack(CartFragment.class.getSimpleName());
                     fragmentTransaction.commit();

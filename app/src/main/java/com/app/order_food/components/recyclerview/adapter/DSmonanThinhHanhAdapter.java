@@ -50,6 +50,7 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
     Button btn_tru, btn_1, btn_cong, btn_tien;
     Integer sl, slht;
     Integer slmn;
+    Integer gia_tong = 0;
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView_dsmonanthinhhanh;
         TextView nameFood, price, rating;
@@ -182,6 +183,18 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
                                     MainActivity.ListFoodDetail.add(new OrderFoodDetails(foods.getId(), slht, foods.getDescription(), foods.getName(),foods.getImg(), foods.getPrice(),giamoi));
                                     notifyDataSetChanged();
                                 }
+                                if(MainActivity.ListFoodDetail.size() <= 0){
+                                    MainActivity.button_sheet.setVisibility(View.INVISIBLE);
+                                }else {
+                                    MainActivity.button_sheet.setVisibility(View.VISIBLE);
+                                    DecimalFormat decimalFor = new DecimalFormat("##,###,###");
+                                    for (int k = 0; k < MainActivity.ListFoodDetail.size() ; k++){
+                                        gia_tong += MainActivity.ListFoodDetail.get(k).getGiatong();
+                                        MainActivity.slgia.setText(decimalFor.format(gia_tong) + " VNĐ");
+                                    }
+                                    MainActivity.slmon.setText(MainActivity.ListFoodDetail.size() +" Món");
+                                }
+
 
                                 dialog.dismiss();
 

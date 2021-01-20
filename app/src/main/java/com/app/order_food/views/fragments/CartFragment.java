@@ -85,6 +85,9 @@ public class CartFragment extends BaseFragment {
         }else if(MainActivity.abc.equals("2")) {
             MainActivity.button_sheet.setVisibility(View.INVISIBLE);
             MainActivity.bottomNavigationView.setVisibility(View.VISIBLE);
+        }else if(MenuFoodFragment.abc.equals("0")){
+            MainActivity.button_sheet.setVisibility(View.INVISIBLE);
+            MainActivity.bottomNavigationView.setVisibility(View.INVISIBLE);
         }
 
         title_don_hang_cua_toi.setNavigationIcon(R.drawable.ic_close);
@@ -199,12 +202,14 @@ public class CartFragment extends BaseFragment {
             tongtien = 0;
             text_tamtinhgiatien.setText(tongtien + " VNĐ");
             text_tong_cong.setText(tongtien + " VNĐ");
+            dsDHAdapter.notifyDataSetChanged();
         } else {
             tongtien = 0;
             for (int i = 0; i < MainActivity.ListFoodDetail.size(); i++) {
                 tongtien += MainActivity.ListFoodDetail.get(i).getGiatong();
                 text_tamtinhgiatien.setText(tongtien + " VNĐ");
                 text_tong_cong.setText(tongtien + " VNĐ");
+                dsDHAdapter.notifyDataSetChanged();
             }
 
         }
