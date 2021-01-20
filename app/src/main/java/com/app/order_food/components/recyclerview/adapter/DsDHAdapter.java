@@ -237,6 +237,8 @@ public class DsDHAdapter extends BaseAdapter {
                 builder.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         MainActivity.ListFoodDetail.remove(i);
+                        MainActivity.ListFoodDetail.size();
+                        notifyDataSetChanged();
                         Toast.makeText(context.getContext(), "Đã xóa món ăn", Toast.LENGTH_SHORT).show();
                         dialog.cancel();
                     }

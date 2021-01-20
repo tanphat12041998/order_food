@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.order_food.API.Api;
@@ -23,6 +25,8 @@ import com.app.order_food.components.Model.Foods;
 import com.app.order_food.components.Model.OrderFoodDetails;
 import com.app.order_food.components.Model.Ratings;
 import com.app.order_food.views.activities.main.MainActivity;
+import com.app.order_food.views.fragments.CartFragment;
+import com.app.order_food.views.fragments.MenuFoodFragment;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,6 +35,7 @@ import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -47,6 +52,7 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
     Button btn_tru, btn_1, btn_cong, btn_tien;
     Integer sl, slht;
     Integer slmn;
+    Integer gia_tong = 0;
 
     public DSmonanAdapter(Context context, List<Foods> foodsList) {
         this.context = context;
@@ -86,7 +92,7 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                         btn_tien = dialog.findViewById(R.id.btn_tien);
                         new GetImage(image_hinhmonan).execute(foods.getImg());
                         text_food.setText(foods.getName());
-                        DecimalFormat decimalFor= new DecimalFormat("##,###,###");
+                        DecimalFormat decimalFor = new DecimalFormat("##,###,###");
                         text_price.setText(decimalFor.format(foods.getPrice()) + " VND");
                         btn_tien.setText(decimalFor.format(foods.getPrice()) + " VND");
                         text_description.setText(foods.getDescription());
@@ -105,7 +111,7 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                                 }
                                 DecimalFormat decimalFormat = new DecimalFormat("#.#");
                                 if (total != 0 || count != 0) {
-                                    text_rating.setText("" +decimalFormat.format(total / count));
+                                    text_rating.setText("" + decimalFormat.format(total / count));
                                 } else {
                                     text_rating.setText("0.0");
                                 }
@@ -128,10 +134,10 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                                 if (sl <= 1) {
                                     btn_cong.setVisibility(View.VISIBLE);
                                     btn_tru.setVisibility(View.INVISIBLE);
-                                }else if (sl >= 10) {
+                                } else if (sl >= 10) {
                                     btn_cong.setVisibility(View.INVISIBLE);
                                     btn_tru.setVisibility(View.VISIBLE);
-                                }else if (sl >= 1) {
+                                } else if (sl >= 1) {
                                     btn_cong.setVisibility(View.VISIBLE);
                                     btn_tru.setVisibility(View.VISIBLE);
                                 }
@@ -141,7 +147,7 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                             @Override
                             public void onClick(View view) {
                                 sl = sl - 1;
-                                slmn =sl * foods.getPrice();
+                                slmn = sl * foods.getPrice();
                                 btn_tien.setText(decimalFor.format(slmn) + " VND");
                                 btn_1.setText(sl + "");
                                 if (sl <= 1) {
@@ -150,7 +156,7 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                                 } else if (sl >= 10) {
                                     btn_cong.setVisibility(View.INVISIBLE);
                                     btn_tru.setVisibility(View.VISIBLE);
-                                }else if (sl >= 1) {
+                                } else if (sl >= 1) {
                                     btn_cong.setVisibility(View.VISIBLE);
                                     btn_tru.setVisibility(View.VISIBLE);
                                 }
@@ -177,21 +183,32 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                                     if (exists == false) {
                                         slht = sl;
                                         Integer giamoi = foods.getPrice() * slht;
-                                        MainActivity.ListFoodDetail.add(new OrderFoodDetails(foods.getId(), slht, foods.getDescription(), foods.getName(),foods.getImg(), foods.getPrice(),giamoi));
+                                        MainActivity.ListFoodDetail.add(new OrderFoodDetails(foods.getId(), slht, foods.getDescription(), foods.getName(), foods.getImg(), foods.getPrice(), giamoi));
                                         notifyDataSetChanged();
                                     }
                                 } else {
                                     slht = sl;
                                     Integer giamoi = foods.getPrice() * slht;
-                                    MainActivity.ListFoodDetail.add(new OrderFoodDetails(foods.getId(), slht, foods.getDescription(), foods.getName(),foods.getImg(), foods.getPrice(),giamoi));
+                                    MainActivity.ListFoodDetail.add(new OrderFoodDetails(foods.getId(), slht, foods.getDescription(), foods.getName(), foods.getImg(), foods.getPrice(), giamoi));
                                     notifyDataSetChanged();
+                                }
+                                if (MainActivity.ListFoodDetail.size() <= 0) {
+                                    MainActivity.button_sheet.setVisibility(View.INVISIBLE);
+//                                    MenuFoodFragment.btn_fab.setVisibility(View.INVISIBLE);
+                                } else {
+//                                    MenuFoodFragment.btn_fab.setVisibility(View.VISIBLE);
+                                    MainActivity.button_sheet.setVisibility(View.VISIBLE);
+                                    DecimalFormat decimalFor = new DecimalFormat("##,###,###");
+                                    for (int k = 0; k < MainActivity.ListFoodDetail.size(); k++) {
+                                        gia_tong += MainActivity.ListFoodDetail.get(k).getGiatong();
+                                        MainActivity.slgia.setText(decimalFor.format(gia_tong) + " VNĐ");
+                                    }
+                                    MainActivity.slmon.setText(MainActivity.ListFoodDetail.size() + " Món");
                                 }
 
                                 dialog.dismiss();
 
                             }
-
-
 
 
                         });
@@ -217,7 +234,7 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
         new GetImage(holder.imageView_dsmonan).execute(foods.getImg());
         holder.titleFood.setText("" + foods.getName());
         holder.description.setText("" + foods.getDescription());
-        DecimalFormat decimalFor= new DecimalFormat("##,###,###");
+        DecimalFormat decimalFor = new DecimalFormat("##,###,###");
         holder.price.setText("Giá: " + decimalFor.format(foods.getPrice()) + " VNĐ");
         api.getRatingByIdFood(foods.getId()).enqueue(new Callback<List<Ratings>>() {
             @Override
@@ -234,7 +251,7 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
                 }
                 DecimalFormat decimalFormat = new DecimalFormat("#.#");
                 if (total != 0 || count != 0) {
-                    holder.rating.setText("" +decimalFormat.format(total / count));
+                    holder.rating.setText("" + decimalFormat.format(total / count));
                 } else {
                     holder.rating.setText("0.0");
                 }

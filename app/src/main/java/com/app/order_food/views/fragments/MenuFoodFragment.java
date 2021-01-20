@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.order_food.API.Api;
@@ -15,9 +16,12 @@ import com.app.order_food.R;
 import com.app.order_food.components.Model.Foods;
 import com.app.order_food.components.recyclerview.adapter.DSmonanAdapter;
 import com.app.order_food.views.activities.main.MainActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,11 +37,13 @@ public class MenuFoodFragment extends BaseFragment {
     Api api = retrofit.getClient().create(Api.class);
     Context context;
     Integer a;
-
+    public static FloatingActionButton btn_fab;
+    public static String abc;
     @Override
     protected void initialVariables() {
         recyclerView_dsmonan = getView().findViewById(R.id.recyclerview_dsmonan);
         title_dsmonan = getView().findViewById(R.id.title_dsmonan);
+        btn_fab = getView().findViewById(R.id.btn_fab);
         MainActivity.bottomNavigationView.setVisibility(View.INVISIBLE);
         Bundle bundle = getArguments();
         a = bundle.getInt(ID, 0);
@@ -84,6 +90,23 @@ public class MenuFoodFragment extends BaseFragment {
                 getFragmentManager().popBackStack();
             }
         });
+        abc = "";
+        if(MainActivity.ListFoodDetail.size() <= 0){
+            btn_fab.setVisibility(View.VISIBLE);
+        }else {
+            btn_fab.setVisibility(View.VISIBLE);
+            btn_fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    abc = "0";
+                    MainActivity.button_sheet.setVisibility(View.INVISIBLE);
+                    FragmentTransaction fragmentTransaction = Objects.requireNonNull(getFragmentManager()).beginTransaction();
+                    fragmentTransaction.add(R.id.main, CartFragment.newInstance());
+                    fragmentTransaction.addToBackStack(CartFragment.class.getSimpleName());
+                    fragmentTransaction.commit();
+                }
+            });
+        }
     }
 
     @Override
