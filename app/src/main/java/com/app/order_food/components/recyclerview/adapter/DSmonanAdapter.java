@@ -199,11 +199,12 @@ public class DSmonanAdapter extends RecyclerView.Adapter<DSmonanAdapter.Recycler
 //                                    MenuFoodFragment.btn_fab.setVisibility(View.VISIBLE);
                                     MainActivity.button_sheet.setVisibility(View.VISIBLE);
                                     DecimalFormat decimalFor = new DecimalFormat("##,###,###");
-                                    for (int k = 0; k < MainActivity.ListFoodDetail.size(); k++) {
+                                    gia_tong = 0;
+                                    for (int k = 0; k < MainActivity.ListFoodDetail.size() ; k++){
                                         gia_tong += MainActivity.ListFoodDetail.get(k).getGiatong();
-                                        MainActivity.slgia.setText(decimalFor.format(gia_tong) + " VNĐ");
                                     }
-                                    MainActivity.slmon.setText(MainActivity.ListFoodDetail.size() + " Món");
+                                    MainActivity.slgia.setText(decimalFor.format(gia_tong) + " VNĐ");
+                                    MainActivity.slmon.setText(MainActivity.ListFoodDetail.size() +" Món");
                                 }
 
                                 dialog.dismiss();

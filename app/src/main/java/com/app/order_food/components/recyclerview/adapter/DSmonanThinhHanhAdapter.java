@@ -188,10 +188,11 @@ public class DSmonanThinhHanhAdapter extends RecyclerView.Adapter<DSmonanThinhHa
                                 }else {
                                     MainActivity.button_sheet.setVisibility(View.VISIBLE);
                                     DecimalFormat decimalFor = new DecimalFormat("##,###,###");
+                                    gia_tong = 0;
                                     for (int k = 0; k < MainActivity.ListFoodDetail.size() ; k++){
                                         gia_tong += MainActivity.ListFoodDetail.get(k).getGiatong();
-                                        MainActivity.slgia.setText(decimalFor.format(gia_tong) + " VNĐ");
                                     }
+                                    MainActivity.slgia.setText(decimalFor.format(gia_tong) + " VNĐ");
                                     MainActivity.slmon.setText(MainActivity.ListFoodDetail.size() +" Món");
                                 }
 
